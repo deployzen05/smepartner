@@ -33,7 +33,7 @@ const features = [
     background: (
       <Image
         className="absolute inset-0 object-cover opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-90"
-        src="https://images.unsplash.com/photo-1549520935-7c0934988457?q=80&w=1000&auto=format&fit=crop"
+        src="https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Commercial Solar"
         fill
       />
