@@ -110,67 +110,85 @@ const features = [
   },
 ];
 
-export function WhatWeOffer() {
-  return (
-    <section className="bg-slate-50 py-24">
-      <div className="container mx-auto max-w-7xl px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mb-16 max-w-3xl text-center"
-        >
-          <div className="mb-4 flex items-center justify-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2v20" />
-                <path d="M2 12h20" />
-                <path d="m4.93 4.93 14.14 14.14" />
-                <path d="m19.07 4.93-14.14 14.14" />
-              </svg>
-            </div>
-            <span className="text-sm font-bold tracking-widest text-slate-500 uppercase">
-              What We Offer
-            </span>
-          </div>
-          <h2 className="text-3xl leading-tight font-bold text-slate-900 md:text-5xl">
-            Customized Solar Solutions & Subsidies
-          </h2>
-        </motion.div>
+import { useRef, useEffect } from 'react';
 
+export function WhatWeOffer() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  // Infinite scroll logic for both rows
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+    let scrollAmount = 0;
+    const speed = 1.1; // px per frame
+    let rafId: number;
+    function animate() {
+      if (carousel && carousel.scrollWidth > carousel.clientWidth) {
+        scrollAmount += speed;
+        if (carousel && scrollAmount >= carousel.scrollWidth / 2) {
+          scrollAmount = 0;
+        }
+        if (carousel) carousel.scrollLeft = scrollAmount;
+      }
+      rafId = requestAnimationFrame(animate);
+    }
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  // Use all features in a single row
+  const row = features;
+
+  // Duplicate features for infinite scroll effect
+  const getLoopedRow = (row: typeof features) => [...row, ...row];
+
+  return (
+    <section className="bg-white py-20">
+      <div className="max-w-8xl container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="p-1"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="mb-12 flex flex-col items-center justify-center"
         >
-          <BentoGrid className="lg:auto-rows-[25rem]">
-            {features.map((feature, idx) => (
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-4 text-center text-3xl font-bold text-orange-600 md:text-5xl"
+          >
+            What We Offer
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mx-auto w-full max-w-2xl rounded-xl bg-white/60 p-6 text-center text-lg text-slate-700 shadow-lg backdrop-blur-md"
+          >
+            Customized solar solutions, subsidies, and project support for
+            residential, commercial, and industrial clients. Explore our
+            offerings below!
+          </motion.div>
+        </motion.div>
+        <div>
+          <div
+            ref={carouselRef}
+            className="no-scrollbar flex gap-12 overflow-x-hidden pb-4"
+            style={{ scrollBehavior: 'auto' }}
+          >
+            {getLoopedRow(row).map((feature, idx) => (
               <motion.div
-                key={feature.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 * idx }}
-                className={feature.className}
+                key={feature.name + idx}
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 * idx }}
+                className="h-105 max-w-135 min-w-110 flex-1"
               >
                 <BentoCard {...feature} className="h-full" />
               </motion.div>
             ))}
-          </BentoGrid>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

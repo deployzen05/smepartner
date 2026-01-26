@@ -3,6 +3,16 @@
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, Zap, ShieldCheck, PlayCircle } from 'lucide-react';
 import { motion, type Variants } from 'motion/react';
+import Image from 'next/image';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { EnquiryForm } from '@/components/enquiry-form';
+import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
   const container: Variants = {
@@ -26,52 +36,106 @@ export function HeroSection() {
   };
 
   return (
-    <div className="flex flex-col justify-center pt-8 lg:pt-0">
-      <motion.div variants={container} initial="hidden" animate="show">
-        <motion.div variants={item}>
-          <Badge className="mb-6 w-fit border-none bg-orange-100 px-3 py-1 text-sm font-medium text-orange-700 hover:bg-orange-200">
-            🌞 Authorized Vendor for UPNEDA & MNRE
-          </Badge>
+    <div className="flex flex-col items-center justify-center gap-10 pt-8 lg:flex-row lg:pt-0">
+      {/* Left: Text Content */}
+      <div className="flex flex-1 flex-col justify-center">
+        <motion.div variants={container} initial="hidden" animate="show">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.7, ease: 'easeOut' },
+              },
+            }}
+          >
+            <Badge className="mb-6 w-fit border-none bg-orange-100 px-3 py-1 text-sm font-medium text-orange-700 hover:bg-orange-200">
+              🌞 Authorized Vendor for UPNEDA & MNRE
+            </Badge>
+          </motion.div>
+
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 0.2, ease: 'easeOut' },
+              },
+            }}
+            className="mb-6 text-4xl leading-[1.1] font-bold text-[#1a1a1a] md:text-5xl lg:text-6xl"
+          >
+            Empowering Your Business with
+            <br />
+            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              SME Solar Solutions
+            </span>
+          </motion.h1>
+
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 0.4, ease: 'easeOut' },
+              },
+            }}
+            className="mb-8 max-w-xl text-lg leading-relaxed text-[#4a4a4a]"
+          >
+            SME Partner delivers end-to-end solar execution services. From
+            Residential Rooftops to Industrial Power Plants, we help you secure
+            government subsidies and financing at 6% interest.
+          </motion.p>
+
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: 0.6, ease: 'easeOut' },
+              },
+            }}
+            className="mb-10 flex flex-wrap gap-4"
+          >
+            {[
+              { icon: Zap, text: 'PM Surya Ghar Yojana' },
+              { icon: ShieldCheck, text: '25 Years Warranty' },
+              { icon: CheckCircle2, text: '6% Interest Loans' },
+            ].map((feature, idx) => (
+              <div
+                key={idx}
+                className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-2 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md"
+              >
+                <feature.icon className="h-4 w-4 fill-orange-500 text-orange-500" />
+                <span className="text-sm font-semibold text-slate-700">
+                  {feature.text}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+          {/* Schedule a Demo Button */}
+          <div className="mt-6">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-10 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0">
+                  Schedule a Demo
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="w-full max-w-lg border-none bg-transparent p-0 shadow-none">
+                <VisuallyHidden>
+                  <DialogTitle>Schedule a Demo</DialogTitle>
+                </VisuallyHidden>
+                <EnquiryForm />
+              </DialogContent>
+            </Dialog>
+          </div>
         </motion.div>
-
-        <motion.h1
-          variants={item}
-          className="mb-6 text-4xl leading-[1.1] font-bold text-[#1a1a1a] md:text-5xl lg:text-6xl"
-        >
-          Empowering Your Business with
-          <br />
-          <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-            SME Solar Solutions
-          </span>
-        </motion.h1>
-
-        <motion.p
-          variants={item}
-          className="mb-8 max-w-xl text-lg leading-relaxed text-[#4a4a4a]"
-        >
-          SME Partner delivers end-to-end solar execution services. From
-          Residential Rooftops to Industrial Power Plants, we help you secure
-          government subsidies and financing at 6% interest.
-        </motion.p>
-
-        <motion.div variants={item} className="mb-10 flex flex-wrap gap-4">
-          {[
-            { icon: Zap, text: 'PM Surya Ghar Yojana' },
-            { icon: ShieldCheck, text: '25 Years Warranty' },
-            { icon: CheckCircle2, text: '6% Interest Loans' },
-          ].map((feature, idx) => (
-            <div
-              key={idx}
-              className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-2 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md"
-            >
-              <feature.icon className="h-4 w-4 fill-orange-500 text-orange-500" />
-              <span className="text-sm font-semibold text-slate-700">
-                {feature.text}
-              </span>
-            </div>
-          ))}
-        </motion.div>
-
+      </div>
+      {/* Right: Video and Logo */}
+      <div className="relative w-full max-w-xl flex-1">
         <motion.div
           variants={item}
           className="group relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white shadow-2xl"
@@ -123,7 +187,17 @@ export function HeroSection() {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+        {/* Large Logo at bottom left, outside video, flush left, no circle */}
+        <div className="absolute -bottom-8 -left-20 z-30">
+          <Image
+            src="/solar-logo.jpeg"
+            alt="Solar Logo"
+            width={140}
+            height={140}
+            className="shadow-2xl"
+          />
+        </div>
+      </div>
     </div>
   );
 }

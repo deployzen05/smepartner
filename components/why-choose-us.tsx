@@ -30,16 +30,16 @@ const benefits = [
     description:
       'Long-term peace of mind with 25-year performance warranty on panels.',
   },
-  {
-    title: 'End-to-End Execution',
-    description:
-      'From site survey and design to installation and net metering.',
-  },
-  {
-    title: 'Premium Partners',
-    description:
-      'We use only Tier-1 brands like Tata Power, Jakson, and Premier Energies.',
-  },
+  // {
+  //   title: 'End-to-End Execution',
+  //   description:
+  //     'From site survey and design to installation and net metering.',
+  // },
+  // {
+  //   title: 'Premium Partners',
+  //   description:
+  //     'We use only Tier-1 brands like Tata Power, Jakson, and Premier Energies.',
+  // },
 ];
 
 export function WhyChooseUsSection() {
@@ -79,7 +79,7 @@ export function WhyChooseUsSection() {
                   Why Choose Us
                 </span>
               </div>
-              <h2 className="mb-6 text-3xl leading-tight font-bold text-slate-900 md:text-5xl">
+              <h2 className="mb-6 text-3xl leading-tight font-bold text-orange-500 md:text-5xl">
                 Why SME Solar is Uttar Pradesh's Most Trusted Choice
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-slate-600">
