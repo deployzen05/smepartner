@@ -13,6 +13,7 @@ import {
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
+import { EnquiryDialog } from './Home/enquire-dialog';
 
 export function HeroSection() {
   const container: Variants = {
@@ -36,10 +37,15 @@ export function HeroSection() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10 pt-8 lg:flex-row lg:pt-0">
+    <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-10 pt-8 lg:flex-row lg:pt-0">
       {/* Left: Text Content */}
       <div className="flex flex-1 flex-col justify-center">
-        <motion.div variants={container} initial="hidden" animate="show">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 40 },
@@ -118,19 +124,11 @@ export function HeroSection() {
           </motion.div>
           {/* Schedule a Demo Button */}
           <div className="mt-6">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-10 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0">
-                  Schedule a Demo
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="w-full max-w-lg border-none bg-transparent p-0 shadow-none">
-                <VisuallyHidden>
-                  <DialogTitle>Schedule a Demo</DialogTitle>
-                </VisuallyHidden>
-                <EnquiryForm />
-              </DialogContent>
-            </Dialog>
+            <EnquiryDialog>
+              <Button className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-10 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0">
+                Schedule a Demo
+              </Button>
+            </EnquiryDialog>
           </div>
         </motion.div>
       </div>
@@ -138,6 +136,9 @@ export function HeroSection() {
       <div className="relative w-full max-w-xl flex-1">
         <motion.div
           variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
           className="group relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white shadow-2xl"
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.4 }}
@@ -188,15 +189,15 @@ export function HeroSection() {
           </div>
         </motion.div>
         {/* Large Logo at bottom left, outside video, flush left, no circle */}
-        <div className="absolute -bottom-8 -left-20 z-30">
-          <Image
-            src="/solar-logo.jpeg"
-            alt="Solar Logo"
-            width={140}
-            height={140}
-            className="shadow-2xl"
-          />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="absolute -bottom-8 -left-20 z-30"
+        >
+          <Image src="/solar.png" alt="Solar Logo" width={140} height={140} />
+        </motion.div>
       </div>
     </div>
   );

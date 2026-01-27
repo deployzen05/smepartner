@@ -71,7 +71,7 @@ export function EnquiryForm() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.8, ease: 'easeOut' }}
-      className="w-full rounded-xl border border-slate-100 bg-white p-8 shadow-sm"
+      className="w-full rounded-xl border border-slate-100 bg-white p-5 shadow-sm md:p-8"
     >
       <h2 className="mb-8 text-center text-2xl font-bold text-[#1a1a1a]">
         Schedule a demo

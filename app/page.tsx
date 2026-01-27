@@ -12,6 +12,8 @@ import { OurProjects } from '@/components/our-projects';
 import { Footer } from '@/components/footer';
 import { TrustedSection } from '@/components/trusted-section';
 
+import { CTASection } from '@/components/cta-section';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -23,8 +25,8 @@ export default function Home() {
         <div className="relative z-10 w-full px-4 py-8 md:px-8 md:py-16 lg:py-20">
           <HeroSection />
         </div>
-        <About />
       </div>
+      <About />
 
       <WhatWeOffer />
       <Team />
@@ -41,6 +43,8 @@ export default function Home() {
       <TrustedSection />
 
       <Testimonials />
+
+      <CTASection />
 
       <Footer />
     </div>

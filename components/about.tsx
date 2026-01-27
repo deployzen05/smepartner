@@ -3,21 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
-const experts = [
-  {
-    name: 'Ratnesh Jaiswal',
-    img: '/experts/ratnesh.jpg',
-  },
-  {
-    name: 'Jitendra Singh',
-    img: '/experts/jitendra.jpg',
-  },
-  {
-    name: 'Chetan Jaiswal',
-    img: '/experts/chetan.jpg',
-  },
-];
-
 export function About() {
   return (
     <section className="bg-white py-20">
@@ -27,7 +12,8 @@ export function About() {
           <div className="grid grid-cols-2 gap-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
             >
@@ -40,7 +26,8 @@ export function About() {
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
             >
@@ -53,7 +40,8 @@ export function About() {
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
             >
@@ -66,7 +54,8 @@ export function About() {
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
             >
@@ -81,14 +70,15 @@ export function About() {
           {/* Text on the right */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
           >
             <h2 className="mb-4 text-3xl font-bold text-orange-600 md:text-5xl">
               About SME Partner
             </h2>
-            <p className="mb-6 max-w-2xl text-lg text-slate-700">
+            <p className="mb-6 max-w-2xl text-justify text-lg text-slate-700">
               Uttar Pradesh’s most trusted industrial consultancy for MSMEs,
               manufacturing, food processing, hospitality, textiles, and
               renewable energy.
