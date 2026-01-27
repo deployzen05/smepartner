@@ -26,24 +26,16 @@ export default function Home() {
           <HeroSection />
         </div>
       </div>
+      <TrustedSection />
       <About />
 
       <WhatWeOffer />
-      <Team />
-
-      {/* <WhyChooseUsSection /> */}
-
-      {/* <OurUSP />
-
+      <WhyChooseUsSection />
+      <OurUSP />
       <ReadyToGoSolar />
-
-      
-      <OurProjects /> */}
-      {/* use these components in solar page */}
-      <TrustedSection />
-
+      <Team />
       <Testimonials />
-
+      <OurProjects />
       <CTASection />
 
       <Footer />
