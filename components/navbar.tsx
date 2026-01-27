@@ -99,7 +99,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="flex flex-col gap-6 px-6 pt-10 sm:max-w-sm"
+              className="flex flex-col gap-6 px-6 pt-0 sm:max-w-sm"
             >
               {/* TopHeader content for mobile */}
               <div className="mb-4 flex flex-col gap-4 border-b border-orange-100 pb-4">

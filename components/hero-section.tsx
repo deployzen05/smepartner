@@ -61,6 +61,20 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Show scroll button only when hero is in view
+  const heroRef = React.useRef<HTMLDivElement>(null);
+  const [showScrollBtn, setShowScrollBtn] = React.useState(true);
+  React.useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setShowScrollBtn(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (heroRef.current) observer.observe(heroRef.current);
+    return () => {
+      if (heroRef.current) observer.unobserve(heroRef.current);
+    };
+  }, []);
+
   // Handler for manual scroll button
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -70,7 +84,8 @@ export function HeroSection() {
   return (
     <div
       id="hero"
-      className="max-w-8xl relative mx-auto flex min-h-[600px] flex-col items-center justify-center gap-0 pt-0 pb-4 lg:flex-row lg:pt-0"
+      ref={heroRef}
+      className="max-w-8xl relative mx-auto -mt-10 flex min-h-[700px] flex-col items-center justify-center gap-0 px-2 pt-0 pb-4 sm:px-4 md:mt-0 md:px-8 lg:flex-row lg:pt-0"
     >
       {/* Background Image Carousel */}
       <div className="absolute inset-0 -z-40 h-full min-h-[600px] w-full overflow-hidden rounded-none">
@@ -98,17 +113,19 @@ export function HeroSection() {
         />
       </div>
       {/* Scroll Button for Carousel */}
-      <button
-        onClick={handleNextImage}
-        className="fixed right-8 bottom-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg ring-1 ring-orange-200 transition-colors hover:bg-orange-100"
-        aria-label="Next background image"
-        style={{ backdropFilter: 'blur(6px)' }}
-      >
-        <ChevronRight className="h-7 w-7 text-orange-600" />
-      </button>
+      {showScrollBtn && (
+        <button
+          onClick={handleNextImage}
+          className="fixed right-4 bottom-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 shadow-lg ring-1 ring-orange-200 transition-colors hover:bg-orange-100 sm:right-8 sm:bottom-8 sm:h-12 sm:w-12"
+          aria-label="Next background image"
+          style={{ backdropFilter: 'blur(6px)' }}
+        >
+          <ChevronRight className="h-6 w-6 text-orange-600 sm:h-7 sm:w-7" />
+        </button>
+      )}
 
       {/* Left: Text Content */}
-      <div className="ml-20 flex flex-1 flex-col justify-center">
+      <div className="flex flex-1 flex-col justify-center px-2 sm:px-6 md:px-10 lg:ml-20">
         <motion.div
           variants={container}
           initial="hidden"
@@ -139,7 +156,7 @@ export function HeroSection() {
                 transition: { duration: 0.8, delay: 0.2, ease: 'easeOut' },
               },
             }}
-            className="mb-6 text-4xl leading-[1.1] font-bold text-balance text-[#1a1a1a] md:text-5xl lg:text-6xl"
+            className="mb-6 text-2xl leading-[1.1] font-bold text-balance text-[#1a1a1a] sm:text-4xl md:text-5xl lg:text-6xl"
           >
             Empowering Your Business with
             <br />
@@ -157,7 +174,7 @@ export function HeroSection() {
                 transition: { duration: 0.8, delay: 0.4, ease: 'easeOut' },
               },
             }}
-            className="mb-8 max-w-xl text-lg leading-relaxed text-[#4a4a4a]"
+            className="mb-8 max-w-xl text-base leading-relaxed text-[#4a4a4a] sm:text-lg"
           >
             SME Partner delivers end-to-end solar execution services. From
             Residential Rooftops to Industrial Power Plants, we help you secure
@@ -173,7 +190,7 @@ export function HeroSection() {
                 transition: { duration: 0.8, delay: 0.6, ease: 'easeOut' },
               },
             }}
-            className="mb-10 flex flex-wrap gap-4"
+            className="mb-10 flex flex-wrap gap-2 sm:gap-4"
           >
             {[
               { icon: Zap, text: 'PM Surya Ghar Yojana' },
@@ -182,7 +199,7 @@ export function HeroSection() {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-0 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md"
+                className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-3 py-0 text-xs shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md sm:text-sm"
               >
                 <feature.icon className="h-4 w-4 fill-orange-600 text-orange-600" />
                 <span className="text-sm font-semibold text-slate-700">
@@ -195,7 +212,7 @@ export function HeroSection() {
           <div className="mt-6">
             <Button
               asChild
-              className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-10 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
+              className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-6 py-3 text-base font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0 sm:px-10 sm:py-5 sm:text-lg"
             >
               <a href="/enquire">Schedule a Demo</a>
             </Button>
