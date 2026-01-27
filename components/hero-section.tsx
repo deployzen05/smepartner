@@ -149,10 +149,10 @@ export function HeroSection() {
             muted
             loop
             playsInline
-            poster="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1200"
+            poster="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg"
           >
             <source
-              src="https://videos.pexels.com/video-files/3195650/3195650-hd_1920_1080_25fps.mp4"
+              src="https://www.pexels.com/download/video/8853487/"
               type="video/mp4"
             />
             Your browser does not support the video tag.

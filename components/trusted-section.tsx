@@ -23,7 +23,7 @@ export function TrustedSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="container mx-auto max-w-7xl px-4 text-center"
+        className="container mx-auto px-4 text-center"
       >
         <p className="mb-8 text-sm font-bold tracking-widest text-slate-500 uppercase">
           Official Partners & Equipment Sourced From

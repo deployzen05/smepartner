@@ -44,7 +44,7 @@ const benefits = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="bg-white py-24">
+    <section className="overflow-hidden bg-white py-24">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* Left Column: Heading and Description */}
