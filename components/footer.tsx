@@ -138,19 +138,19 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                'RESIDENTIAL SOLAR',
-                'COMMERCIAL SOLAR',
-                'INDUSTRIAL SOLAR',
-                'WATER PUMPS',
-                'SUBSIDY INFO',
-                'CONTACT',
+                { label: 'RESIDENTIAL SOLAR', href: '/services/residential' },
+                { label: 'COMMERCIAL SOLAR', href: '/services/commercial' },
+                { label: 'INDUSTRIAL SOLAR', href: '/services/industrial' },
+                { label: 'WATER PUMPS', href: '/services/pumps' },
+                { label: 'SUBSIDY INFO', href: '/services/subsidy' },
+                { label: 'CONTACT', href: '/enquire' },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="inline-block text-sm font-semibold text-slate-500 uppercase transition-colors hover:translate-x-1 hover:text-orange-500"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}

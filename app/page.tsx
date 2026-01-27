@@ -1,6 +1,5 @@
 import { Navbar } from '@/components/navbar';
 import { HeroSection } from '@/components/hero-section';
-import { EnquiryForm } from '@/components/enquiry-form';
 import { About } from '@/components/about';
 import { WhatWeOffer } from '@/components/what-we-offer';
 import { Team } from '@/components/team';
@@ -20,24 +19,20 @@ export default function Home() {
       <div className="relative overflow-hidden rounded-b-[40px] bg-[#FFF9F0] pb-12 shadow-sm md:rounded-b-[80px]">
         <Navbar />
         <div className="h-16" />
-
-        {/* HeroSection now full width, outside container */}
         <div className="relative z-10 w-full overflow-hidden px-4 py-8 md:px-8 md:py-16 lg:py-20">
           <HeroSection />
         </div>
       </div>
       <TrustedSection />
-      <About />
-
-      <WhatWeOffer />
       <WhyChooseUsSection />
+      <About />
+      <WhatWeOffer />
       <OurUSP />
       <ReadyToGoSolar />
+      <OurProjects />
       <Team />
       <Testimonials />
-      <OurProjects />
       <CTASection />
-
       <Footer />
     </div>
   );

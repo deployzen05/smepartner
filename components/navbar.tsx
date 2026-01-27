@@ -18,9 +18,9 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#solar', label: 'Solar Product' },
-    { href: '#subsidy', label: 'Subsidy Plans' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/subsidy', label: 'Subsidy' },
   ];
 
   return (

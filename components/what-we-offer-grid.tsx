@@ -19,7 +19,7 @@ const features = [
     name: 'Residential (PM Surya Ghar)',
     description:
       'Get up to ₹1,08,000 subsidy & free electricity (300 units). 6% Bank Finance available.',
-    href: '/residential',
+    href: '/services/residential',
     cta: 'Check Eligibility',
     imgSrc:
       'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop',
@@ -29,7 +29,7 @@ const features = [
     name: 'Commercial Solar',
     description:
       'End-to-end solar solutions for hospitals, hotels, and cold storages with high ROI.',
-    href: '/commercial',
+    href: '/services/commercial',
     cta: 'Learn more',
     imgSrc:
       'https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -39,7 +39,7 @@ const features = [
     name: 'Industrial Solar',
     description:
       '50-90% Capital Subsidy specially for Food Processing units & MSMEs.',
-    href: '/industrial',
+    href: '/services/industrial',
     cta: 'View Subsidies',
     imgSrc:
       'https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=1000&auto=format&fit=crop',
@@ -49,7 +49,7 @@ const features = [
     name: 'Solar Water Pumps',
     description:
       'Efficient solar pumping solutions for unlimited water supply without electricity bills.',
-    href: '/pumps',
+    href: '/services/pumps',
     cta: 'Learn more',
     imgSrc:
       'https://plus.unsplash.com/premium_photo-1664302342178-564b28c68d33?q=80&w=1170&auto=format&fit=crop',
@@ -59,7 +59,7 @@ const features = [
     name: 'Industrial Subsidy',
     description:
       'Consultancy for Capital Subsidy, Mandi Tax Exemption, and Project Finance.',
-    href: '/subsidy',
+    href: '/services/subsidy',
     cta: 'Get Consultation',
     imgSrc:
       'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop',
@@ -69,7 +69,7 @@ const features = [
     name: 'O&M Services',
     description:
       'Comprehensive operation & maintenance to ensure maximum generation for 25 years.',
-    href: '/operations',
+    href: '/services/operations',
     cta: 'View Plans',
     imgSrc:
       'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop',
