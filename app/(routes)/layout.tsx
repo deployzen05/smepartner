@@ -1,8 +1,10 @@
 'use client';
 
 import { BreadcrumbSection } from '@/components/breadcrumb-section';
+import { CTASection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
+import { WhyChooseUsTwo } from '@/components/why-choose-us-two';
 import { usePathname } from 'next/navigation';
 
 export default function SolarLayout({
@@ -40,9 +42,11 @@ export default function SolarLayout({
   return (
     <main className="min-h-screen">
       <Navbar />
-      <div className="h-20" /> {/* Spacer for fixed navbar */}
+      <div className="h-20" />
       <BreadcrumbSection title={title} breadcrumbItems={breadcrumbItems} />
       {children}
+      <WhyChooseUsTwo />
+      <CTASection />
       <Footer />
     </main>
   );

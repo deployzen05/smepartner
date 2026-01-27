@@ -11,7 +11,7 @@ export default function EnquirePage() {
         <div className="container mx-auto max-w-7xl px-4">
           {/* Header Section */}
           <div className="mb-16 text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-sm font-semibold tracking-wider text-blue-600 uppercase">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-100 bg-orange-50 px-4 py-1 text-sm font-semibold tracking-wider text-orange-600 uppercase">
               <Sparkles className="h-4 w-4" />
               YOUR ENQUIRIES
             </div>

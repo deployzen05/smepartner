@@ -94,7 +94,7 @@ export function OurUSP() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl leading-tight font-bold text-orange-600 md:text-5xl"
+            className="text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl"
           >
             Leading Solar Energy Provider in UP
           </motion.h2>

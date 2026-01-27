@@ -119,7 +119,7 @@ export function OurProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto max-w-4xl text-3xl leading-tight font-bold text-orange-600 md:text-5xl"
+          className="mx-auto max-w-4xl text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl"
         >
           Trusted by top brands for their energy needs.
         </motion.h2>

@@ -41,7 +41,7 @@ export function Team() {
             Our Team
           </h2>
           <div className="mx-auto w-full max-w-2xl rounded-xl bg-white/60 p-6 text-center text-lg text-slate-700">
-            Meet the team behind SME Partner—Uttar Pradesh's most trusted
+            Meet the team behind SME Partner—Uttar Pradesh’s most trusted
             industrial consultancy.
           </div>
         </motion.header>

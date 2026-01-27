@@ -36,7 +36,7 @@ export function WhyChooseUsTwo() {
               </span>
             </div>
 
-            <h2 className="mb-6 text-3xl leading-tight font-bold text-slate-900 md:text-5xl">
+            <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
               Empowering Homes and Businesses with Solar
             </h2>
 
@@ -70,7 +70,7 @@ export function WhyChooseUsTwo() {
                     96<span className="text-orange-500">%</span>
                   </h2>
                   <p className="text-sm font-semibold tracking-wide text-slate-500 uppercase">
-                    Satisfied Customer
+                    Satisfied Customers
                   </p>
                 </div>
               </div>
@@ -78,10 +78,10 @@ export function WhyChooseUsTwo() {
 
             <Link
               href="/about"
-              className="group inline-flex items-center justify-center rounded-md bg-[#ffd563] px-8 py-3 font-bold text-black shadow-md transition-all duration-300 hover:bg-[#ffca28] hover:shadow-lg"
+              className="group inline-flex items-center justify-center rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-8 py-4 text-lg font-bold text-black shadow-lg transition-transform hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
             >
               Learn More{' '}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -91,7 +91,7 @@ export function WhyChooseUsTwo() {
             <div className="space-y-4 md:space-y-6">
               <div className="animate-in fade-in zoom-in relative h-48 overflow-hidden rounded-2xl shadow-lg transition-transform duration-500 hover:-translate-y-2 md:h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6f?q=80&w=800&auto=format&fit=crop"
+                  src="/service-residential.png"
                   alt="Service 1"
                   fill
                   className="object-cover"
@@ -99,7 +99,7 @@ export function WhyChooseUsTwo() {
               </div>
               <div className="animate-in fade-in zoom-in relative h-40 overflow-hidden rounded-2xl shadow-lg transition-transform delay-100 duration-500 hover:-translate-y-2 md:h-56">
                 <Image
-                  src="https://images.unsplash.com/photo-1585123388867-34aca3e7619a?q=80&w=800&auto=format&fit=crop"
+                  src="/service-commercial.png"
                   alt="Service 2"
                   fill
                   className="object-cover"
@@ -111,7 +111,7 @@ export function WhyChooseUsTwo() {
             <div className="space-y-4 pt-8 md:space-y-6 md:pt-12">
               <div className="animate-in fade-in zoom-in relative h-40 overflow-hidden rounded-2xl shadow-lg transition-transform delay-200 duration-500 hover:-translate-y-2 md:h-56">
                 <Image
-                  src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop"
+                  src="/service-residential.png"
                   alt="Service 3"
                   fill
                   className="object-cover"
@@ -119,7 +119,7 @@ export function WhyChooseUsTwo() {
               </div>
               <div className="animate-in fade-in zoom-in relative h-48 overflow-hidden rounded-2xl shadow-lg transition-transform delay-300 duration-500 hover:-translate-y-2 md:h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=800&auto=format&fit=crop"
+                  src="/service-commercial.png"
                   alt="Service 4"
                   fill
                   className="object-cover"
