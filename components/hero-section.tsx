@@ -56,7 +56,7 @@ export function HeroSection() {
               },
             }}
           >
-            <Badge className="mb-6 w-fit max-w-full border-none bg-orange-100 px-3 py-1 text-center text-sm font-medium whitespace-normal text-orange-700 hover:bg-orange-200">
+            <Badge className="mb-6 w-fit max-w-full border-none bg-orange-100 px-3 py-1 text-center text-sm font-medium whitespace-normal text-orange-600 hover:bg-orange-200">
               🌞 Authorized Vendor for UPNEDA & MNRE
             </Badge>
           </motion.div>
@@ -74,7 +74,7 @@ export function HeroSection() {
           >
             Empowering Your Business with
             <br />
-            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
               SME Solar Solutions
             </span>
           </motion.h1>
@@ -115,7 +115,7 @@ export function HeroSection() {
                 key={idx}
                 className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-2 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md"
               >
-                <feature.icon className="h-4 w-4 fill-orange-500 text-orange-500" />
+                <feature.icon className="h-4 w-4 fill-orange-600 text-orange-600" />
                 <span className="text-sm font-semibold text-slate-700">
                   {feature.text}
                 </span>
@@ -124,11 +124,12 @@ export function HeroSection() {
           </motion.div>
           {/* Schedule a Demo Button */}
           <div className="mt-6">
-            <EnquiryDialog>
-              <Button className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-10 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0">
-                Schedule a Demo
-              </Button>
-            </EnquiryDialog>
+            <Button
+              asChild
+              className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-10 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
+            >
+              <a href="/enquire">Schedule a Demo</a>
+            </Button>
           </div>
         </motion.div>
       </div>

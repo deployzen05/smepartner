@@ -15,7 +15,7 @@ export default function EnquirePage() {
               <Sparkles className="h-4 w-4" />
               YOUR ENQUIRIES
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 md:text-5xl">
+            <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
               Explore Your Enquiries with Us
             </h2>
           </div>

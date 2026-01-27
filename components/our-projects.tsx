@@ -95,7 +95,7 @@ export function OurProjects() {
           transition={{ duration: 0.5 }}
           className="mb-4 flex items-center justify-center gap-2"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -119,7 +119,7 @@ export function OurProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto max-w-4xl text-3xl leading-tight font-bold text-slate-900 md:text-5xl"
+          className="mx-auto max-w-4xl text-3xl leading-tight font-bold text-orange-600 md:text-5xl"
         >
           Trusted by top brands for their energy needs.
         </motion.h2>

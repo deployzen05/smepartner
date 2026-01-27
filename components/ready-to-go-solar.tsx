@@ -17,7 +17,7 @@ export function ReadyToGoSolar() {
           className="mx-auto mb-16 max-w-3xl text-center"
         >
           <div className="mb-4 flex items-center justify-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -38,7 +38,7 @@ export function ReadyToGoSolar() {
               Ready to Go Solar?
             </span>
           </div>
-          <h2 className="mb-6 text-3xl leading-tight font-bold text-slate-900 md:text-5xl">
+          <h2 className="mb-6 text-3xl leading-tight font-bold text-orange-600 md:text-5xl">
             Let’s Get Started with SME Partner
           </h2>
           <p className="text-lg leading-relaxed text-slate-600">
@@ -118,7 +118,7 @@ export function ReadyToGoSolar() {
               'Documentation & Approval',
               'Quick Installation',
             ].map((step, idx, arr) => (
-              <Link href="#form" key={idx} className="group block">
+              <Link href="/enquire" key={idx} className="group block">
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -127,7 +127,7 @@ export function ReadyToGoSolar() {
                   className="flex items-center justify-between rounded-xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:border-orange-200 hover:shadow-md"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-3xl font-bold text-slate-200 transition-colors group-hover:text-orange-500">
+                    <span className="font-mono text-3xl font-bold text-slate-200 transition-colors group-hover:text-orange-600">
                       0{idx + 1}.
                     </span>
                     <span className="text-lg font-bold text-slate-800 group-hover:text-slate-900 md:text-xl">
@@ -135,7 +135,7 @@ export function ReadyToGoSolar() {
                     </span>
                   </div>
                   {idx !== arr.length - 1 && (
-                    <ArrowDown className="h-5 w-5 text-slate-400 transition-colors group-hover:text-orange-500" />
+                    <ArrowDown className="h-5 w-5 text-slate-400 transition-colors group-hover:text-orange-600" />
                   )}
                 </motion.div>
               </Link>

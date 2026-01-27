@@ -79,7 +79,7 @@ export function WhyChooseUsSection() {
                   Why Choose Us
                 </span>
               </div>
-              <h2 className="mb-6 text-3xl leading-tight font-bold text-orange-500 md:text-5xl">
+              <h2 className="mb-6 text-3xl leading-tight font-bold text-orange-600 md:text-5xl">
                 Why SME Solar is Uttar Pradesh's Most Trusted Choice
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-slate-600">
@@ -125,7 +125,7 @@ export function WhyChooseUsSection() {
                 className="group flex cursor-pointer items-start gap-4 rounded-xl border border-slate-100 p-5 transition-all duration-300 hover:border-orange-100 hover:bg-orange-50/30"
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-white text-orange-500 shadow-sm transition-transform duration-300 group-hover:scale-110">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-white text-orange-600 shadow-sm transition-transform duration-300 group-hover:scale-110">
                   <Trophy className="h-6 w-6" />
                 </div>
                 <div>

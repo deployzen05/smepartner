@@ -59,7 +59,7 @@ const features = [
     name: 'Industrial Subsidy',
     description:
       'Consultancy for Capital Subsidy, Mandi Tax Exemption, and Project Finance.',
-    href: '/services/subsidy',
+    href: '/subsidy',
     cta: 'Get Consultation',
     imgSrc:
       'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop',

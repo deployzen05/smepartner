@@ -69,7 +69,7 @@ export function OurUSP() {
             transition={{ duration: 0.6 }}
             className="mb-4 flex items-center justify-center gap-2"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -94,7 +94,7 @@ export function OurUSP() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl leading-tight font-bold text-slate-900 md:text-5xl"
+            className="text-3xl leading-tight font-bold text-orange-600 md:text-5xl"
           >
             Leading Solar Energy Provider in UP
           </motion.h2>
@@ -112,7 +112,7 @@ export function OurUSP() {
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
                 className="group flex flex-col items-center text-center lg:items-end lg:text-right"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-orange-500 shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-orange-600 shadow-md transition-transform duration-300 group-hover:scale-110">
                   <CheckCircle2 className="h-6 w-6" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-orange-600">
@@ -160,7 +160,7 @@ export function OurUSP() {
                 transition={{ duration: 0.6, delay: 0.2 + idx * 0.2 }}
                 className="group flex flex-col items-center text-center lg:items-start lg:text-left"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-orange-500 shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-orange-600 shadow-md transition-transform duration-300 group-hover:scale-110">
                   <CheckCircle2 className="h-6 w-6" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-orange-600">

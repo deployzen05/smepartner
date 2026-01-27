@@ -142,7 +142,7 @@ export function Footer() {
                 { label: 'COMMERCIAL SOLAR', href: '/services/commercial' },
                 { label: 'INDUSTRIAL SOLAR', href: '/services/industrial' },
                 { label: 'WATER PUMPS', href: '/services/pumps' },
-                { label: 'SUBSIDY INFO', href: '/services/subsidy' },
+                { label: 'SUBSIDY INFO', href: '/subsidy' },
                 { label: 'CONTACT', href: '/enquire' },
               ].map((item) => (
                 <li key={item.label}>

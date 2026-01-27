@@ -14,9 +14,8 @@ export function CTASection() {
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-64 w-64 rounded-full bg-yellow-100 opacity-60 blur-3xl"></div>
 
           <div className="relative z-10 max-w-2xl flex-1">
-            <h3 className="mb-4 text-3xl leading-tight font-bold text-slate-900 md:text-5xl">
-              Ready to switch to{' '}
-              <span className="text-orange-600">Solar Energy?</span>
+            <h3 className="mb-4 text-3xl leading-tight font-bold text-orange-600 md:text-5xl">
+              Ready to switch to Solar Energy?
             </h3>
             <p className="text-lg leading-relaxed text-slate-600 md:text-xl">
               Get up to{' '}
@@ -43,7 +42,7 @@ export function CTASection() {
               size="lg"
             >
               <Link href="tel:+919169478991">
-                <PhoneCall className="mr-2 h-5 w-5 text-orange-500" /> Talk to
+                <PhoneCall className="mr-2 h-5 w-5 text-orange-600" /> Talk to
                 Expert
               </Link>
             </Button>

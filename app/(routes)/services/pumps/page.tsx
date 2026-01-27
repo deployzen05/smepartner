@@ -14,7 +14,7 @@ export default function PumpsPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900 md:text-5xl">
+              <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Solar Water Pumps
               </h2>
               <p className="text-lg leading-relaxed text-slate-600">
