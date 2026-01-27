@@ -5,7 +5,7 @@ import { WhatWeOfferGrid } from './what-we-offer-grid';
 
 export function WhatWeOffer() {
   return (
-    <section className="bg-white py-20">
+    <section id="what-we-offer" className="bg-white py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

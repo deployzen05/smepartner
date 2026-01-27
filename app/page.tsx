@@ -18,8 +18,8 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <div className="relative overflow-hidden rounded-b-[40px] bg-[#FFF9F0] pb-12 shadow-sm md:rounded-b-[80px]">
         <Navbar />
-        <div className="h-16" />
-        <div className="relative z-10 w-full overflow-hidden px-4 py-8 md:px-8 md:py-16 lg:py-20">
+        <div className="h-30" />
+        <div className="relative z-10 w-full overflow-hidden px-0 py-8 md:px-0 md:py-0 lg:py-0">
           <HeroSection />
         </div>
       </div>

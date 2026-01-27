@@ -1,7 +1,15 @@
 'use client';
 
+import React from 'react';
+
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, Zap, ShieldCheck, PlayCircle } from 'lucide-react';
+import {
+  CheckCircle2,
+  Zap,
+  ShieldCheck,
+  PlayCircle,
+  ChevronRight,
+} from 'lucide-react';
 import { motion, type Variants } from 'motion/react';
 import Image from 'next/image';
 import {
@@ -36,10 +44,71 @@ export function HeroSection() {
     },
   };
 
+  // Solar background images for carousel
+  const bgImages = [
+    'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=1200&auto=format&fit=crop',
+  ];
+
+  // Simple carousel state
+  const [bgIndex, setBgIndex] = React.useState(0);
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % bgImages.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Handler for manual scroll button
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setBgIndex((prev) => (prev + 1) % bgImages.length);
+  };
+
   return (
-    <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-10 pt-8 lg:flex-row lg:pt-0">
+    <div
+      id="hero"
+      className="max-w-8xl relative mx-auto flex min-h-[600px] flex-col items-center justify-center gap-0 pt-0 pb-4 lg:flex-row lg:pt-0"
+    >
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 -z-40 h-full min-h-[600px] w-full overflow-hidden rounded-none">
+        {bgImages.map((img, idx) => (
+          <motion.div
+            key={img}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: bgIndex === idx ? 1 : 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            className="absolute inset-0 h-full w-full"
+            style={{
+              backgroundImage: `url(${img})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              zIndex: 0,
+              opacity: 0.75,
+            }}
+            aria-hidden="true"
+          />
+        ))}
+        {/* Overlay for readability */}
+        <div
+          className="absolute inset-0 bg-linear-to-r from-white/95 via-white/80 to-white/50"
+          style={{ opacity: 0.92 }}
+        />
+      </div>
+      {/* Scroll Button for Carousel */}
+      <button
+        onClick={handleNextImage}
+        className="fixed right-8 bottom-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg ring-1 ring-orange-200 transition-colors hover:bg-orange-100"
+        aria-label="Next background image"
+        style={{ backdropFilter: 'blur(6px)' }}
+      >
+        <ChevronRight className="h-7 w-7 text-orange-600" />
+      </button>
+
       {/* Left: Text Content */}
-      <div className="flex flex-1 flex-col justify-center">
+      <div className="ml-20 flex flex-1 flex-col justify-center">
         <motion.div
           variants={container}
           initial="hidden"
@@ -74,7 +143,7 @@ export function HeroSection() {
           >
             Empowering Your Business with
             <br />
-            <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
               SME Solar Solutions
             </span>
           </motion.h1>
@@ -113,7 +182,7 @@ export function HeroSection() {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-2 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md"
+                className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-0 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md"
               >
                 <feature.icon className="h-4 w-4 fill-orange-600 text-orange-600" />
                 <span className="text-sm font-semibold text-slate-700">
@@ -133,73 +202,7 @@ export function HeroSection() {
           </div>
         </motion.div>
       </div>
-      {/* Right: Video and Logo */}
-      <div className="relative w-full max-w-xl flex-1">
-        <motion.div
-          variants={item}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="group relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white shadow-2xl"
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.4 }}
-        >
-          <video
-            className="absolute inset-0 h-full w-full scale-105 transform object-cover transition-transform duration-1000 group-hover:scale-100"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg"
-          >
-            <source
-              src="https://www.pexels.com/download/video/8853487/"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-
-          <div className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10" />
-
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <div className="rounded-full bg-white/30 p-4 backdrop-blur-md">
-              <PlayCircle
-                className="h-16 w-16 text-white drop-shadow-lg"
-                fill="currentColor"
-              />
-            </div>
-          </div>
-
-          <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-20 text-white">
-            <div className="flex items-end justify-between">
-              <div>
-                <div className="text-lg font-bold">
-                  Industrial & Residential Solar
-                </div>
-                <div className="text-sm opacity-90">
-                  Up to ₹1,08,000 Subsidy Available
-                </div>
-              </div>
-              <div className="hidden text-right sm:block">
-                <div className="mb-1 text-xs font-bold tracking-wider uppercase opacity-80">
-                  Max Subsidy
-                </div>
-                <div className="text-xl font-bold">₹&nbsp;1.08&nbsp;Lakh</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-        {/* Large Logo at bottom left, outside video, flush left, no circle */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="absolute -bottom-8 -left-20 z-30"
-        >
-          <Image src="/solar.png" alt="Solar Logo" width={140} height={140} />
-        </motion.div>
-      </div>
+      {/* No video or logo on the right; only background images remain */}
     </div>
   );
 }

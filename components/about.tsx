@@ -8,68 +8,45 @@ export function About() {
   const isMobile = useIsMobile();
 
   return (
-    <section className="overflow-hidden bg-white py-20">
+    <section id="about" className="overflow-hidden bg-white py-20">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          {/* Images on the left */}
-          <div className="grid grid-cols-2 gap-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
-            >
+          {/* Left: Video and Logo (restored) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="relative flex h-[320px] w-full items-center justify-center"
+          >
+            {/* Video */}
+            <div className="relative aspect-video w-full max-w-lg overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg"
+              >
+                <source
+                  src="https://www.pexels.com/download/video/8853487/"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+            {/* Logo at bottom left, outside video */}
+            <div className="absolute -bottom-8 -left-20 z-30 hidden md:block">
               <Image
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop"
-                alt="Solar Install 1"
-                fill
-                className="object-cover"
+                src="/solar.png"
+                alt="Solar Logo"
+                width={140}
+                height={140}
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=800&auto=format&fit=crop"
-                alt="Solar Install 2"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=800&auto=format&fit=crop"
-                alt="Solar Install 3"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative h-40 w-full overflow-hidden rounded-2xl shadow-md"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=800&auto=format&fit=crop"
-                alt="Solar Install 4"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
           {/* Text on the right */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}

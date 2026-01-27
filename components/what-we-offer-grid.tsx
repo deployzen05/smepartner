@@ -107,6 +107,7 @@ export function WhatWeOfferGrid() {
             key={rowIndex}
             className={cn(
               'flex flex-col lg:flex-row',
+              'transition-transform duration-300 hover:scale-[1.025] hover:shadow-xl',
               rowIndex !== rows.length - 1 && 'border-b border-gray-200'
             )}
           >
@@ -122,15 +123,17 @@ export function WhatWeOfferGrid() {
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
                     <Feature1.Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-zinc-900">
+                  <h3 className="mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors hover:text-orange-600">
                     {row[0].name}
                   </h3>
-                  <p className="mb-6 leading-relaxed text-zinc-500">
+                  <p className="mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors hover:text-orange-600">
                     {row[0].description}
                   </p>
                   <div className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600">
-                    {row[0].cta}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <span className="transition-colors group-hover:text-orange-600">
+                      {row[0].cta}
+                    </span>
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:text-orange-600" />
                   </div>
                 </div>
                 <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
@@ -160,15 +163,17 @@ export function WhatWeOfferGrid() {
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
                     <Feature2.Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-zinc-900">
+                  <h3 className="mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors hover:text-orange-600">
                     {row[1].name}
                   </h3>
-                  <p className="mb-6 leading-relaxed text-zinc-500">
+                  <p className="mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors hover:text-orange-600">
                     {row[1].description}
                   </p>
                   <div className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600">
-                    {row[1].cta}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <span className="transition-colors group-hover:text-orange-600">
+                      {row[1].cta}
+                    </span>
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:text-orange-600" />
                   </div>
                 </div>
                 <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
