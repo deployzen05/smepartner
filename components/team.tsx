@@ -5,22 +5,22 @@ import { motion } from 'motion/react';
 
 const teams = [
   {
-    name: 'Ratnesh Jaiswal',
+    name: 'Chetan Jaiswal',
     title: 'SME Expert',
     image: '/image.png',
   },
   {
-    name: 'Jitendra Singh',
+    name: 'Ratnesh Singh',
     title: 'SME Expert',
     image: '/image1.png',
   },
+  // {
+  //   name: 'Chetan Jaiswal',
+  //   title: 'SME Expert',
+  //   image: '/image2.png',
+  // }
   {
-    name: 'Chetan Jaiswal',
-    title: 'SME Expert',
-    image: '/image2.png',
-  },
-  {
-    name: 'Expert Name Coming Soon',
+    name: 'Jitendra Singh',
     title: 'SME Expert',
     image: '/image3.png',
   },
