@@ -22,7 +22,7 @@ export default function Home() {
         <div className="h-16" />
 
         {/* HeroSection now full width, outside container */}
-        <div className="relative z-10 w-full px-4 py-8 md:px-8 md:py-16 lg:py-20">
+        <div className="relative z-10 w-full overflow-hidden px-4 py-8 md:px-8 md:py-16 lg:py-20">
           <HeroSection />
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
       <WhatWeOffer />
       <Team />
 
-      <WhyChooseUsSection />
+      {/* <WhyChooseUsSection /> */}
 
       {/* <OurUSP />
 

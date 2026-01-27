@@ -56,7 +56,7 @@ export function HeroSection() {
               },
             }}
           >
-            <Badge className="mb-6 w-fit border-none bg-orange-100 px-3 py-1 text-sm font-medium text-orange-700 hover:bg-orange-200">
+            <Badge className="mb-6 w-fit max-w-full border-none bg-orange-100 px-3 py-1 text-center text-sm font-medium whitespace-normal text-orange-700 hover:bg-orange-200">
               🌞 Authorized Vendor for UPNEDA & MNRE
             </Badge>
           </motion.div>

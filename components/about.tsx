@@ -2,10 +2,13 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export function About() {
+  const isMobile = useIsMobile();
+
   return (
-    <section className="bg-white py-20">
+    <section className="overflow-hidden bg-white py-20">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* Images on the left */}
@@ -71,6 +74,7 @@ export function About() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
+            animate={isMobile ? { opacity: 1, x: 0 } : undefined}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
