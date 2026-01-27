@@ -14,7 +14,7 @@ export function CTASection() {
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-64 w-64 rounded-full bg-yellow-100 opacity-60 blur-3xl"></div>
 
           <div className="relative z-10 max-w-2xl flex-1">
-            <h3 className="mb-4 text-3xl leading-tight font-bold text-orange-600 md:text-5xl">
+            <h3 className="mb-4 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
               Ready to switch to Solar Energy?
             </h3>
             <p className="text-lg leading-relaxed text-slate-600 md:text-xl">
@@ -23,18 +23,18 @@ export function CTASection() {
                 ₹1,08,000 subsidy
               </span>{' '}
               and reduce your electricity bills by up to 90%. Start your journey
-              with Uttar Pradesh's most trusted solar partner today.
+              with Uttar Pradesh’s most trusted solar partner today.
             </p>
           </div>
           <div className="relative z-10 flex shrink-0 flex-col items-center justify-center gap-4 sm:flex-row lg:gap-6">
-            <EnquiryDialog>
+            <Link href="/enquiry">
               <Button
                 variant="cta"
                 className="px-6 py-4 text-sm shadow-sm md:text-base"
               >
                 Enquiry
               </Button>
-            </EnquiryDialog>
+            </Link>
             <Button
               asChild
               variant="outline-brand"

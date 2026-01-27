@@ -247,7 +247,7 @@ export function EnquiryForm() {
                     <div className="relative">
                       <Briefcase className="absolute top-3 left-3 h-4 w-4 text-slate-400" />
                       <Input
-                        placeholder="Director, Manager..."
+                        placeholder="Director, Manager…"
                         {...field}
                         className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white"
                       />
@@ -407,7 +407,7 @@ export function EnquiryForm() {
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Tell us about specific features or needs..."
+                    placeholder="Tell us about specific features or needs…"
                     className="min-h-[80px] w-full resize-none rounded-md border-slate-200 bg-slate-50 p-3 focus:border-slate-500 focus:bg-white"
                     {...field}
                   />

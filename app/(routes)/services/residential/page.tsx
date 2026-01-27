@@ -1,6 +1,5 @@
 'use client';
 
-import { CTASection } from '@/components/cta-section';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
@@ -35,7 +34,7 @@ export default function ResidentialPage() {
                     key={i}
                     className="flex items-center gap-3 font-medium text-slate-700"
                   >
-                    <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    <CheckCircle2 className="h-5 w-5 text-orange-600" />
                     {item}
                   </li>
                 ))}
@@ -46,7 +45,7 @@ export default function ResidentialPage() {
                   <DialogTrigger asChild>
                     <Button
                       size="lg"
-                      className="bg-orange-500 px-8 font-bold text-white hover:bg-orange-600"
+                      className="bg-orange-600 px-8 font-bold text-white hover:bg-orange-700"
                     >
                       Check Eligibility
                     </Button>
@@ -69,8 +68,6 @@ export default function ResidentialPage() {
           </div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }

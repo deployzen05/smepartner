@@ -63,7 +63,7 @@ const TestimonialCard = ({
       <div className="relative mb-8">
         <MessageSquareQuote className="absolute -top-2 -left-2 -z-10 h-8 w-8 text-orange-100" />
         <p className="relative z-10 leading-relaxed text-slate-600 italic">
-          "{content}"
+          “{content}”
         </p>
       </div>
 

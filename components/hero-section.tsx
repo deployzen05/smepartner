@@ -70,7 +70,7 @@ export function HeroSection() {
                 transition: { duration: 0.8, delay: 0.2, ease: 'easeOut' },
               },
             }}
-            className="mb-6 text-4xl leading-[1.1] font-bold text-[#1a1a1a] md:text-5xl lg:text-6xl"
+            className="mb-6 text-4xl leading-[1.1] font-bold text-balance text-[#1a1a1a] md:text-5xl lg:text-6xl"
           >
             Empowering Your Business with
             <br />
@@ -184,7 +184,7 @@ export function HeroSection() {
                 <div className="mb-1 text-xs font-bold tracking-wider uppercase opacity-80">
                   Max Subsidy
                 </div>
-                <div className="text-xl font-bold">₹ 1.08 Lakh</div>
+                <div className="text-xl font-bold">₹&nbsp;1.08&nbsp;Lakh</div>
               </div>
             </div>
           </div>

@@ -38,7 +38,7 @@ export function ReadyToGoSolar() {
               Ready to Go Solar?
             </span>
           </div>
-          <h2 className="mb-6 text-3xl leading-tight font-bold text-orange-600 md:text-5xl">
+          <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
             Let’s Get Started with SME Partner
           </h2>
           <p className="text-lg leading-relaxed text-slate-600">

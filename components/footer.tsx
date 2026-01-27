@@ -148,7 +148,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="inline-block text-sm font-semibold text-slate-500 uppercase transition-colors hover:translate-x-1 hover:text-orange-500"
+                    className="inline-block text-sm font-semibold tracking-wider text-slate-500 uppercase transition-colors hover:translate-x-1 hover:text-orange-500"
                   >
                     {item.label}
                   </Link>

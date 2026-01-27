@@ -79,8 +79,8 @@ export function WhyChooseUsSection() {
                   Why Choose Us
                 </span>
               </div>
-              <h2 className="mb-6 text-3xl leading-tight font-bold text-orange-600 md:text-5xl">
-                Why SME Solar is Uttar Pradesh's Most Trusted Choice
+              <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
+                Why SME Solar is Uttar Pradesh’s Most Trusted Choice
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-slate-600">
                 <p>
