@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function WhyChooseUsTwo() {
   return (
-    <section className="py-24" style={{ backgroundColor: '#f6f8fa' }}>
+    <section className="py-5" style={{ backgroundColor: '#f6f8fa' }}>
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Left Column: Text & Stats */}

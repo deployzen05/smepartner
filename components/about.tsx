@@ -8,7 +8,7 @@ export function About() {
   const isMobile = useIsMobile();
 
   return (
-    <section id="about" className="overflow-hidden bg-white py-20">
+    <section id="about" className="overflow-hidden bg-white py-5">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* Left: Video and Logo (restored) */}

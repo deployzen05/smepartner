@@ -12,6 +12,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import React, { useState } from 'react';
 
 const features = [
   {
@@ -84,6 +85,12 @@ const chunk = <T,>(arr: T[], size: number): T[][] =>
 export function WhatWeOfferGrid() {
   const rows = chunk(features, 2);
 
+  // Track which card is being touched for mobile feedback
+  const [activeCard, setActiveCard] = useState<{
+    row: number;
+    col: 0 | 1 | null;
+  }>({ row: -1, col: null });
+
   return (
     <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
       {rows.map((row, rowIndex) => {
@@ -118,22 +125,66 @@ export function WhatWeOfferGrid() {
                   'flex flex-col justify-between border-b border-gray-200 p-8 transition-colors hover:bg-gray-50/50 lg:border-r lg:border-b-0 lg:p-10',
                   leftWidth
                 )}
+                onTouchStart={() => setActiveCard({ row: rowIndex, col: 0 })}
+                onTouchEnd={() => setActiveCard({ row: -1, col: null })}
+                onTouchCancel={() => setActiveCard({ row: -1, col: null })}
               >
                 <div>
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
                     <Feature1.Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors hover:text-orange-600">
+                  <h3
+                    className={cn(
+                      'mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors',
+                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
+                      activeCard.row === rowIndex &&
+                        activeCard.col === 0 &&
+                        'text-orange-600'
+                    )}
+                  >
                     {row[0].name}
                   </h3>
-                  <p className="mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors hover:text-orange-600">
+                  <p
+                    className={cn(
+                      'mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors',
+                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
+                      activeCard.row === rowIndex &&
+                        activeCard.col === 0 &&
+                        'text-orange-600'
+                    )}
+                  >
                     {row[0].description}
                   </p>
-                  <div className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600">
-                    <span className="transition-colors group-hover:text-orange-600">
+                  <div
+                    className={cn(
+                      'group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors',
+                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
+                      activeCard.row === rowIndex &&
+                        activeCard.col === 0 &&
+                        'text-orange-600'
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'transition-colors group-hover:text-orange-600 group-focus:text-orange-600 group-active:text-orange-600',
+                        activeCard.row === rowIndex &&
+                          activeCard.col === 0 &&
+                          'text-orange-600'
+                      )}
+                    >
                       {row[0].cta}
                     </span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:text-orange-600" />
+                    <ArrowRight
+                      className={cn(
+                        'ml-2 h-4 w-4 transition-transform',
+                        'group-hover:translate-x-1 group-hover:text-orange-600',
+                        'group-active:translate-x-1 group-active:text-orange-600',
+                        'group-focus:translate-x-1 group-focus:text-orange-600',
+                        activeCard.row === rowIndex &&
+                          activeCard.col === 0 &&
+                          'translate-x-1 text-orange-600'
+                      )}
+                    />
                   </div>
                 </div>
                 <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
@@ -158,22 +209,66 @@ export function WhatWeOfferGrid() {
                   'flex flex-col justify-between p-8 transition-colors hover:bg-gray-50/50 lg:p-10',
                   rightWidth
                 )}
+                onTouchStart={() => setActiveCard({ row: rowIndex, col: 1 })}
+                onTouchEnd={() => setActiveCard({ row: -1, col: null })}
+                onTouchCancel={() => setActiveCard({ row: -1, col: null })}
               >
                 <div>
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
                     <Feature2.Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors hover:text-orange-600">
+                  <h3
+                    className={cn(
+                      'mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors',
+                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
+                      activeCard.row === rowIndex &&
+                        activeCard.col === 1 &&
+                        'text-orange-600'
+                    )}
+                  >
                     {row[1].name}
                   </h3>
-                  <p className="mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors hover:text-orange-600">
+                  <p
+                    className={cn(
+                      'mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors',
+                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
+                      activeCard.row === rowIndex &&
+                        activeCard.col === 1 &&
+                        'text-orange-600'
+                    )}
+                  >
                     {row[1].description}
                   </p>
-                  <div className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600">
-                    <span className="transition-colors group-hover:text-orange-600">
+                  <div
+                    className={cn(
+                      'group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors',
+                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
+                      activeCard.row === rowIndex &&
+                        activeCard.col === 1 &&
+                        'text-orange-600'
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'transition-colors group-hover:text-orange-600 group-focus:text-orange-600 group-active:text-orange-600',
+                        activeCard.row === rowIndex &&
+                          activeCard.col === 1 &&
+                          'text-orange-600'
+                      )}
+                    >
                       {row[1].cta}
                     </span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:text-orange-600" />
+                    <ArrowRight
+                      className={cn(
+                        'ml-2 h-4 w-4 transition-transform',
+                        'group-hover:translate-x-1 group-hover:text-orange-600',
+                        'group-active:translate-x-1 group-active:text-orange-600',
+                        'group-focus:translate-x-1 group-focus:text-orange-600',
+                        activeCard.row === rowIndex &&
+                          activeCard.col === 1 &&
+                          'translate-x-1 text-orange-600'
+                      )}
+                    />
                   </div>
                 </div>
                 <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
