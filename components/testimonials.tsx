@@ -53,31 +53,36 @@ const TestimonialCard = ({
   stars: number;
 }) => {
   return (
-    <div className="relative mx-4 w-[350px] shrink-0 rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md md:w-[450px]">
-      <div className="mb-6 flex gap-1">
+    <div className="relative mx-3 w-[280px] shrink-0 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:w-[350px] md:mx-4 md:w-[450px] md:p-8">
+      <div className="mb-4 flex justify-center gap-1 md:mb-6 md:justify-start">
         {Array.from({ length: stars }).map((_, i) => (
-          <Star key={i} className="h-4 w-4 fill-orange-400 text-orange-400" />
+          <Star
+            key={i}
+            className="h-3.5 w-3.5 fill-orange-400 text-orange-400 md:h-4 md:w-4"
+          />
         ))}
       </div>
 
-      <div className="relative mb-8">
-        <MessageSquareQuote className="absolute -top-2 -left-2 -z-10 h-8 w-8 text-orange-100" />
-        <p className="relative z-10 leading-relaxed text-slate-600 italic">
+      <div className="relative mb-6 md:mb-8">
+        <MessageSquareQuote className="absolute -top-2 -left-2 -z-10 h-6 w-6 text-orange-100 md:h-8 md:w-8" />
+        <p className="relative z-10 text-center text-sm leading-relaxed text-slate-600 italic md:text-left md:text-base">
           “{content}”
         </p>
       </div>
 
-      <div className="flex items-center gap-4 border-t border-slate-50 pt-6">
+      <div className="flex items-center justify-center gap-3 border-t border-slate-50 pt-4 md:justify-start md:gap-4 md:pt-6">
         {/* Avatar Placeholder using Initials */}
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-lg font-bold text-slate-500">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-base font-bold text-slate-500 md:h-12 md:w-12 md:text-lg">
           {name
             .split(' ')
             .map((n) => n[0])
             .join('')}
         </div>
-        <div>
-          <div className="font-bold text-slate-900">{name}</div>
-          <div className="text-xs text-slate-500">
+        <div className="text-left">
+          <div className="text-sm font-bold text-slate-900 md:text-base">
+            {name}
+          </div>
+          <div className="text-[10px] text-slate-500 md:text-xs">
             {role} – {location}
           </div>
         </div>

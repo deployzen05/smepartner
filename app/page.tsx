@@ -16,10 +16,10 @@ import { CTASection } from '@/components/cta-section';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative overflow-hidden rounded-b-[40px] bg-[#FFF9F0] pb-12 shadow-sm md:rounded-b-[80px]">
+      <div className="relative overflow-hidden rounded-b-[40px] bg-[#FFF9F0] shadow-sm md:rounded-b-[80px]">
         <Navbar />
         <div className="h-10" />
-        <div className="relative z-10 w-full overflow-hidden px-0 py-8 md:px-0 md:py-0 lg:py-0">
+        <div className="relative z-10 w-full overflow-hidden px-0 py-0 md:px-0 md:py-0 lg:py-0">
           <HeroSection />
         </div>
       </div>

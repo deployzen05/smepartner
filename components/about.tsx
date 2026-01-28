@@ -60,7 +60,7 @@ export function About() {
               About SME Partner
             </h2>
             <p className="mb-6 max-w-2xl text-justify text-lg text-slate-700">
-              Uttar Pradesh’s most trusted industrial consultancy for MSMEs,
+              Uttar Pradesh's most trusted industrial consultancy for MSMEs,
               manufacturing, food processing, hospitality, textiles, and
               renewable energy.
               <br />

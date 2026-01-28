@@ -47,29 +47,29 @@ export function WhyChooseUsTwo() {
             </p>
 
             {/* Counter Box Area */}
-            <div className="mb-10 rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
-              <div className="grid grid-cols-2 gap-8 divide-x divide-slate-100 text-center md:grid-cols-3">
+            <div className="mb-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:mb-10 sm:p-8">
+              <div className="grid grid-cols-2 gap-4 divide-x divide-slate-100 text-center sm:gap-8 md:grid-cols-3">
                 <div className="px-2">
-                  <h2 className="mb-2 text-4xl font-bold text-slate-900">
+                  <h2 className="mb-1 text-2xl font-bold text-slate-900 sm:mb-2 sm:text-4xl">
                     1600<span className="text-orange-500">+</span>
                   </h2>
-                  <p className="text-sm font-semibold tracking-wide text-slate-500 uppercase">
+                  <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase sm:text-sm">
                     Projects Completed
                   </p>
                 </div>
                 <div className="px-2">
-                  <h2 className="mb-2 text-4xl font-bold text-slate-900">
+                  <h2 className="mb-1 text-2xl font-bold text-slate-900 sm:mb-2 sm:text-4xl">
                     650<span className="text-orange-500">+</span>
                   </h2>
-                  <p className="text-sm font-semibold tracking-wide text-slate-500 uppercase">
+                  <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase sm:text-sm">
                     Happy Customers
                   </p>
                 </div>
-                <div className="col-span-2 mt-8 border-t px-2 pt-8 md:col-span-1 md:mt-0 md:border-t-0 md:pt-0">
-                  <h2 className="mb-2 text-4xl font-bold text-slate-900">
+                <div className="col-span-2 mt-4 border-t px-2 pt-4 sm:col-span-1 sm:mt-0 sm:border-t-0 sm:pt-0">
+                  <h2 className="mb-1 text-2xl font-bold text-slate-900 sm:mb-2 sm:text-4xl">
                     96<span className="text-orange-500">%</span>
                   </h2>
-                  <p className="text-sm font-semibold tracking-wide text-slate-500 uppercase">
+                  <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase sm:text-sm">
                     Satisfied Customers
                   </p>
                 </div>

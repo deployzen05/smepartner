@@ -85,7 +85,7 @@ export function HeroSection() {
     <div
       id="hero"
       ref={heroRef}
-      className="max-w-8xl relative mx-auto -mt-10 flex min-h-[700px] flex-col items-center justify-center gap-0 px-2 pt-0 pb-4 sm:px-4 md:mt-0 md:px-8 lg:flex-row lg:pt-0"
+      className="relative -mt-10 flex min-h-[750px] w-full flex-col items-center justify-center gap-0 md:mt-0 lg:flex-row"
     >
       {/* Background Image Carousel */}
       <div className="absolute inset-0 -z-40 h-full min-h-[600px] w-full overflow-hidden rounded-none">
@@ -108,8 +108,8 @@ export function HeroSection() {
         ))}
         {/* Overlay for readability */}
         <div
-          className="absolute inset-0 bg-linear-to-r from-white/95 via-white/80 to-white/50"
-          style={{ opacity: 0.92 }}
+          className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-black/30"
+          style={{ opacity: 0.95 }}
         />
       </div>
       {/* Scroll Button for Carousel */}
@@ -156,7 +156,7 @@ export function HeroSection() {
                 transition: { duration: 0.8, delay: 0.2, ease: 'easeOut' },
               },
             }}
-            className="mb-6 text-2xl leading-[1.1] font-bold text-balance text-[#1a1a1a] sm:text-4xl md:text-5xl lg:text-6xl"
+            className="mb-6 text-2xl leading-[1.1] font-bold text-balance text-white sm:text-4xl md:text-5xl lg:text-6xl"
           >
             Empowering Your Business with
             <br />
@@ -174,7 +174,7 @@ export function HeroSection() {
                 transition: { duration: 0.8, delay: 0.4, ease: 'easeOut' },
               },
             }}
-            className="mb-8 max-w-xl text-base leading-relaxed text-[#4a4a4a] sm:text-lg"
+            className="mb-8 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg"
           >
             SME Partner delivers end-to-end solar execution services. From
             Residential Rooftops to Industrial Power Plants, we help you secure
@@ -199,10 +199,10 @@ export function HeroSection() {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="flex cursor-default items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-3 py-0 text-xs shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md sm:text-sm"
+                className="flex cursor-default items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-0 text-xs text-white shadow-sm backdrop-blur-md transition-shadow hover:shadow-md sm:text-sm"
               >
-                <feature.icon className="h-4 w-4 fill-orange-600 text-orange-600" />
-                <span className="text-sm font-semibold text-slate-700">
+                <feature.icon className="h-4 w-4 fill-orange-500 text-orange-500" />
+                <span className="text-sm font-semibold text-slate-100">
                   {feature.text}
                 </span>
               </div>

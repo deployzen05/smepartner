@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import {
@@ -12,7 +13,6 @@ import {
   Zap,
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import React, { useState } from 'react';
 
 const features = [
   {
@@ -21,7 +21,7 @@ const features = [
     description:
       'Get up to ₹1,08,000 subsidy & free electricity (300 units). 6% Bank Finance available.',
     href: '/services/residential',
-    cta: 'Check Eligibility',
+    cta: 'Learn more',
     imgSrc:
       'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop',
   },
@@ -41,7 +41,7 @@ const features = [
     description:
       '50-90% Capital Subsidy specially for Food Processing units & MSMEs.',
     href: '/services/industrial',
-    cta: 'View Subsidies',
+    cta: 'Learn more',
     imgSrc:
       'https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=1000&auto=format&fit=crop',
   },
@@ -61,7 +61,7 @@ const features = [
     description:
       'Consultancy for Capital Subsidy, Mandi Tax Exemption, and Project Finance.',
     href: '/subsidy',
-    cta: 'Get Consultation',
+    cta: 'Learn more',
     imgSrc:
       'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop',
   },
@@ -71,7 +71,7 @@ const features = [
     description:
       'Comprehensive operation & maintenance to ensure maximum generation for 25 years.',
     href: '/services/operations',
-    cta: 'View Plans',
+    cta: 'Learn more',
     imgSrc:
       'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop',
   },
@@ -84,12 +84,6 @@ const chunk = <T,>(arr: T[], size: number): T[][] =>
 
 export function WhatWeOfferGrid() {
   const rows = chunk(features, 2);
-
-  // Track which card is being touched for mobile feedback
-  const [activeCard, setActiveCard] = useState<{
-    row: number;
-    col: 0 | 1 | null;
-  }>({ row: -1, col: null });
 
   return (
     <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
@@ -114,7 +108,6 @@ export function WhatWeOfferGrid() {
             key={rowIndex}
             className={cn(
               'flex flex-col lg:flex-row',
-              'transition-transform duration-300 hover:scale-[1.025] hover:shadow-xl',
               rowIndex !== rows.length - 1 && 'border-b border-gray-200'
             )}
           >
@@ -125,67 +118,24 @@ export function WhatWeOfferGrid() {
                   'flex flex-col justify-between border-b border-gray-200 p-8 transition-colors hover:bg-gray-50/50 lg:border-r lg:border-b-0 lg:p-10',
                   leftWidth
                 )}
-                onTouchStart={() => setActiveCard({ row: rowIndex, col: 0 })}
-                onTouchEnd={() => setActiveCard({ row: -1, col: null })}
-                onTouchCancel={() => setActiveCard({ row: -1, col: null })}
               >
                 <div>
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
                     <Feature1.Icon className="h-5 w-5" />
                   </div>
-                  <h3
-                    className={cn(
-                      'mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors',
-                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
-                      activeCard.row === rowIndex &&
-                        activeCard.col === 0 &&
-                        'text-orange-600'
-                    )}
-                  >
+                  <h3 className="mb-2 text-xl font-semibold text-zinc-900">
                     {row[0].name}
                   </h3>
-                  <p
-                    className={cn(
-                      'mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors',
-                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
-                      activeCard.row === rowIndex &&
-                        activeCard.col === 0 &&
-                        'text-orange-600'
-                    )}
-                  >
+                  <p className="mb-6 leading-relaxed text-zinc-500">
                     {row[0].description}
                   </p>
-                  <div
-                    className={cn(
-                      'group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors',
-                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
-                      activeCard.row === rowIndex &&
-                        activeCard.col === 0 &&
-                        'text-orange-600'
-                    )}
+                  <Link
+                    href={row[0].href}
+                    className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600"
                   >
-                    <span
-                      className={cn(
-                        'transition-colors group-hover:text-orange-600 group-focus:text-orange-600 group-active:text-orange-600',
-                        activeCard.row === rowIndex &&
-                          activeCard.col === 0 &&
-                          'text-orange-600'
-                      )}
-                    >
-                      {row[0].cta}
-                    </span>
-                    <ArrowRight
-                      className={cn(
-                        'ml-2 h-4 w-4 transition-transform',
-                        'group-hover:translate-x-1 group-hover:text-orange-600',
-                        'group-active:translate-x-1 group-active:text-orange-600',
-                        'group-focus:translate-x-1 group-focus:text-orange-600',
-                        activeCard.row === rowIndex &&
-                          activeCard.col === 0 &&
-                          'translate-x-1 text-orange-600'
-                      )}
-                    />
-                  </div>
+                    {row[0].cta}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
                 <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
                   <div
@@ -209,67 +159,24 @@ export function WhatWeOfferGrid() {
                   'flex flex-col justify-between p-8 transition-colors hover:bg-gray-50/50 lg:p-10',
                   rightWidth
                 )}
-                onTouchStart={() => setActiveCard({ row: rowIndex, col: 1 })}
-                onTouchEnd={() => setActiveCard({ row: -1, col: null })}
-                onTouchCancel={() => setActiveCard({ row: -1, col: null })}
               >
                 <div>
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
                     <Feature2.Icon className="h-5 w-5" />
                   </div>
-                  <h3
-                    className={cn(
-                      'mb-2 cursor-pointer text-xl font-semibold text-zinc-900 transition-colors',
-                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
-                      activeCard.row === rowIndex &&
-                        activeCard.col === 1 &&
-                        'text-orange-600'
-                    )}
-                  >
+                  <h3 className="mb-2 text-xl font-semibold text-zinc-900">
                     {row[1].name}
                   </h3>
-                  <p
-                    className={cn(
-                      'mb-6 cursor-pointer leading-relaxed text-zinc-500 transition-colors',
-                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
-                      activeCard.row === rowIndex &&
-                        activeCard.col === 1 &&
-                        'text-orange-600'
-                    )}
-                  >
+                  <p className="mb-6 leading-relaxed text-zinc-500">
                     {row[1].description}
                   </p>
-                  <div
-                    className={cn(
-                      'group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors',
-                      'hover:text-orange-600 focus:text-orange-600 active:text-orange-600',
-                      activeCard.row === rowIndex &&
-                        activeCard.col === 1 &&
-                        'text-orange-600'
-                    )}
+                  <Link
+                    href={row[1].href}
+                    className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600"
                   >
-                    <span
-                      className={cn(
-                        'transition-colors group-hover:text-orange-600 group-focus:text-orange-600 group-active:text-orange-600',
-                        activeCard.row === rowIndex &&
-                          activeCard.col === 1 &&
-                          'text-orange-600'
-                      )}
-                    >
-                      {row[1].cta}
-                    </span>
-                    <ArrowRight
-                      className={cn(
-                        'ml-2 h-4 w-4 transition-transform',
-                        'group-hover:translate-x-1 group-hover:text-orange-600',
-                        'group-active:translate-x-1 group-active:text-orange-600',
-                        'group-focus:translate-x-1 group-focus:text-orange-600',
-                        activeCard.row === rowIndex &&
-                          activeCard.col === 1 &&
-                          'translate-x-1 text-orange-600'
-                      )}
-                    />
-                  </div>
+                    {row[1].cta}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
                 <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
                   <div

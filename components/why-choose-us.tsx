@@ -44,19 +44,19 @@ const benefits = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="overflow-hidden bg-white py-24">
+    <section className="overflow-hidden bg-white py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Column: Heading and Description */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="space-y-8"
+            className="flex flex-col items-center space-y-8 text-center lg:items-start lg:text-left"
           >
             <div>
-              <div className="mb-4 flex items-center gap-2">
+              <div className="mb-4 flex items-center justify-center gap-2 lg:justify-start">
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-orange-600">
                   <svg
                     width="12"
@@ -98,7 +98,7 @@ export function WhyChooseUsSection() {
               </div>
             </div>
 
-            <div>
+            <div className="flex w-full justify-center lg:justify-start">
               <Link
                 href="/about"
                 className="group inline-flex items-center justify-center rounded-md bg-[#ffd563] px-8 py-3 font-bold text-black shadow-md transition-all duration-300 hover:bg-[#ffca28] hover:shadow-lg"
@@ -122,7 +122,7 @@ export function WhyChooseUsSection() {
                   delay: index * 0.1,
                   ease: 'easeOut',
                 }}
-                className="group flex cursor-pointer items-start gap-4 rounded-xl border border-slate-100 p-5 transition-all duration-300 hover:border-orange-100 hover:bg-orange-50/30"
+                className="group flex cursor-pointer flex-col items-center gap-4 rounded-xl border border-slate-100 p-5 text-center transition-all duration-300 hover:border-orange-100 hover:bg-orange-50/30 sm:flex-row sm:text-left"
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-white text-orange-600 shadow-sm transition-transform duration-300 group-hover:scale-110">

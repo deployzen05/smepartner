@@ -45,7 +45,7 @@ export function Team() {
             industrial consultancy.
           </div>
         </motion.header>
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
           {teams.map((member, i) => (
             <motion.div
               key={i}
@@ -53,7 +53,7 @@ export function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-card rounded-lg border text-center"
+              className="bg-card w-[300px] rounded-lg border text-center"
             >
               <div className="relative h-64 w-full overflow-hidden rounded-t-lg">
                 <Image
