@@ -17,61 +17,61 @@ import { motion } from 'motion/react';
 const features = [
   {
     Icon: Home,
-    name: 'Residential (PM Surya Ghar)',
+    name: 'Residential Solar (PM Surya Ghar)',
     description:
-      'Get up to ₹1,08,000 subsidy & free electricity (300 units). 6% Bank Finance available.',
+      'Rooftop solar solutions for homes under PM Surya Ghar Yojana with central & state subsidy assistance and bank finance options.',
     href: '/services/residential',
-    cta: 'Learn more',
+    cta: 'Know more',
     imgSrc:
       'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop',
   },
   {
     Icon: Building2,
-    name: 'Commercial Solar',
+    name: 'Commercial Solar Solutions',
     description:
-      'End-to-end solar solutions for hospitals, hotels, and cold storages with high ROI.',
+      'Customized solar EPC solutions for hospitals, hotels, cold storages, and commercial establishments with long-term ROI focus.',
     href: '/services/commercial',
-    cta: 'Learn more',
+    cta: 'Know more',
     imgSrc:
-      'https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop',
   },
   {
     Icon: Factory,
-    name: 'Industrial Solar',
+    name: 'Industrial Solar Projects',
     description:
-      '50-90% Capital Subsidy specially for Food Processing units & MSMEs.',
+      'Solar power plants for MSMEs and food processing units with eligibility-based capital subsidy support and compliance handling.',
     href: '/services/industrial',
-    cta: 'Learn more',
+    cta: 'Know more',
     imgSrc:
       'https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=1000&auto=format&fit=crop',
   },
   {
     Icon: Droplets,
-    name: 'Solar Water Pumps',
+    name: 'Solar Water Pump Systems',
     description:
-      'Efficient solar pumping solutions for unlimited water supply without electricity bills.',
+      'Solar-powered pumping solutions for agriculture and industrial use, reducing dependency on grid electricity.',
     href: '/services/pumps',
-    cta: 'Learn more',
+    cta: 'Know more',
     imgSrc:
       'https://plus.unsplash.com/premium_photo-1664302342178-564b28c68d33?q=80&w=1170&auto=format&fit=crop',
   },
   {
     Icon: Wallet,
-    name: 'Industrial Subsidy',
+    name: 'Industrial Subsidy Consultancy',
     description:
-      'Consultancy for Capital Subsidy, Mandi Tax Exemption, and Project Finance.',
+      'Consultancy services for capital subsidy, mandi tax exemption, MSME benefits, and project finance across eligible sectors.',
     href: '/subsidy',
-    cta: 'Learn more',
+    cta: 'Know more',
     imgSrc:
       'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop',
   },
   {
     Icon: Zap,
-    name: 'O&M Services',
+    name: 'Operations & Maintenance',
     description:
-      'Comprehensive operation & maintenance to ensure maximum generation for 25 years.',
+      'Long-term operation and maintenance services to ensure consistent generation and system performance.',
     href: '/services/operations',
-    cta: 'Learn more',
+    cta: 'Know more',
     imgSrc:
       'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop',
   },
@@ -82,115 +82,90 @@ const chunk = <T,>(arr: T[], size: number): T[][] =>
     arr.slice(i * size, i * size + size)
   );
 
-export function WhatWeOfferGrid() {
-  const rows = chunk(features, 2);
+const rows = chunk(features, 2);
 
+export function WhatWeOfferGrid() {
   return (
-    <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+    <div className="flex flex-col gap-4 md:gap-6">
       {rows.map((row, rowIndex) => {
         const isPatternA = rowIndex % 2 === 0;
 
-        const leftWidth = isPatternA ? 'lg:w-3/5' : 'lg:w-2/5';
-        const rightWidth = isPatternA ? 'lg:w-2/5' : 'lg:w-3/5';
-
-        const leftAspect = isPatternA ? 'lg:aspect-[2.4]' : 'lg:aspect-[1.45]';
-        const rightAspect = isPatternA ? 'lg:aspect-[1.45]' : 'lg:aspect-[2.4]';
-
-        const Feature1 = row[0];
-        const Feature2 = row[1];
-
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6, delay: rowIndex * 0.1 }}
-            key={rowIndex}
-            className={cn(
-              'flex flex-col lg:flex-row',
-              rowIndex !== rows.length - 1 && 'border-b border-gray-200'
-            )}
-          >
-            {row[0] && (
-              <div
-                className={cn(
-                  'flex flex-col justify-between border-b border-gray-200 p-8 transition-colors hover:bg-gray-50/50 lg:border-r lg:border-b-0 lg:p-10',
-                  leftWidth
-                )}
-              >
-                <div>
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
-                    <Feature1.Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mb-2 text-xl font-semibold text-zinc-900">
-                    {row[0].name}
-                  </h3>
-                  <p className="mb-6 leading-relaxed text-zinc-500">
-                    {row[0].description}
-                  </p>
-                  <Link
-                    href={row[0].href}
-                    className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600"
-                  >
-                    {row[0].cta}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-                <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
-                  <div
-                    className={cn('relative aspect-[1.5] w-full', leftAspect)}
-                  >
-                    <Image
-                      src={row[0].imgSrc}
-                      alt={row[0].name}
-                      fill
-                      className="object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
+          <div key={rowIndex} className="flex flex-col gap-4 lg:flex-row lg:gap-6">
+            {row.map((feature, idx) => {
+              const isLeft = idx === 0;
+              // Pattern: 60/40 then 40/60
+              const widthClass = isPatternA
+                ? isLeft
+                  ? 'lg:w-[60%]'
+                  : 'lg:w-[40%]'
+                : isLeft
+                ? 'lg:w-[40%]'
+                : 'lg:w-[60%]';
 
-            {row[1] && (
-              <div
-                className={cn(
-                  'flex flex-col justify-between p-8 transition-colors hover:bg-gray-50/50 lg:p-10',
-                  rightWidth
-                )}
-              >
-                <div>
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
-                    <Feature2.Icon className="h-5 w-5" />
+              return (
+                <motion.div
+                  key={feature.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{
+                    duration: 0.6,
+                    delay: (rowIndex * 2 + idx) * 0.1,
+                    ease: [0.21, 0.47, 0.32, 0.98], // smooth ease-out-quart
+                  }}
+                  className={cn(
+                    'group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-gray-50 p-6 will-change-transform transition-colors duration-300 hover:bg-white hover:shadow-xl md:p-10',
+                    widthClass
+                  )}
+                >
+                  <div className="relative z-10 flex h-full flex-col justify-between gap-8">
+                    {/* Header Part */}
+                    <div>
+                      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110 group-hover:ring-orange-100">
+                        <feature.Icon className="h-7 w-7 text-zinc-600 transition-colors duration-300 group-hover:text-orange-600" />
+                      </div>
+
+                      <h3 className="mb-3 text-2xl font-bold leading-tight text-slate-900 md:text-3xl">
+                        {feature.name}
+                      </h3>
+
+                      <p className="max-w-md text-base leading-relaxed text-slate-500 md:text-lg">
+                        {feature.description}
+                      </p>
+                    </div>
+
+                    {/* Bottom Part: CTA + Image */}
+                    <div className="flex flex-col gap-6">
+                      <div className="flex items-center gap-3 text-sm font-bold tracking-widest text-slate-900 uppercase">
+                        {feature.cta}
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white transition-transform duration-300 group-hover:-rotate-45">
+                          <ArrowRight className="h-4 w-4" />
+                        </div>
+                      </div>
+
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl md:aspect-[2/1]">
+                        <Image
+                          src={feature.imgSrc}
+                          alt={feature.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover grayscale-0 transition-transform duration-500 group-hover:scale-105 group-hover:grayscale-0 lg:grayscale"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-zinc-900">
-                    {row[1].name}
-                  </h3>
-                  <p className="mb-6 leading-relaxed text-zinc-500">
-                    {row[1].description}
-                  </p>
+
+                  {/* Accessible Link Overlay */}
                   <Link
-                    href={row[1].href}
-                    className="group flex w-fit cursor-pointer items-center text-sm font-medium text-zinc-900 transition-colors hover:text-orange-600"
-                  >
-                    {row[1].cta}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-                <div className="group relative mt-8 w-full overflow-hidden rounded-sm bg-zinc-100">
-                  <div
-                    className={cn('relative aspect-[1.5] w-full', rightAspect)}
-                  >
-                    <Image
-                      src={row[1].imgSrc}
-                      alt={row[1].name}
-                      fill
-                      className="object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-          </motion.div>
+                    href={feature.href}
+                    className="absolute inset-0 z-20 outline-none focus:ring-4 focus:ring-orange-500/20 focus:ring-offset-2"
+                    aria-label={`View details for ${feature.name}`}
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
         );
       })}
     </div>

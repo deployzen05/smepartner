@@ -1,6 +1,13 @@
 'use client';
 
-import { ArrowRight, Trophy } from 'lucide-react';
+import {
+  ArrowRight,
+  Trophy,
+  ShieldCheck,
+  Percent,
+  IndianRupee,
+  Award,
+} from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 
@@ -8,124 +15,118 @@ const benefits = [
   {
     title: 'Authorized UPNEDA Vendor',
     description:
-      'Trusted partner authorized by Uttar Pradesh New & Renewable Energy Development Agency.',
+      'Registered and trusted vendor approved by Uttar Pradesh New & Renewable Energy Development Agency.',
+    icon: ShieldCheck,
   },
   {
     title: 'MNRE Associated',
     description:
-      'Recognized by the Ministry of New and Renewable Energy for quality standards.',
+      'Aligned with MNRE standards for quality, safety, and compliance.',
+    icon: Award,
   },
   {
-    title: 'Max Subsidies Available',
+    title: 'Maximum Subsidy Assistance',
     description:
-      'Expertise in securing up to 90% capital subsidy for eligible units.',
+      'Expert guidance for capital subsidy assistance up to 90%, subject to scheme eligibility.',
+    icon: Percent,
   },
   {
-    title: '6% Interest Financing',
+    title: 'Low-Interest Financing',
     description:
-      'Easy bank finance options available at just 6% interest rate.',
+      'Facilitation of specialized solar loans starting at just 6% interest.',
+    icon: IndianRupee,
   },
   {
-    title: '25 Years Warranty',
+    title: '25+ Years Performance Warranty',
     description:
-      'Long-term peace of mind with 25-year performance warranty on panels.',
+      'Reliable, long-term panel performance backed by manufacturer warranties.',
+    icon: Trophy,
   },
 ];
 
 export function WhyChooseUsSection() {
   return (
     <section className="overflow-hidden bg-white py-16 md:py-24">
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
             className="flex flex-col items-center space-y-8 text-center lg:items-start lg:text-left"
           >
             <div>
               <div className="mb-4 flex items-center justify-center gap-2 lg:justify-start">
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-orange-600">
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Trophy className="h-3.5 w-3.5" />
                 </div>
                 <span className="text-sm font-bold tracking-widest text-slate-500 uppercase">
                   Why Choose Us
                 </span>
               </div>
-              <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
-                Why SME Partner is Uttar Pradesh’s Most Trusted Choice
+
+              <h2 className="mb-6 text-3xl font-bold leading-tight text-balance text-orange-600 md:text-5xl">
+                Why SME Partner is Uttar Pradesh’s Trusted Choice
               </h2>
+
               <div className="space-y-4 text-lg leading-relaxed text-slate-600">
                 <p>
-                  At SME Partner, we are not just installers; we are your energy
-                  partners. As registered vendors with UPNEDA and associated
-                  with MNRE, we guarantee compliance, quality, and the highest
-                  possible subsidies for your project.
+                  SME Partner is more than a solar installer — we are a complete
+                  consultancy for government subsidies and renewable energy
+                  solutions. Our authorization with UPNEDA and association with
+                  MNRE ensure regulatory compliance and maximum benefit
+                  realization.
                 </p>
                 <p>
-                  Whether you are a food processing unit looking for a 90%
-                  subsidy or a homeowner applying for the PM Surya Ghar Yojana,
-                  our team handles the entire documentation, financing, and
-                  installation process seamlessly.
+                  From MSME and food processing subsidies to PM Surya Ghar
+                  residential solar, our team manages documentation, financing,
+                  approvals, and execution end-to-end.
                 </p>
               </div>
             </div>
 
-            <div className="flex w-full justify-center lg:justify-start">
-              <Link
-                href="/about"
-                className="group inline-flex items-center justify-center rounded-md bg-[#ffd563] px-8 py-3 font-bold text-black shadow-md transition-all duration-300 hover:bg-[#ffca28] hover:shadow-lg"
-              >
-                Know More{' '}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
+            <Link
+              href="/about"
+              className="group inline-flex items-center rounded-md bg-[#ffd563] px-8 py-3 font-bold text-black shadow-md transition-all hover:bg-[#ffca28] hover:shadow-lg"
+            >
+              Know More
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </motion.div>
 
+          {/* BENEFITS LIST */}
           <div className="space-y-4">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                  ease: 'easeOut',
-                }}
-                className="group flex cursor-pointer flex-col items-center gap-4 rounded-xl border border-slate-100 p-5 text-center transition-all duration-300 hover:border-orange-100 hover:bg-orange-50/30 sm:flex-row sm:text-left"
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-white text-orange-600 shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  <Trophy className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-orange-600">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-slate-600">
-                    {benefit.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.2,
+                    ease: 'easeOut',
+                  }}
+                  className="flex flex-col items-center gap-4 rounded-xl border border-slate-100 p-5 text-center transition-colors hover:border-orange-200 hover:bg-orange-50/30 sm:flex-row sm:text-left"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-white text-orange-600 shadow-sm">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 text-lg font-bold text-slate-900">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

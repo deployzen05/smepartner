@@ -2,100 +2,93 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck, FileText, Banknote } from 'lucide-react';
 
 export function WhyChooseUsTwo() {
   return (
-    <section className="py-5" style={{ backgroundColor: '#f6f8fa' }}>
-      <div className="container mx-auto max-w-7xl px-4">
+    <section className="bg-[#f6f8fa] py-10 md:py-16">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          {/* Content */}
           <div className="animate-in fade-in slide-in-from-left-8 duration-700">
             <div className="mb-4 flex items-center gap-2">
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-orange-600">
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <ShieldCheck className="h-4 w-4" />
               </div>
               <span className="text-sm font-bold tracking-widest text-slate-500 uppercase">
-                Why Choose Us
+                Why Choose SME Partner
               </span>
             </div>
 
-            <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
-              Empowering Homes and Businesses with Solar
+            <h2 className="mb-6 text-3xl font-bold leading-tight text-balance text-orange-600 md:text-5xl">
+              A Trusted Partner for Solar & Government Subsidies
             </h2>
 
-            <p className="mb-10 text-lg leading-relaxed text-slate-600">
-              Choosing us means choosing a partner dedicated to transforming the
-              way you use energy. With years of expertise, cutting-edge
-              technology.
+            <p className="mb-8 text-lg leading-relaxed text-slate-600">
+              SME PARTNER is an industrial consultancy and solar EPC company
+              established in 2015. We help businesses and households across
+              Uttar Pradesh adopt solar energy while navigating government
+              subsidies, approvals, and financing with confidence.
             </p>
 
-            <div className="mb-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:mb-10 sm:p-8">
-              <div className="grid grid-cols-2 gap-4 divide-x divide-slate-100 text-center sm:gap-8 md:grid-cols-3">
-                <div className="px-2">
-                  <h2 className="mb-1 text-2xl font-bold text-slate-900 sm:mb-2 sm:text-4xl">
-                    1600<span className="text-orange-500">+</span>
-                  </h2>
-                  <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase sm:text-sm">
-                    Projects Completed
+            {/* Trust Blocks instead of fake numbers */}
+            <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {[
+                {
+                  icon: FileText,
+                  title: 'Subsidy Expertise',
+                  desc: 'Eligibility checks, documentation & department follow-ups',
+                },
+                {
+                  icon: Banknote,
+                  title: 'Finance Assistance',
+                  desc: 'Support for bank loans & project finance',
+                },
+                {
+                  icon: ShieldCheck,
+                  title: 'Government Authorized',
+                  desc: 'UPNEDA vendor & MNRE associated',
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-slate-100 bg-white p-5 text-center shadow-sm"
+                >
+                  <item.icon className="mx-auto mb-2 h-6 w-6 text-orange-600" />
+                  <h3 className="mb-1 text-sm font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-slate-500">
+                    {item.desc}
                   </p>
                 </div>
-                <div className="px-2">
-                  <h2 className="mb-1 text-2xl font-bold text-slate-900 sm:mb-2 sm:text-4xl">
-                    650<span className="text-orange-500">+</span>
-                  </h2>
-                  <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase sm:text-sm">
-                    Happy Customers
-                  </p>
-                </div>
-                <div className="col-span-2 mt-4 border-t px-2 pt-4 sm:col-span-1 sm:mt-0 sm:border-t-0 sm:pt-0">
-                  <h2 className="mb-1 text-2xl font-bold text-slate-900 sm:mb-2 sm:text-4xl">
-                    96<span className="text-orange-500">%</span>
-                  </h2>
-                  <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase sm:text-sm">
-                    Satisfied Customers
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
             <Link
               href="/about"
-              className="group inline-flex items-center justify-center rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-8 py-4 text-lg font-bold text-black shadow-lg transition-transform hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
+              className="group inline-flex items-center justify-center rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-8 py-4 text-lg font-bold text-black shadow-lg transition hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
             >
-              Learn More{' '}
+              Learn More
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
+          {/* Images */}
           <div className="grid grid-cols-2 gap-4 md:gap-6">
             <div className="space-y-4 md:space-y-6">
-              <div className="animate-in fade-in zoom-in relative h-48 overflow-hidden rounded-2xl shadow-lg transition-transform duration-500 hover:-translate-y-2 md:h-64">
+              <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-2 md:h-64">
                 <Image
                   src="/service-residential.png"
-                  alt="Service 1"
+                  alt="Residential Solar Solutions"
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="animate-in fade-in zoom-in relative h-40 overflow-hidden rounded-2xl shadow-lg transition-transform delay-100 duration-500 hover:-translate-y-2 md:h-56">
+              <div className="relative h-40 overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-2 md:h-56">
                 <Image
                   src="/service-commercial.png"
-                  alt="Service 2"
+                  alt="Commercial Solar Solutions"
                   fill
                   className="object-cover"
                 />
@@ -103,18 +96,18 @@ export function WhyChooseUsTwo() {
             </div>
 
             <div className="space-y-4 pt-8 md:space-y-6 md:pt-12">
-              <div className="animate-in fade-in zoom-in relative h-40 overflow-hidden rounded-2xl shadow-lg transition-transform delay-200 duration-500 hover:-translate-y-2 md:h-56">
+              <div className="relative h-40 overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-2 md:h-56">
                 <Image
                   src="/service-residential.png"
-                  alt="Service 3"
+                  alt="Industrial Solar & Subsidy"
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="animate-in fade-in zoom-in relative h-48 overflow-hidden rounded-2xl shadow-lg transition-transform delay-300 duration-500 hover:-translate-y-2 md:h-64">
+              <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-2 md:h-64">
                 <Image
                   src="/service-commercial.png"
-                  alt="Service 4"
+                  alt="Government Subsidy Consultancy"
                   fill
                   className="object-cover"
                 />

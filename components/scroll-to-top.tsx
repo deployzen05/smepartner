@@ -1,14 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
 
   const scaleX = useSpring(scrollYProgress, {
@@ -16,10 +13,6 @@ export function ScrollToTop() {
     damping: 30,
     restDelta: 0.001,
   });
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   useEffect(() => {
     const toggleVisibility = () => {

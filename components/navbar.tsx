@@ -13,6 +13,7 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  FileText,
 } from 'lucide-react';
 import { EnquiryDialog } from '@/components/Home/enquire-dialog';
 import { Button } from './ui/button';

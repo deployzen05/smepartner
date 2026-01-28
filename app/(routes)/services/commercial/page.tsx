@@ -4,73 +4,90 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Commercial Solar Solutions',
+  title: 'Commercial Solar Solutions | SME Partner',
   description:
-    'Reduce operational costs with our commercial solar solutions for hospitals, hotels, and schools. High ROI and accelerated depreciation benefits.',
+    'Commercial rooftop solar solutions for hospitals, hotels, offices, and business facilities in Uttar Pradesh. End-to-end execution with subsidy and finance assistance.',
 };
 
 export default function CommercialPage() {
   return (
     <div className="bg-white">
       <section className="py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Content */}
             <div className="space-y-6">
               <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Commercial Solar Solutions
               </h1>
+
               <p className="text-lg leading-relaxed text-slate-600">
-                Maximize profits and reduce operational costs for your business.
-                Our end-to-end solar execution services are tailored for
-                hospitals, hotels, schools, and commercial complexes, offering
-                high Return on Investment (ROI).
+                SME Partner provides end-to-end commercial rooftop solar
+                solutions for hospitals, hotels, offices, cold storages, and
+                other commercial establishments across Uttar Pradesh.
+              </p>
+
+              <p className="text-base leading-relaxed text-slate-600">
+                From feasibility assessment and system design to installation,
+                approvals, and grid connectivity, we handle the complete
+                execution while assisting with applicable government incentives
+                and bank financing options.
               </p>
 
               <ul className="space-y-4">
                 {[
-                  'Accelerated Depreciation Benefits',
-                  'Reduce Electricity Bill by up to 90%',
-                  'High ROI & Payback within 3-4 Years',
-                  'Customized Designs for Rooftops',
+                  'Rooftop solar systems designed for commercial load patterns',
+                  'Assistance with applicable tax and depreciation benefits',
+                  'Improved energy cost efficiency over long-term operation',
+                  'Customized system sizing based on site assessment',
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-center gap-3 font-medium text-slate-700"
+                    className="flex items-start gap-3 text-slate-700"
                   >
-                    <CheckCircle2 className="h-5 w-5 text-orange-600" />
-                    {item}
+                    <CheckCircle2 className="mt-1 h-5 w-5 text-orange-600" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="pt-4">
-                <Dialog>
-                  <DialogTrigger asChild>
+                
                     <Button
                       size="lg"
                       className="bg-orange-600 px-8 font-bold text-white hover:bg-orange-700"
+                    asChild
                     >
-                      Get a Quote
+                      <Link href="/enquiry">
+                      Request a Consultation
+                      </Link>
                     </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-2xl">
-                    <EnquiryForm />
-                  </DialogContent>
-                </Dialog>
+                  
               </div>
             </div>
 
+            {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
                 src="https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop"
-                alt="Commercial Solar"
+                alt="Commercial rooftop solar installation"
                 fill
                 className="object-cover"
+                priority
               />
             </div>
           </div>
+
+          {/* Disclaimer */}
+          {/* <p className="mt-12 max-w-4xl text-xs leading-relaxed text-slate-500">
+            *Energy savings, financial benefits, and payback periods depend on
+            site conditions, electricity tariff, system capacity, usage
+            patterns, and applicable government policies. Eligibility for
+            subsidies and incentives is subject to prevailing guidelines.
+          </p> */}
         </div>
       </section>
     </div>

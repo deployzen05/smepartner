@@ -144,7 +144,7 @@
 
 html,
 body {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; - Removed to fix refresh scroll restoration */
 }
 
 @layer base {

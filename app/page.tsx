@@ -10,28 +10,36 @@ import { Testimonials } from '@/components/testimonials';
 import { OurProjects } from '@/components/our-projects';
 import { Footer } from '@/components/footer';
 import { TrustedSection } from '@/components/trusted-section';
-
 import { CTASection } from '@/components/cta-section';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* HERO */}
       <div className="relative overflow-hidden rounded-b-[40px] bg-[#FFF9F0] shadow-sm md:rounded-b-[80px]">
         <Navbar />
-        <div className="h-10" />
-        <div className="relative z-10 w-full overflow-hidden px-0 py-0 md:px-0 md:py-0 lg:py-0">
-          <HeroSection />
-        </div>
+        <div className="h-15" />
+        <HeroSection />
       </div>
+
+      {/* TRUST */}
       <TrustedSection />
       <WhyChooseUsSection />
+
+      {/* BRAND */}
       <About />
-      <WhatWeOffer />
       <OurUSP />
+
+      {/* SERVICES */}
+      <WhatWeOffer />
       <ReadyToGoSolar />
+
+      {/* PROOF */}
       <OurProjects />
       <Team />
       <Testimonials />
+
+      {/* CTA + FOOTER */}
       <CTASection />
       <Footer />
     </div>

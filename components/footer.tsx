@@ -17,10 +17,7 @@ export function Footer() {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
     },
   };
 
@@ -30,8 +27,8 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative z-20 overflow-hidden bg-white pt-24 pb-8 shadow-[0_-5px_30px_rgba(0,0,0,0.02)]">
-      <div className="container mx-auto max-w-7xl px-4">
+    <footer className="relative z-20 overflow-hidden bg-white pt-16 md:pt-24 pb-8 shadow-[0_-5px_30px_rgba(0,0,0,0.02)]">
+      <div className="mx-auto max-w-7xl px-4">
         <motion.div
           variants={container}
           initial="hidden"
@@ -39,172 +36,151 @@ export function Footer() {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12"
         >
+          {/* Brand */}
           <motion.div variants={item} className="lg:col-span-4">
-            <Link href="/" className="mb-6 flex items-center gap-2">
+            <Link href="/" className="mb-6 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white">
                 <Sun className="h-6 w-6" strokeWidth={3} />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-xl font-black tracking-tight text-slate-900">
-                  SME
+                  SME PARTNER
                 </span>
-                <span className="text-sm font-bold tracking-widest text-orange-500 uppercase">
-                  SOLAR
+                <span className="text-xs font-bold tracking-widest text-orange-500 uppercase">
+                  Solar & Industrial Consultancy
                 </span>
               </div>
             </Link>
-            <p className="mb-8 pr-4 leading-relaxed text-slate-500">
-              SME Partner (Division of SME Partner) is a leading Solar EPC company
-              based in Kanpur. As an authorized vendor for UPNEDA and associated
-              with MNRE, we empower Uttar Pradesh with clean energy.
+
+            <p className="mb-6 pr-4 leading-relaxed text-slate-500">
+              SME PARTNER is an industrial consultancy and solar EPC company
+              established in 2015. We provide government subsidy assistance,
+              project finance support, and solar power solutions across Uttar
+              Pradesh.
+            </p>
+
+            <p className="mb-8 text-sm text-slate-500">
+              Authorized UPNEDA Vendor · MNRE Associated · IIA & SIDBI Partner
             </p>
 
             <div className="flex gap-4">
               <Link
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all hover:scale-110 hover:bg-blue-600 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-blue-600 hover:text-white"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all hover:scale-110 hover:bg-blue-700 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-blue-700 hover:text-white"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all hover:scale-110 hover:bg-pink-600 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-pink-600 hover:text-white"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
             </div>
           </motion.div>
 
-          <motion.div variants={item} className="lg:col-span-3">
+          {/* Contact */}
+          <motion.div variants={item} className="lg:col-span-4">
             <h3 className="mb-6 text-xl font-bold text-slate-900">
-              Contact Us
+              Contact Information
             </h3>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  href="#"
-                  className="group flex items-start gap-3 text-slate-600 transition-colors hover:text-orange-500"
-                >
-                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-slate-400 group-hover:text-orange-500" />
-                  <span>
-                    128/758, Krishna Rama Chandra Apartment, K-Block, Kidwai
-                    Nagar, Kanpur - 208011
-                  </span>
-                </Link>
+            <ul className="space-y-4 text-slate-600">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-1 h-5 w-5 text-slate-400" />
+                <span>
+                  128/758, Krishna Rama Chandra Apartment, K-Block, Kidwai Nagar,
+                  Kanpur, Uttar Pradesh – 208011
+                </span>
               </li>
-              <li>
-                <Link
-                  href="tel:+919169478991"
-                  className="group flex items-center gap-3 text-slate-600 transition-colors hover:text-orange-500"
-                >
-                  <Phone className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-orange-500" />
-                  <span>+91 9169478991</span>
-                </Link>
+              <li className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-slate-400" />
+                <span>+91 9169478991</span>
               </li>
-              <li>
-                <Link
-                  href="tel:+919140299799"
-                  className="group flex items-center gap-3 text-slate-600 transition-colors hover:text-orange-500"
-                >
-                  <Phone className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-orange-500" />
-                  <span>+91 9140299799</span>
-                </Link>
+              <li className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-slate-400" />
+                <span>+91 9140299799</span>
               </li>
-              <li>
-                <Link
-                  href="mailto:smesolarsolution@gmail.com"
-                  className="group flex items-center gap-3 text-slate-600 transition-colors hover:text-orange-500"
-                >
-                  <Mail className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-orange-500" />
-                  <span>smesolarsolution@gmail.com</span>
-                </Link>
+              <li className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-slate-400" />
+                <span>+91 9956286657</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-slate-400" />
+                <span>smesolarsolution@gmail.com</span>
               </li>
             </ul>
           </motion.div>
 
+          {/* Quick Links */}
           <motion.div variants={item} className="lg:col-span-2">
             <h3 className="mb-6 text-xl font-bold text-slate-900">
               Quick Links
             </h3>
             <ul className="space-y-3">
               {[
-                { label: 'RESIDENTIAL SOLAR', href: '/services/residential' },
-                { label: 'COMMERCIAL SOLAR', href: '/services/commercial' },
-                { label: 'INDUSTRIAL SOLAR', href: '/services/industrial' },
-                { label: 'WATER PUMPS', href: '/services/pumps' },
-                { label: 'SUBSIDY INFO', href: '/subsidy' },
-                { label: 'CONTACT', href: '/enquire' },
-              ].map((item) => (
-                <li key={item.label}>
+                { label: 'Residential Solar', href: '/services/residential' },
+                { label: 'Commercial Solar', href: '/services/commercial' },
+                { label: 'Industrial Solar', href: '/services/industrial' },
+                { label: 'Solar Water Pumps', href: '/services/pumps' },
+                { label: 'Subsidy Consultancy', href: '/subsidy' },
+                { label: 'Contact Us', href: '/enquire' },
+              ].map((link) => (
+                <li key={link.label}>
                   <Link
-                    href={item.href}
-                    className="inline-block text-sm font-semibold tracking-wider text-slate-500 uppercase transition-colors hover:translate-x-1 hover:text-orange-500"
+                    href={link.href}
+                    className="text-sm font-semibold text-slate-500 transition hover:text-orange-500"
                   >
-                    {item.label}
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          <motion.div variants={item} className="lg:col-span-3">
+          {/* Support */}
+          <motion.div variants={item} className="lg:col-span-2">
             <h3 className="mb-6 text-xl font-bold text-slate-900">Support</h3>
             <ul className="space-y-3">
               {[
                 'Process Workflow',
-                'Bank Finance Options',
-                'Maintenance Services',
-                'PM Surya Ghar Inquiry',
+                'Bank & Project Finance',
+                'Operations & Maintenance',
+                'PM Surya Ghar Assistance',
               ].map((item) => (
                 <li key={item}>
-                  <Link
-                    href="#"
-                    className="inline-block text-sm font-semibold text-slate-500 transition-colors hover:translate-x-1 hover:text-orange-500"
-                  >
+                  <span className="text-sm font-semibold text-slate-500">
                     {item}
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          <div className="my-12 h-px w-full bg-slate-200" />
+        {/* Bottom */}
+        <div className="my-12 h-px bg-slate-200" />
 
-          <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 md:flex-row">
-            <p>
-              Copyright © 2024-25{' '}
-              <span className="font-bold text-slate-900">SME Partner</span>. All
-              rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link
-                href="#"
-                className="transition-colors hover:text-orange-500"
-              >
-                Terms & Conditions
-              </Link>
-              <Link
-                href="#"
-                className="transition-colors hover:text-orange-500"
-              >
-                Privacy Policy
-              </Link>
-            </div>
+        <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 md:flex-row">
+          <p>
+            © {new Date().getFullYear()}{' '}
+            <span className="font-semibold text-slate-900">SME PARTNER</span>.
+            All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link href="#" className="hover:text-orange-500">
+              Terms & Conditions
+            </Link>
+            <Link href="#" className="hover:text-orange-500">
+              Privacy Policy
+            </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
