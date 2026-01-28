@@ -1,10 +1,15 @@
-'use client';
-
+import { Metadata } from 'next';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Solar Water Pumps',
+  description:
+    'Solar water pumping solutions for agriculture. Zero electricity cost, independent of grid, and supported by government subsidies.',
+};
 
 export default function PumpsPage() {
   return (
@@ -13,9 +18,9 @@ export default function PumpsPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
+              <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Solar Water Pumps
-              </h2>
+              </h1>
               <p className="text-lg leading-relaxed text-slate-600">
                 Ensure reliable water supply for irrigation without the burden
                 of electricity bills or diesel costs. Our high-efficiency solar

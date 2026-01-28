@@ -11,7 +11,6 @@ export function About() {
     <section id="about" className="overflow-hidden bg-white py-5">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          {/* Left: Video and Logo (restored) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -19,7 +18,6 @@ export function About() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="relative flex h-[320px] w-full items-center justify-center"
           >
-            {/* Video */}
             <div className="relative aspect-video w-full max-w-lg overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
               <video
                 className="absolute inset-0 h-full w-full object-cover"
@@ -37,7 +35,6 @@ export function About() {
               </video>
               <div className="absolute inset-0 bg-black/20" />
             </div>
-            {/* Logo at bottom left, outside video */}
             <div className="absolute -bottom-8 -left-20 z-30 hidden md:block">
               <Image
                 src="/solar.png"
@@ -47,7 +44,6 @@ export function About() {
               />
             </div>
           </motion.div>
-          {/* Text on the right */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}

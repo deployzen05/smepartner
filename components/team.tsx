@@ -14,11 +14,6 @@ const teams = [
     title: 'SME Expert',
     image: '/image1.png',
   },
-  // {
-  //   name: 'Chetan Jaiswal',
-  //   title: 'SME Expert',
-  //   image: '/image2.png',
-  // }
   {
     name: 'Jitendra Singh',
     title: 'SME Expert',

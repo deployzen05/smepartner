@@ -36,7 +36,6 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 w-full font-sans">
-      {/* TopHeader only visible on md+ screens */}
       <div className="hidden md:block">
         <TopHeader />
       </div>
@@ -57,7 +56,6 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex lg:gap-10">
             {navLinks.map((link) => (
               <Link
@@ -71,7 +69,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Buttons */}
           <div className="hidden items-center gap-4 md:flex">
             <Button
               asChild
@@ -95,7 +92,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Trigger */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">

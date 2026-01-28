@@ -1,10 +1,15 @@
-'use client';
-
+import { Metadata } from 'next';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Operations & Maintenance (O&M)',
+  description:
+    'Professional solar plant maintenance plans. Panel cleaning, health checkups, and real-time monitoring to ensure peak efficiency.',
+};
 
 export default function OperationsPage() {
   return (
@@ -13,9 +18,9 @@ export default function OperationsPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
+              <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Operations & Maintenance (O&M)
-              </h2>
+              </h1>
               <p className="text-lg leading-relaxed text-slate-600">
                 Protect your investment and ensure peak performance with our
                 comprehensive commercial O&M services. Regular maintenance is

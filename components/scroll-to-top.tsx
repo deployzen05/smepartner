@@ -11,7 +11,6 @@ export function ScrollToTop() {
   const pathname = usePathname();
   const { scrollYProgress } = useScroll();
 
-  // Smooth out the progress value
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -31,7 +30,7 @@ export function ScrollToTop() {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -42,8 +41,6 @@ export function ScrollToTop() {
     });
   };
 
-  // Map progress to dashoffset for the SVG circle
-  // Circle circumference is approx 30 * 2 * PI ~= 188.5
   const circumference = 30 * 2 * Math.PI;
 
   return (
@@ -61,7 +58,6 @@ export function ScrollToTop() {
         className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-transform hover:-translate-y-1"
         aria-label="Scroll to top"
       >
-        {/* Progress Circle Background */}
         <svg
           className="absolute inset-0 h-full w-full -rotate-90 text-slate-100"
           viewBox="0 0 100 100"
@@ -72,14 +68,14 @@ export function ScrollToTop() {
             r="30"
             fill="none"
             stroke="currentColor"
-            strokeWidth="8" // Thicker background track
+            strokeWidth="8"
           />
           <motion.circle
             cx="50"
             cy="50"
             r="30"
             fill="none"
-            stroke="#f97316" // Orange-500
+            stroke="#f97316"
             strokeWidth="8"
             strokeLinecap="round"
             style={{
@@ -88,7 +84,6 @@ export function ScrollToTop() {
           />
         </svg>
 
-        {/* Icon */}
         <div className="relative z-10 rounded-full bg-orange-500 p-2 text-white transition-colors group-hover:bg-orange-600">
           <ArrowUp className="h-4 w-4" />
         </div>

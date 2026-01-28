@@ -34,7 +34,6 @@ const usps = {
 export function OurUSP() {
   return (
     <section className="relative overflow-hidden bg-slate-50 py-24">
-      {/* Decorative background elements */}
       <motion.div
         animate={{
           x: [0, 20, 0],
@@ -60,7 +59,6 @@ export function OurUSP() {
       />
 
       <div className="relative z-10 container mx-auto max-w-7xl px-4">
-        {/* Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center md:mb-24">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -101,7 +99,6 @@ export function OurUSP() {
         </div>
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
-          {/* Left Column */}
           <div className="order-2 space-y-12 lg:order-1 lg:space-y-24">
             {usps.left.map((item, idx) => (
               <motion.div
@@ -125,9 +122,7 @@ export function OurUSP() {
             ))}
           </div>
 
-          {/* Center Image */}
           <div className="relative order-1 mx-auto h-[400px] w-full max-w-md lg:order-2 lg:h-[500px]">
-            {/* Circle Background behind image */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
@@ -149,7 +144,6 @@ export function OurUSP() {
             </motion.div>
           </div>
 
-          {/* Right Column */}
           <div className="order-3 space-y-12 lg:space-y-24">
             {usps.right.map((item, idx) => (
               <motion.div

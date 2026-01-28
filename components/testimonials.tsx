@@ -71,7 +71,6 @@ const TestimonialCard = ({
       </div>
 
       <div className="flex items-center justify-center gap-3 border-t border-slate-50 pt-4 md:justify-start md:gap-4 md:pt-6">
-        {/* Avatar Placeholder using Initials */}
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-base font-bold text-slate-500 md:h-12 md:w-12 md:text-lg">
           {name
             .split(' ')
@@ -94,7 +93,6 @@ const TestimonialCard = ({
 export function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-slate-50 py-24">
-      {/* Background Elements */}
       <motion.div
         animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.1, 1] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
@@ -140,7 +138,6 @@ export function Testimonials() {
         transition={{ duration: 1, delay: 0.4 }}
         className="relative w-full"
       >
-        {/* Left/Right Fade Masks */}
         <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-24 bg-gradient-to-r from-slate-50 to-transparent md:w-48" />
         <div className="pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-24 bg-gradient-to-l from-slate-50 to-transparent md:w-48" />
 

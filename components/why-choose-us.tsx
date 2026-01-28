@@ -30,16 +30,6 @@ const benefits = [
     description:
       'Long-term peace of mind with 25-year performance warranty on panels.',
   },
-  // {
-  //   title: 'End-to-End Execution',
-  //   description:
-  //     'From site survey and design to installation and net metering.',
-  // },
-  // {
-  //   title: 'Premium Partners',
-  //   description:
-  //     'We use only Tier-1 brands like Tata Power, Jakson, and Premier Energies.',
-  // },
 ];
 
 export function WhyChooseUsSection() {
@@ -47,7 +37,6 @@ export function WhyChooseUsSection() {
     <section className="overflow-hidden bg-white py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left Column: Heading and Description */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,11 +69,11 @@ export function WhyChooseUsSection() {
                 </span>
               </div>
               <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
-                Why SME Solar is Uttar Pradesh’s Most Trusted Choice
+                Why SME Partner is Uttar Pradesh’s Most Trusted Choice
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-slate-600">
                 <p>
-                  At SME Solar, we are not just installers; we are your energy
+                  At SME Partner, we are not just installers; we are your energy
                   partners. As registered vendors with UPNEDA and associated
                   with MNRE, we guarantee compliance, quality, and the highest
                   possible subsidies for your project.
@@ -109,7 +98,6 @@ export function WhyChooseUsSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Benefits List */}
           <div className="space-y-4">
             {benefits.map((benefit, index) => (
               <motion.div

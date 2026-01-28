@@ -1,10 +1,15 @@
-'use client';
-
+import { Metadata } from 'next';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Residential Rooftop Solar - PM Surya Ghar Yojana',
+  description:
+    'Get free electricity up to 300 units with PM Surya Ghar Muft Bijli Yojana. Secure up to ₹1,08,000 subsidy for your home solar system.',
+};
 
 export default function ResidentialPage() {
   return (
@@ -13,9 +18,9 @@ export default function ResidentialPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
+              <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Residential Solar Solutions (PM Surya Ghar)
-              </h2>
+              </h1>
               <p className="text-lg leading-relaxed text-slate-600">
                 Transform your home into a powerhouse with our residential solar
                 solutions. With the PM Surya Ghar Muft Bijli Yojana, you can get

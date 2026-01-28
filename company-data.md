@@ -1,4 +1,4 @@
-Based on the consolidated information from the documents and images provided, here are the full details for **SME PARTNER** and its division **SME Solar**.
+Based on the consolidated information from the documents and images provided, here are the full details for **SME PARTNER** and its division **SME Partner**.
 
 ### **1. Company Profile**
 
@@ -42,9 +42,9 @@ SME Partner specializes in securing government incentives, subsidies, and financ
 
 ---
 
-### **3. SME Solar: Solar Power Solutions**
+### **3. SME Partner: Solar Power Solutions**
 
-The company provides end-to-end solar execution services under the brand **SME Solar**.
+The company provides end-to-end solar execution services under the brand **SME Partner**.
 
 **Types of Solutions:**
 

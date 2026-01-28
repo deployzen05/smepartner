@@ -42,4 +42,5 @@ next-env.d.ts
 .agent
 .agents
 .gemini
-/skills
+skills
+skills/typography

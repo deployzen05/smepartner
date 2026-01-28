@@ -34,7 +34,6 @@ export function BreadcrumbSection({
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-black/20" />
       <div className="relative z-10 container mx-auto px-4">
         <div className="flex flex-col gap-2">

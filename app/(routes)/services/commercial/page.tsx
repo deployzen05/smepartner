@@ -1,10 +1,15 @@
-'use client';
-
+import { Metadata } from 'next';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Commercial Solar Solutions',
+  description:
+    'Reduce operational costs with our commercial solar solutions for hospitals, hotels, and schools. High ROI and accelerated depreciation benefits.',
+};
 
 export default function CommercialPage() {
   return (
@@ -13,9 +18,9 @@ export default function CommercialPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
+              <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Commercial Solar Solutions
-              </h2>
+              </h1>
               <p className="text-lg leading-relaxed text-slate-600">
                 Maximize profits and reduce operational costs for your business.
                 Our end-to-end solar execution services are tailored for

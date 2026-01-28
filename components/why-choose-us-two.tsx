@@ -9,10 +9,8 @@ export function WhyChooseUsTwo() {
     <section className="py-5" style={{ backgroundColor: '#f6f8fa' }}>
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          {/* Left Column: Text & Stats */}
           <div className="animate-in fade-in slide-in-from-left-8 duration-700">
             <div className="mb-4 flex items-center gap-2">
-              {/* Sub-logo placeholder */}
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-orange-600">
                 <svg
                   width="12"
@@ -46,7 +44,6 @@ export function WhyChooseUsTwo() {
               technology.
             </p>
 
-            {/* Counter Box Area */}
             <div className="mb-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:mb-10 sm:p-8">
               <div className="grid grid-cols-2 gap-4 divide-x divide-slate-100 text-center sm:gap-8 md:grid-cols-3">
                 <div className="px-2">
@@ -85,9 +82,7 @@ export function WhyChooseUsTwo() {
             </Link>
           </div>
 
-          {/* Right Column: Image Grid */}
           <div className="grid grid-cols-2 gap-4 md:gap-6">
-            {/* Column 1 */}
             <div className="space-y-4 md:space-y-6">
               <div className="animate-in fade-in zoom-in relative h-48 overflow-hidden rounded-2xl shadow-lg transition-transform duration-500 hover:-translate-y-2 md:h-64">
                 <Image
@@ -107,7 +102,6 @@ export function WhyChooseUsTwo() {
               </div>
             </div>
 
-            {/* Column 2 - Offset */}
             <div className="space-y-4 pt-8 md:space-y-6 md:pt-12">
               <div className="animate-in fade-in zoom-in relative h-40 overflow-hidden rounded-2xl shadow-lg transition-transform delay-200 duration-500 hover:-translate-y-2 md:h-56">
                 <Image

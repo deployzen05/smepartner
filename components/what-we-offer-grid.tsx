@@ -111,7 +111,6 @@ export function WhatWeOfferGrid() {
               rowIndex !== rows.length - 1 && 'border-b border-gray-200'
             )}
           >
-            {/* Left Item */}
             {row[0] && (
               <div
                 className={cn(
@@ -152,7 +151,6 @@ export function WhatWeOfferGrid() {
               </div>
             )}
 
-            {/* Right Item */}
             {row[1] && (
               <div
                 className={cn(

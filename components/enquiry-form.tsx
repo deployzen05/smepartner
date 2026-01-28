@@ -94,9 +94,7 @@ export function EnquiryForm() {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-          {/* Detailed Info Group */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {/* Name */}
             <FormField
               control={form.control}
               name="fullName"
@@ -120,7 +118,6 @@ export function EnquiryForm() {
               )}
             />
 
-            {/* Email */}
             <FormField
               control={form.control}
               name="email"
@@ -146,7 +143,6 @@ export function EnquiryForm() {
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {/* Country */}
             <FormField
               control={form.control}
               name="country"
@@ -178,7 +174,6 @@ export function EnquiryForm() {
               )}
             />
 
-            {/* Phone */}
             <FormField
               control={form.control}
               name="phone"
@@ -210,7 +205,6 @@ export function EnquiryForm() {
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {/* Company */}
             <FormField
               control={form.control}
               name="companyName"
@@ -234,7 +228,6 @@ export function EnquiryForm() {
               )}
             />
 
-            {/* Job Title */}
             <FormField
               control={form.control}
               name="jobTitle"
@@ -260,7 +253,6 @@ export function EnquiryForm() {
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {/* Role */}
             <FormField
               control={form.control}
               name="role"
@@ -294,7 +286,6 @@ export function EnquiryForm() {
               )}
             />
 
-            {/* Purpose */}
             <FormField
               control={form.control}
               name="purpose"
@@ -329,7 +320,6 @@ export function EnquiryForm() {
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {/* Capacity */}
             <FormField
               control={form.control}
               name="capacity"
@@ -363,7 +353,6 @@ export function EnquiryForm() {
               )}
             />
 
-            {/* Frequency */}
             <FormField
               control={form.control}
               name="projectsPerMonth"

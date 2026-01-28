@@ -1,10 +1,15 @@
-'use client';
-
+import { Metadata } from 'next';
 import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Industrial Power Plants & Subsidy',
+  description:
+    'Large-scale industrial solar installations with up to 90% capital subsidy for food processing and other industries in Uttar Pradesh.',
+};
 
 export default function IndustrialPage() {
   return (
@@ -13,9 +18,9 @@ export default function IndustrialPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-orange-600 md:text-5xl">
+              <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
                 Industrial Solar Power Plants
-              </h2>
+              </h1>
               <p className="text-lg leading-relaxed text-slate-600">
                 Power your factory with renewable energy and unlock massive
                 government incentives. We specialize in large-scale industrial

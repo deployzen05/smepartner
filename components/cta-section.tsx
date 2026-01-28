@@ -9,7 +9,6 @@ export function CTASection() {
     <section className="py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-4">
         <div className="relative flex w-full flex-col gap-6 overflow-hidden rounded-2xl border border-orange-100 bg-[#FFF9F0] p-8 shadow-none md:rounded-3xl lg:flex-row lg:items-center lg:justify-between lg:p-16">
-          {/* Background Decorations */}
           <div className="absolute top-0 right-0 -mt-20 -mr-20 h-64 w-64 rounded-full bg-orange-100 opacity-60 blur-3xl"></div>
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-64 w-64 rounded-full bg-yellow-100 opacity-60 blur-3xl"></div>
 

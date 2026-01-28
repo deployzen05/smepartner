@@ -5,7 +5,6 @@ import {
   Facebook,
   Linkedin,
   Instagram,
-  Youtube,
   MapPin,
   Phone,
   Mail,
@@ -40,7 +39,6 @@ export function Footer() {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12"
         >
-          {/* Column 1: Logo & About */}
           <motion.div variants={item} className="lg:col-span-4">
             <Link href="/" className="mb-6 flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white">
@@ -56,7 +54,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="mb-8 pr-4 leading-relaxed text-slate-500">
-              SME Solar (Division of SME Partner) is a leading Solar EPC company
+              SME Partner (Division of SME Partner) is a leading Solar EPC company
               based in Kanpur. As an authorized vendor for UPNEDA and associated
               with MNRE, we empower Uttar Pradesh with clean energy.
             </p>
@@ -83,7 +81,6 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Column 2: Contact */}
           <motion.div variants={item} className="lg:col-span-3">
             <h3 className="mb-6 text-xl font-bold text-slate-900">
               Contact Us
@@ -131,7 +128,6 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 3: Quick Links */}
           <motion.div variants={item} className="lg:col-span-2">
             <h3 className="mb-6 text-xl font-bold text-slate-900">
               Quick Links
@@ -157,7 +153,6 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 4: Support */}
           <motion.div variants={item} className="lg:col-span-3">
             <h3 className="mb-6 text-xl font-bold text-slate-900">Support</h3>
             <ul className="space-y-3">
@@ -191,7 +186,7 @@ export function Footer() {
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 md:flex-row">
             <p>
               Copyright © 2024-25{' '}
-              <span className="font-bold text-slate-900">SME Solar</span>. All
+              <span className="font-bold text-slate-900">SME Partner</span>. All
               rights reserved.
             </p>
             <div className="flex gap-6">

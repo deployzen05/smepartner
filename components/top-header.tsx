@@ -19,18 +19,25 @@ export function TopHeader() {
           <span>Mon-Sat: 9:00am - 6:00pm</span>
         </span>
         <a
-          href="mailto:info@smepartner.com"
+          href="mailto:smepartner01@gmail.com"
           className="flex items-center gap-2 transition-colors hover:text-white"
         >
           <Mail className="h-3.5 w-3.5 text-orange-500" />
-          <span>info@smepartner.com</span>
+          <span>smepartner01@gmail.com</span>
         </a>
         <a
-          href="tel:+919876543210"
+          href="tel:+919169478991"
           className="flex items-center gap-2 transition-colors hover:text-white"
         >
           <Phone className="h-3.5 w-3.5 text-orange-500" />
-          <span>+91 98765 43210</span>
+          <span>+91 91694 78991</span>
+        </a>
+        <a
+          href="tel:+919140299799"
+          className="flex items-center gap-2 transition-colors hover:text-white"
+        >
+          <Phone className="h-3.5 w-3.5 text-orange-500" />
+          <span>+91 91402 99799</span>
         </a>
       </div>
       <div className="flex items-center gap-4">

@@ -7,21 +7,11 @@ import {
   CheckCircle2,
   Zap,
   ShieldCheck,
-  PlayCircle,
   ChevronRight,
 } from 'lucide-react';
 import { motion, type Variants } from 'motion/react';
 import Image from 'next/image';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
-import { EnquiryForm } from '@/components/enquiry-form';
 import { Button } from '@/components/ui/button';
-import { EnquiryDialog } from './Home/enquire-dialog';
 
 export function HeroSection() {
   const container: Variants = {
@@ -44,7 +34,6 @@ export function HeroSection() {
     },
   };
 
-  // Solar background images for carousel
   const bgImages = [
     'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1200&auto=format&fit=crop',
@@ -52,7 +41,6 @@ export function HeroSection() {
     'https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=1200&auto=format&fit=crop',
   ];
 
-  // Simple carousel state
   const [bgIndex, setBgIndex] = React.useState(0);
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -61,7 +49,6 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // Show scroll button only when hero is in view
   const heroRef = React.useRef<HTMLDivElement>(null);
   const [showScrollBtn, setShowScrollBtn] = React.useState(true);
   React.useEffect(() => {
@@ -75,7 +62,6 @@ export function HeroSection() {
     };
   }, []);
 
-  // Handler for manual scroll button
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setBgIndex((prev) => (prev + 1) % bgImages.length);
@@ -87,7 +73,6 @@ export function HeroSection() {
       ref={heroRef}
       className="relative -mt-10 flex min-h-[750px] w-full flex-col items-center justify-center gap-0 md:mt-0 lg:flex-row"
     >
-      {/* Background Image Carousel */}
       <div className="absolute inset-0 -z-40 h-full min-h-[600px] w-full overflow-hidden rounded-none">
         {bgImages.map((img, idx) => (
           <motion.div
@@ -96,23 +81,22 @@ export function HeroSection() {
             animate={{ opacity: bgIndex === idx ? 1 : 0 }}
             transition={{ duration: 1.2, ease: 'easeInOut' }}
             className="absolute inset-0 h-full w-full"
-            style={{
-              backgroundImage: `url(${img})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              zIndex: 0,
-              opacity: 0.75,
-            }}
-            aria-hidden="true"
-          />
+          >
+            <Image
+              src={img}
+              alt="Solar energy background"
+              fill
+              className="object-cover opacity-75"
+              priority={idx === 0}
+              sizes="100vw"
+            />
+          </motion.div>
         ))}
-        {/* Overlay for readability */}
         <div
           className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-black/30"
           style={{ opacity: 0.95 }}
         />
       </div>
-      {/* Scroll Button for Carousel */}
       {showScrollBtn && (
         <button
           onClick={handleNextImage}
@@ -124,7 +108,6 @@ export function HeroSection() {
         </button>
       )}
 
-      {/* Left: Text Content */}
       <div className="flex flex-1 flex-col justify-center px-2 sm:px-6 md:px-10 lg:ml-20">
         <motion.div
           variants={container}
@@ -161,7 +144,7 @@ export function HeroSection() {
             Empowering Your Business with
             <br />
             <span className="bg-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
-              SME Solar Solutions
+              SME Partner
             </span>
           </motion.h1>
 
@@ -208,7 +191,6 @@ export function HeroSection() {
               </div>
             ))}
           </motion.div>
-          {/* Schedule a Demo Button */}
           <div className="mt-6">
             <Button
               asChild
@@ -219,7 +201,6 @@ export function HeroSection() {
           </div>
         </motion.div>
       </div>
-      {/* No video or logo on the right; only background images remain */}
     </div>
   );
 }
