@@ -26,7 +26,7 @@ export function CTASection() {
             </p>
           </div>
           <div className="relative z-10 flex shrink-0 flex-col items-center justify-center gap-4 sm:flex-row lg:gap-6">
-            <Link href="/enquiry">
+            <Link href="/enquire">
               <Button
                 variant="cta"
                 className="px-6 py-4 text-sm shadow-sm md:text-base"
