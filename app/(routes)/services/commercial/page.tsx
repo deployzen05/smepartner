@@ -72,7 +72,7 @@ export default function CommercialPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop"
+                src="/service-commercial.png"
                 alt="Commercial rooftop solar installation"
                 fill
                 className="object-cover"

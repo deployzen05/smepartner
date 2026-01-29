@@ -129,7 +129,8 @@ export function Footer() {
                 { label: 'Industrial Solar', href: '/services/industrial' },
                 { label: 'Solar Water Pumps', href: '/services/pumps' },
                 { label: 'Subsidy Consultancy', href: '/subsidy' },
-                { label: 'Contact Us', href: '/enquire' },
+                { label: 'Terms & Conditions', href: '#' },
+                { label: 'Privacy Policy', href: '#' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -173,12 +174,14 @@ export function Footer() {
             All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-orange-500">
-              Terms & Conditions
-            </Link>
-            <Link href="#" className="hover:text-orange-500">
-              Privacy Policy
-            </Link>
+            <a
+              href="https://deployzen.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-400 transition hover:text-orange-500"
+            >
+              Developed by DeployZen
+            </a>
           </div>
         </div>
       </div>

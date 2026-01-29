@@ -71,7 +71,7 @@ export default function ResidentialPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop"
+                src="/service-residential.png"
                 alt="Residential rooftop solar installation"
                 fill
                 className="object-cover"

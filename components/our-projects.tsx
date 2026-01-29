@@ -59,6 +59,8 @@ const ProjectCard = ({
         src={image}
         alt={title}
         fill
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
         className="object-cover transition-transform duration-700 group-hover:scale-110"
       />
 

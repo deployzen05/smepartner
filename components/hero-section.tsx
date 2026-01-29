@@ -17,6 +17,11 @@ export function HeroSection() {
     },
   };
 
+  const item: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   const bgImages = [
     'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1600&auto=format&fit=crop',
@@ -37,7 +42,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative z-10 flex min-h-[750px] pt-5 w-full items-center overflow-hidden"
+      className="relative z-10 flex min-h-[750px] w-full items-center overflow-hidden bg-slate-900 pt-5"
     >
       {/* BACKGROUND IMAGES */}
       <div className="absolute inset-0 z-0">
@@ -45,7 +50,7 @@ export function HeroSection() {
           <motion.div
             key={img}
             className="absolute inset-0"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: idx === 0 ? 1 : 0 }}
             animate={{ opacity: bgIndex === idx ? 1 : 0 }}
             transition={{ duration: 1.2, ease: 'easeInOut' }}
           >
@@ -55,6 +60,8 @@ export function HeroSection() {
               fill
               priority={idx === 0}
               sizes="100vw"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
               className="object-cover"
             />
           </motion.div>
@@ -69,15 +76,19 @@ export function HeroSection() {
         <motion.div
           variants={container}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+          animate="show"
           className="flex max-w-2xl flex-col items-start text-left"
         >
-          <Badge className="mb-4 bg-orange-100 text-orange-700">
-            🌞 Authorized UPNEDA Vendor · MNRE Associated
-          </Badge>
+          <motion.div variants={item}>
+            <Badge className="mb-4 bg-orange-100 text-orange-700">
+              🌞 Authorized UPNEDA Vendor · MNRE Associated
+            </Badge>
+          </motion.div>
 
-          <motion.h1 className="mb-4 text-left text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+          <motion.h1 
+            variants={item}
+            className="mb-4 text-left text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+          >
             Empowering Your Business with
             <br />
             <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
@@ -85,14 +96,17 @@ export function HeroSection() {
             </span>
           </motion.h1>
 
-          <motion.p className="mb-6 max-w-xl text-left text-base text-slate-200 sm:text-lg">
+          <motion.p 
+            variants={item}
+            className="mb-6 max-w-xl text-left text-base text-slate-200 sm:text-lg"
+          >
             Since 2015, SME Partner has helped businesses and households across
             Uttar Pradesh unlock industrial incentives, capital subsidies, and
             reliable solar power solutions — with complete documentation and
             government coordination.
           </motion.p>
 
-          <motion.div className="mb-8 flex flex-wrap gap-3">
+          <motion.div variants={item} className="mb-8 flex flex-wrap gap-3">
             {[
               { icon: Zap, text: 'PM Surya Ghar Yojana Support' },
               { icon: ShieldCheck, text: '25+ Years Panel Life' },
@@ -108,12 +122,14 @@ export function HeroSection() {
             ))}
           </motion.div>
 
-          <Button
-            asChild
-            className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-8 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
-          >
-            <Link href="/enquire">Get Free Consultation</Link>
-          </Button>
+          <motion.div variants={item}>
+            <Button
+              asChild
+              className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-8 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
+            >
+              <Link href="/enquire">Get Free Consultation</Link>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

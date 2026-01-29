@@ -71,7 +71,7 @@ export default function PumpsPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="https://plus.unsplash.com/premium_photo-1664302342178-564b28c68d33?q=80&w=1170&auto=format&fit=crop"
+                src="/service-pump.png"
                 alt="Solar water pump installation"
                 fill
                 className="object-cover"

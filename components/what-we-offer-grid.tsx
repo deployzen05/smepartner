@@ -14,6 +14,13 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import ServiceResidential from '../public/service-residential.png';
+import ServiceCommercial from '../public/service-commercial.png';
+import ServiceIndustrial from '../public/service-industrial.png';
+import ServicePump from '../public/service-pump.png';
+import ServiceSubsidy from '../public/service-subsidy.png';
+import ServiceMaintenance from '../public/service-maintenance.jpg';
+
 const features = [
   {
     Icon: Home,
@@ -22,8 +29,7 @@ const features = [
       'Rooftop solar solutions for homes under PM Surya Ghar Yojana with central & state subsidy assistance and bank finance options.',
     href: '/services/residential',
     cta: 'Know more',
-    imgSrc:
-      'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop',
+    imgSrc: ServiceResidential,
   },
   {
     Icon: Building2,
@@ -32,8 +38,7 @@ const features = [
       'Customized solar EPC solutions for hospitals, hotels, cold storages, and commercial establishments with long-term ROI focus.',
     href: '/services/commercial',
     cta: 'Know more',
-    imgSrc:
-      'https://images.unsplash.com/photo-1726776230751-183496c51f00?q=80&w=1210&auto=format&fit=crop',
+    imgSrc: ServiceCommercial,
   },
   {
     Icon: Factory,
@@ -42,8 +47,7 @@ const features = [
       'Solar power plants for MSMEs and food processing units with eligibility-based capital subsidy support and compliance handling.',
     href: '/services/industrial',
     cta: 'Know more',
-    imgSrc:
-      'https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=1000&auto=format&fit=crop',
+    imgSrc: ServiceIndustrial,
   },
   {
     Icon: Droplets,
@@ -52,8 +56,7 @@ const features = [
       'Solar-powered pumping solutions for agriculture and industrial use, reducing dependency on grid electricity.',
     href: '/services/pumps',
     cta: 'Know more',
-    imgSrc:
-      'https://plus.unsplash.com/premium_photo-1664302342178-564b28c68d33?q=80&w=1170&auto=format&fit=crop',
+    imgSrc: ServicePump,
   },
   {
     Icon: Wallet,
@@ -62,9 +65,8 @@ const features = [
       'Consultancy services for capital subsidy, mandi tax exemption, MSME benefits, and project finance across eligible sectors.',
     href: '/subsidy',
     cta: 'Know more',
-    imgSrc:
-      'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop',
-  },
+    imgSrc: ServiceSubsidy,
+  },  
   {
     Icon: Zap,
     name: 'Operations & Maintenance',
@@ -72,8 +74,7 @@ const features = [
       'Long-term operation and maintenance services to ensure consistent generation and system performance.',
     href: '/services/operations',
     cta: 'Know more',
-    imgSrc:
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop',
+    imgSrc: ServiceMaintenance,
   },
 ];
 
@@ -149,8 +150,9 @@ export function WhatWeOfferGrid() {
                           src={feature.imgSrc}
                           alt={feature.name}
                           fill
+                          placeholder="blur"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover grayscale-0 transition-transform duration-500 group-hover:scale-105 group-hover:grayscale-0 lg:grayscale"
+                          className="object-cover transition-all duration-500 group-hover:scale-105 group-hover:saturate-150 group-hover:contrast-125"
                         />
                       </div>
                     </div>

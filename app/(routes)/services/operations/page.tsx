@@ -70,7 +70,7 @@ export default function OperationsPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop"
+                src="/service-maintenance.jpg"
                 alt="Solar operations and maintenance service"
                 fill
                 className="object-cover"

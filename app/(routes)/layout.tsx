@@ -4,6 +4,7 @@ import { BreadcrumbSection } from '@/components/breadcrumb-section';
 import { CTASection } from '@/components/cta-section';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
+import { PartnersAndClients } from '@/components/partners-and-clients';
 import { WhyChooseUsTwo } from '@/components/why-choose-us-two';
 import { usePathname } from 'next/navigation';
 
@@ -41,6 +42,7 @@ export default function SolarLayout({
       <BreadcrumbSection title={title} breadcrumbItems={breadcrumbItems} />
       {children}
       <WhyChooseUsTwo />
+      <PartnersAndClients />
       <CTASection />
       <Footer />
     </main>

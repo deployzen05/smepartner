@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import SolarIcon from '../public/solar.png';
 
 export function About() {
   return (
@@ -40,11 +41,12 @@ export function About() {
             {/* Decorative image */}
             <div className="absolute -bottom-8 -left-16 z-30 hidden md:block">
               <Image
-                src="/solar.png"
+                src={SolarIcon}
                 alt="Solar Icon"
                 width={140}
                 height={140}
                 priority
+                placeholder="blur"
               />
             </div>
           </motion.div>

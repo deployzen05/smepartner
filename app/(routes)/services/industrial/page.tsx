@@ -80,7 +80,7 @@ export default function IndustrialPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=1000&auto=format&fit=crop"
+                src="/service-industrial.png"
                 alt="Industrial solar power plant installation"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

@@ -2,22 +2,25 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import Image1 from '../public/image.png';
+import Image2 from '../public/image1.png';
+import Image3 from '../public/image3.png';
 
 const teams = [
   {
     name: 'Chetan Jaiswal',
     title: 'Industrial Subsidy & Solar Consultant',
-    image: '/image.png',
+    image: Image1,
   },
   {
     name: 'Ratnesh Singh',
     title: 'SME & Project Finance Specialist',
-    image: '/image1.png',
+    image: Image2,
   },
   {
     name: 'Jitendra Singh',
     title: 'Industrial Compliance & Subsidy Consultant',
-    image: '/image3.png',
+    image: Image3,
   },
 ];
 
@@ -60,17 +63,19 @@ export function Team() {
               key={member.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10"
+              className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-orange-500/10"
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
+                  placeholder="blur"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-fit transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="object-fill transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 
                 {/* Gradient Overlay */}
