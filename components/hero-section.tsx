@@ -81,7 +81,7 @@ export function HeroSection() {
         >
           <motion.div variants={item}>
             <Badge className="mb-4 bg-orange-100 text-orange-700">
-              🌞 Authorized UPNEDA Vendor · MNRE Associated
+              🌞 Authorized UPNEDA Vendor
             </Badge>
           </motion.div>
 
@@ -109,7 +109,7 @@ export function HeroSection() {
           <motion.div variants={item} className="mb-8 flex flex-wrap gap-3">
             {[
               { icon: Zap, text: 'PM Surya Ghar Yojana Support' },
-              { icon: ShieldCheck, text: '25+ Years Panel Life' },
+              { icon: ShieldCheck, text: '30 Years Panel Life' },
               { icon: FileText, text: 'Up to 90% Subsidy Assistance' },
             ].map((f, i) => (
               <div

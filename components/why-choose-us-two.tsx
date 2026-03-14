@@ -47,7 +47,7 @@ export function WhyChooseUsTwo() {
                 {
                   icon: ShieldCheck,
                   title: 'Government Authorized',
-                  desc: 'UPNEDA vendor & MNRE associated',
+                  desc: 'UPNEDA vendor',
                 },
               ].map((item, i) => (
                 <div

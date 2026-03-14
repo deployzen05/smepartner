@@ -43,7 +43,7 @@ export default function ResidentialPage() {
                   'Subsidy assistance up to ₹1,08,000 as per applicable guidelines',
                   'Residential rooftop systems designed for household consumption',
                   'Bank finance support available at approximately 6% interest',
-                  'Solar panels with long-term performance warranty (up to 25 years)',
+                  'Solar panels with long-term performance warranty (up to 30 years)',
                 ].map((item, i) => (
                   <li
                     key={i}

@@ -17,8 +17,6 @@ Based on the consolidated information from the documents and images provided, he
 
 - Authorized Vendor for **UPNEDA** (Uttar Pradesh New & Renewable Energy Development Agency).
 
-- Associated with the **Ministry of New and Renewable Energy (MNRE)**.
-
 - Member/Partner of **IIA** (Indian Industries Association) and **SIDBI**.
 
 ---
@@ -66,7 +64,7 @@ The company provides end-to-end solar execution services under the brand **SME P
 
 - **Financing:** Bank loans available at **6% interest**.
 
-- **Benefits:** Two-thirds savings on electricity bills; panels have a lifespan of ~27 years.
+- **Benefits:** Two-thirds savings on electricity bills; panels have a lifespan of ~30 years.
 
 **Residential Cost & Subsidy Breakdown:**
 

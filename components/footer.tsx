@@ -60,7 +60,7 @@ export function Footer() {
             </p>
 
             <p className="mb-8 text-sm text-slate-500">
-              Authorized UPNEDA Vendor · MNRE Associated · IIA & SIDBI Partner
+              Authorized UPNEDA Vendor · IIA & SIDBI Partner
             </p>
 
             <div className="flex gap-4">

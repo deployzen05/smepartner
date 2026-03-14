@@ -19,9 +19,9 @@ const benefits = [
     icon: ShieldCheck,
   },
   {
-    title: 'MNRE Associated',
+    title: 'Certified Quality Standards',
     description:
-      'Aligned with MNRE standards for quality, safety, and compliance.',
+      'Committed to the highest standards for quality, safety, and regulatory compliance.',
     icon: Award,
   },
   {
@@ -37,7 +37,7 @@ const benefits = [
     icon: IndianRupee,
   },
   {
-    title: '25+ Years Performance Warranty',
+    title: '30 Years Performance Warranty',
     description:
       'Reliable, long-term panel performance backed by manufacturer warranties.',
     icon: Trophy,
@@ -75,9 +75,8 @@ export function WhyChooseUsSection() {
                 <p>
                   SME Partner is more than a solar installer — we are a complete
                   consultancy for government subsidies and renewable energy
-                  solutions. Our authorization with UPNEDA and association with
-                  MNRE ensure regulatory compliance and maximum benefit
-                  realization.
+                  solutions. Our authorization with UPNEDA ensures regulatory
+                  compliance and maximum benefit realization.
                 </p>
                 <p>
                   From MSME and food processing subsidies to PM Surya Ghar

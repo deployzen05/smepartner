@@ -21,7 +21,7 @@ const usps = {
     {
       title: 'Government Authorized',
       description:
-        'Authorized vendor with UPNEDA and associated with MNRE, ensuring compliance and eligibility-based subsidy support.',
+        'Authorized vendor with UPNEDA, ensuring compliance and eligibility-based subsidy support.',
     },
     {
       title: 'Long-Term Performance Support',
