@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { TopHeader } from './top-header';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Sun,
   Menu,
@@ -42,12 +43,15 @@ import LogoImage from '@/public/logo.jpeg';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
+  const isSubsidyPage = pathname === '/subsidy';
 
   const serviceLinks = [
     {
       title: 'Residential Solar',
       href: '/services/residential',
-      description: 'Rooftop solar solutions for homes under PM Surya Ghar Yojana',
+      description:
+        'Rooftop solar solutions for homes under PM Surya Ghar Yojana',
       icon: Home,
     },
     {
@@ -92,16 +96,16 @@ export function Navbar() {
           <a
             ref={ref}
             className={cn(
-              'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-orange-50 hover:text-orange-600 focus:bg-orange-50 focus:text-orange-600 dark:hover:bg-slate-800 dark:hover:text-orange-400 dark:focus:bg-slate-800',
+              'block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-orange-50 hover:text-orange-600 focus:bg-orange-50 focus:text-orange-600 dark:hover:bg-slate-800 dark:hover:text-orange-400 dark:focus:bg-slate-800',
               className
             )}
             {...props}
           >
-            <div className="flex items-center gap-2 text-sm font-medium leading-none">
+            <div className="flex items-center gap-2 text-sm leading-none font-medium">
               {Icon && <Icon className="h-4 w-4" />}
               {title}
             </div>
-            <p className="line-clamp-2 mt-1 text-sm leading-snug text-slate-500 dark:text-slate-400">
+            <p className="mt-1 line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
               {children}
             </p>
           </a>
@@ -120,8 +124,14 @@ export function Navbar() {
       <nav className="relative z-40 w-full border-b border-white/5 bg-white/80 px-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] backdrop-blur-xl transition-all md:px-6 dark:border-white/5 dark:bg-slate-950/80">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between xl:h-20">
           <Link href="/" className="group flex items-center gap-2.5">
-            <div className="flex h-14 overflow-hidden w-14 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/20 transition-transform group-hover:scale-105">
-              <Image src={LogoImage} alt="Logo" width={56} height={56} placeholder="blur" />
+            <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/20 transition-transform group-hover:scale-105">
+              <Image
+                src={LogoImage}
+                alt="Logo"
+                width={56}
+                height={56}
+                placeholder="blur"
+              />
             </div>
           </Link>
 
@@ -168,10 +178,10 @@ export function Navbar() {
             </NavigationMenu>
 
             <Link
-              href="/subsidy"
+              href={isSubsidyPage ? '/' : '/subsidy'}
               className="group relative flex items-center py-2 text-sm font-medium text-slate-600 transition-colors hover:text-orange-600 dark:text-slate-300 dark:hover:text-orange-400"
             >
-              Subsidy
+              {isSubsidyPage ? 'Solar' : 'Subsidy'}
               <span className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-full dark:bg-orange-500" />
             </Link>
           </div>
@@ -184,11 +194,7 @@ export function Navbar() {
             >
               <Link href="/enquire">Enquiry</Link>
             </Button>
-            <Button
-              asChild
-              variant="outline-brand"
-              className="h-11 px-8"
-            >
+            <Button asChild variant="outline-brand" className="h-11 px-8">
               <a
                 href="https://www.google.com/maps/search/?api=1&query=128/758,+Krishna+Rama+Chandra+Apartment,+K-Block,+Kidwai+Nagar,+Kanpur+-+208011"
                 target="_blank"
@@ -274,11 +280,11 @@ export function Navbar() {
                     </Accordion>
 
                     <Link
-                      href="/subsidy"
+                      href={isSubsidyPage ? '/' : '/subsidy'}
                       onClick={() => setIsOpen(false)}
                       className="group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-slate-900 transition-colors hover:bg-orange-50 hover:text-orange-600 dark:text-slate-100 dark:hover:bg-orange-950/30 dark:hover:text-orange-400"
                     >
-                      Subsidy
+                      {isSubsidyPage ? 'Solar' : 'Subsidy'}
                       <ArrowRight className="h-4 w-4 text-slate-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-slate-500" />
                     </Link>
                   </div>

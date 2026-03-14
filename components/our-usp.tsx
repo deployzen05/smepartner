@@ -71,7 +71,7 @@ export function OurUSP() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="text-3xl font-bold leading-tight text-balance text-orange-600 md:text-5xl"
+            className="text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl"
           >
             What Makes SME Partner Different
           </motion.h2>
@@ -107,7 +107,7 @@ export function OurUSP() {
               whileHover={{ scale: 1.05 }}
             >
               <Image
-                src="https://images.pexels.com/photos/8853506/pexels-photo-8853506.jpeg"
+                src="/sub-3.jfif"
                 alt="Solar project expertise"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110"
@@ -162,7 +162,7 @@ function USPItem({
         <h3 className="mb-2 text-xl font-bold text-slate-900 transition-colors group-hover:text-orange-600">
           {item.title}
         </h3>
-        <p className="max-w-xs text-slate-600 leading-relaxed group-hover:text-slate-700">
+        <p className="max-w-xs leading-relaxed text-slate-600 group-hover:text-slate-700">
           {item.description}
         </p>
       </div>

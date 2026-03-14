@@ -26,7 +26,7 @@ export function ReadyToGoSolar() {
             </span>
           </div>
 
-          <h2 className="mb-6 text-3xl font-bold leading-tight text-balance text-orange-600 md:text-5xl">
+          <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
             Start Your Solar Journey with SME Partner
           </h2>
 
@@ -40,7 +40,7 @@ export function ReadyToGoSolar() {
 
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* Images */}
-          <div className="grid grid-cols-12 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {[
               'photo-1509391366360-2e959784a276',
               'photo-1624397640148-949b1732bb0a',
@@ -53,9 +53,7 @@ export function ReadyToGoSolar() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`relative overflow-hidden rounded-2xl shadow-md ${
-                  idx % 2 === 0 ? 'col-span-7' : 'col-span-5'
-                } h-48 sm:h-64`}
+                className="relative aspect-square overflow-hidden rounded-2xl shadow-md"
               >
                 <Image
                   src={`https://images.unsplash.com/${id}?q=80&w=800&auto=format&fit=crop`}

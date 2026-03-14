@@ -24,29 +24,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import {
-  User,
-  Mail,
-  Building2,
-  Briefcase,
-  Phone,
-  Globe,
-  FileText,
-  Zap,
-  LayoutDashboard,
-} from 'lucide-react';
+import { User, Mail, Globe } from 'lucide-react';
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Name is required'),
   email: z.string().email('Invalid email address'),
   country: z.string().min(1, 'Country is required'),
   phone: z.string().min(5, 'Phone number is required'),
-  companyName: z.string().min(1, 'Company name is required'),
-  jobTitle: z.string().min(1, 'Job title is required'),
-  role: z.string().min(1, 'Role is required'),
-  purpose: z.string().min(1, 'Selection required'),
-  capacity: z.string().min(1, 'Capacity required'),
-  projectsPerMonth: z.string().min(1, 'Selection required'),
   requirements: z.string().optional(),
 });
 
@@ -58,12 +42,6 @@ export function EnquiryForm() {
       email: '',
       country: 'in',
       phone: '',
-      companyName: '',
-      jobTitle: '',
-      role: '',
-      purpose: '',
-      capacity: '',
-      projectsPerMonth: '',
       requirements: '',
     },
   });
@@ -101,7 +79,7 @@ export function EnquiryForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Full Name
+                    Name
                   </FormLabel>
                   <FormControl>
                     <div className="relative">
@@ -124,7 +102,7 @@ export function EnquiryForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Business Email
+                    Email
                   </FormLabel>
                   <FormControl>
                     <div className="relative">
@@ -204,195 +182,13 @@ export function EnquiryForm() {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <FormField
-              control={form.control}
-              name="companyName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Company Name
-                  </FormLabel>
-                  <FormControl>
-                    <div className="relative">
-                      <Building2 className="absolute top-3 left-3 h-4 w-4 text-slate-400" />
-                      <Input
-                        placeholder="Company Ltd."
-                        {...field}
-                        className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="jobTitle"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Job Title
-                  </FormLabel>
-                  <FormControl>
-                    <div className="relative">
-                      <Briefcase className="absolute top-3 left-3 h-4 w-4 text-slate-400" />
-                      <Input
-                        placeholder="Director, Manager…"
-                        {...field}
-                        className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <FormField
-              control={form.control}
-              name="role"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Your Role
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <div className="relative">
-                        <User className="absolute top-3 left-3 z-10 h-4 w-4 text-slate-400" />
-                        <SelectTrigger className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white">
-                          <SelectValue placeholder="Select Role" />
-                        </SelectTrigger>
-                      </div>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="installer">
-                        Solar Installer/EPC
-                      </SelectItem>
-                      <SelectItem value="manufacturer">Manufacturer</SelectItem>
-                      <SelectItem value="consultant">Consultant</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="purpose"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Purpose
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <div className="relative">
-                        <FileText className="absolute top-3 left-3 z-10 h-4 w-4 text-slate-400" />
-                        <SelectTrigger className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white">
-                          <SelectValue placeholder="Select Purpose" />
-                        </SelectTrigger>
-                      </div>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="exploring">
-                        Exploring Software
-                      </SelectItem>
-                      <SelectItem value="purchasing">Purchasing</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <FormField
-              control={form.control}
-              name="capacity"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Project Capacity
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <div className="relative">
-                        <Zap className="absolute top-3 left-3 z-10 h-4 w-4 text-slate-400" />
-                        <SelectTrigger className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white">
-                          <SelectValue placeholder="Select Capacity" />
-                        </SelectTrigger>
-                      </div>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="3-25kw">3-25KW</SelectItem>
-                      <SelectItem value="25-200kw">25-200KW</SelectItem>
-                      <SelectItem value="200-500kw">200-500KW</SelectItem>
-                      <SelectItem value="500kw+">500KW - 2.5MW</SelectItem>
-                      <SelectItem value="2.5mw+">Above 2.5MW</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="projectsPerMonth"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Projects / Month
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <div className="relative">
-                        <LayoutDashboard className="absolute top-3 left-3 z-10 h-4 w-4 text-slate-400" />
-                        <SelectTrigger className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white">
-                          <SelectValue placeholder="Average Count" />
-                        </SelectTrigger>
-                      </div>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="1-5">1-5</SelectItem>
-                      <SelectItem value="5-10">5-10</SelectItem>
-                      <SelectItem value="10-20">10-20</SelectItem>
-                      <SelectItem value="20+">20+</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
           <FormField
             control={form.control}
             name="requirements"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                  Additional Requirements
+                  Requirements
                 </FormLabel>
                 <FormControl>
                   <Textarea
