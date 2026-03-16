@@ -22,7 +22,7 @@ export function SubsidyAbout() {
           >
             <div className="relative aspect-video w-full max-w-lg overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
               <Image
-                src="/sub-2.jfif"
+                src="/sub-2.png"
                 alt="Solar Subsidy Expertise"
                 fill
                 className="object-cover"

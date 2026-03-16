@@ -107,7 +107,7 @@ export function OurUSP() {
               whileHover={{ scale: 1.05 }}
             >
               <Image
-                src="/sub-3.jfif"
+                src="/sub-3.png"
                 alt="Solar project expertise"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110"
@@ -148,11 +148,10 @@ function USPItem({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
       whileHover={{ y: -5 }}
-      className={`group flex flex-col gap-4 ${
-        align === 'right'
+      className={`group flex flex-col gap-4 ${align === 'right'
           ? 'items-center lg:items-end lg:text-right'
           : 'items-center lg:items-start lg:text-left'
-      }`}
+        }`}
     >
       <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-orange-600 shadow-md transition-all duration-300 group-hover:bg-orange-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-orange-500/30">
         <CheckCircle2 className="h-8 w-8" />

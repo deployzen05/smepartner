@@ -22,7 +22,7 @@ export function SubsidyHero() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const bgImages = ['/sub-1.jfif', '/sub-2.jfif', '/sub-3.jfif', '/sub-4.jfif'];
+  const bgImages = ['/sub-1.png', '/sub-2.png', '/sub-3.png', '/sub-4.png'];
 
   const [bgIndex, setBgIndex] = React.useState(0);
 
