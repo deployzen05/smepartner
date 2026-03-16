@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.smepartner.in/og-image.jpg',
+        url: 'https://www.smepartner.in/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'SME Partner - Solar & Industrial Consultancy',
@@ -94,6 +94,7 @@ export const metadata: Metadata = {
     title: 'SME Partner - Leading Solar Energy Solution Provider in UP',
     description:
       'Empowering businesses and homes with sustainable solar energy solutions. Authorized UPNEDA vendor offering subsidies and financing.',
+
   },
   robots: {
     index: true,
