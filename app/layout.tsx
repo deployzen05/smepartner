@@ -1,12 +1,24 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono, Inter } from 'next/font/google';
+import { Geist, Geist_Mono, Inter, Montserrat, Poppins } from 'next/font/google';
 import './globals.css';
-import { ScrollToTop } from '@/components/scroll-to-top';
-import { ScrollProgress } from '@/components/scroll-progress';
+import { ScrollToTop } from '@/components/common/scroll-to-top';
+import { ScrollProgress } from '@/components/common/scroll-progress';
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+});
+
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+});
+
+const poppins = Poppins({
+  variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 const geistSans = Geist({
@@ -56,6 +68,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  alternates: {
+    canonical: 'https://www.smepartner.in',
+  },
+  category: 'Business',
   openGraph: {
     title: 'SME Partner - Leading Solar Energy Solution Provider in UP',
     description:
@@ -64,6 +80,14 @@ export const metadata: Metadata = {
     siteName: 'SME Partner',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.smepartner.in/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SME Partner - Solar & Industrial Consultancy',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -92,7 +116,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
         <ScrollProgress />

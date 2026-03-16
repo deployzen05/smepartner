@@ -46,6 +46,19 @@
   --radius-4xl: calc(var(--radius) + 16px);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  
+  /* Custom colors for Dual Pathway UI */
+  --color-tech-deep: #ffffff;
+  --color-tech-blue: #2563eb;
+  --color-tech-cyan: #0891b2;
+  --color-tech-green: #059669;
+  --color-tech-orange: #ea580c;
+  --color-tech-darker: #f8fafc;
+
+  /* Custom fonts */
+  --font-sans: 'Montserrat', var(--font-inter), sans-serif;
+  --font-display: 'Poppins', sans-serif;
+
   @keyframes marquee {
     from {
       transform: translateX(0);
@@ -61,6 +74,45 @@
     to {
       transform: translateY(calc(-100% - var(--gap)));
     }
+  }
+}
+
+@layer utilities {
+  .split-hero {
+    height: calc(100vh - 80px);
+    min-height: 700px;
+  }
+  .pathway-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pathway-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.95) 55%, rgba(255, 255, 255, 1) 100%);
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pathway-card:hover::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 1) 100%);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+  .pathway-card:hover .pathway-image {
+    transform: scale(1.05);
+  }
+  .pathway-image {
+    transition: transform 0.8s ease;
+  }
+  .glow-blue { 
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4); 
+  }
+  .glow-orange { 
+    box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.4); 
   }
 }
 

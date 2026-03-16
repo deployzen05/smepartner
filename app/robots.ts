@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/private/', '/admin/'],
+      disallow: ['/api/', '/admin/'],
     },
     sitemap: 'https://www.smepartner.in/sitemap.xml',
   };
