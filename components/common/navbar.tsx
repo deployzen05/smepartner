@@ -46,7 +46,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
   const isSubsidyPage = pathname === '/subsidy';
-  const isHomePage = pathname === '/';
+  const isHomePage = pathname === '/' || pathname === '/about';
 
   const serviceLinks = [
     {

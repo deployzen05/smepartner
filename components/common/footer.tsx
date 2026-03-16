@@ -16,7 +16,7 @@ import LogoImage from '@/public/logo.jpeg';
 
 export function Footer() {
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
+  const isHomePage = pathname === '/' || pathname === '/about';
 
   const container = {
     hidden: { opacity: 0 },
