@@ -18,11 +18,21 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const policies = [
+export interface PolicyDetail {
+  id: string;
+  title: string;
+  icon: string;
+  content: {
+    subTitle: string;
+    details: string[];
+  }[];
+}
+
+const defaultPolicies: PolicyDetail[] = [
   {
     id: 'food-processing',
     title: 'Food Processing Policy 2023',
-    icon: FileText,
+    icon: 'FileText',
     content: [
       {
         subTitle: 'Capital Subsidy',
@@ -51,7 +61,7 @@ const policies = [
   {
     id: 'msme-2022',
     title: 'MSME Subsidy 2022',
-    icon: TrendingUp,
+    icon: 'TrendingUp',
     content: [
       {
         subTitle: 'Regional Capital Subsidy',
@@ -75,7 +85,7 @@ const policies = [
   {
     id: 'tech-upgradation',
     title: 'Technical Upgradation (TUS/RAMP)',
-    icon: Hammer,
+    icon: 'Hammer',
     content: [
       {
         subTitle: 'Financial Assistance',
@@ -91,7 +101,7 @@ const policies = [
   {
     id: 'pmfme',
     title: 'PMFME Scheme',
-    icon: MapPin,
+    icon: 'MapPin',
     content: [
       {
         subTitle: 'Micro Food Enterprises',
@@ -106,7 +116,7 @@ const policies = [
   {
     id: 'tourism-2022',
     title: 'UP Tourism Policy 2022',
-    icon: Waves,
+    icon: 'Waves',
     content: [
       {
         subTitle: 'Capital Investment Subsidy',
@@ -129,7 +139,7 @@ const policies = [
   {
     id: 'dairy-2022',
     title: 'Dairy Development Policy 2022',
-    icon: Truck,
+    icon: 'Truck',
     content: [
       {
         subTitle: 'Infrastructure Support',
@@ -141,10 +151,10 @@ const policies = [
         ],
       },
     ],
-  },
+  }
 ];
 
-export function SubsidyPolicyDetails() {
+export function SubsidyPolicyDetails({ policies = defaultPolicies }: { policies?: PolicyDetail[] }) {
   return (
     <section id="policy-details" className="bg-slate-50 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4">
@@ -164,23 +174,35 @@ export function SubsidyPolicyDetails() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {policies.map((policy, idx) => (
-            <motion.div
-              key={policy.id}
-              initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm"
-            >
-              <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-100 text-orange-600">
-                  <policy.icon className="h-6 w-6" />
+          {policies.map((policy, idx) => {
+            const iconMap: Record<string, React.ElementType> = {
+              FileText: FileText,
+              TrendingUp: TrendingUp,
+              MapPin: MapPin,
+              Zap: Zap,
+              Truck: Truck,
+              Waves: Waves,
+              Hammer: Hammer,
+            };
+            const Icon = iconMap[policy.icon] || FileText;
+
+            return (
+              <motion.div
+                key={policy.id}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm"
+              >
+                <div className="mb-6 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-100 text-orange-600">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {policy.title}
+                  </h3>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">
-                  {policy.title}
-                </h3>
-              </div>
 
               <Accordion type="single" collapsible className="w-full">
                 {policy.content.map((section, sidx) => (
@@ -209,7 +231,7 @@ export function SubsidyPolicyDetails() {
                 ))}
               </Accordion>
             </motion.div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

@@ -8,10 +8,11 @@ import {
   MapPin,
   Phone,
   Mail,
-  Sun,
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import LogoImage from '@/public/logo.jpeg';
 
 export function Footer() {
   const pathname = usePathname();
@@ -43,8 +44,14 @@ export function Footer() {
           {/* Brand */}
           <motion.div variants={item} className="lg:col-span-4">
             <Link href="/" className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500 text-white">
-                <Sun className="h-6 w-6" strokeWidth={3} />
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
+                <Image
+                  src={LogoImage}
+                  alt="SME Partner"
+                  width={40}
+                  height={40}
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-xl font-black tracking-tight text-slate-900">

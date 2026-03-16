@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Montserrat, Poppins } from 'next/font/google'
 import './globals.css';
 import { ScrollToTop } from '@/components/common/scroll-to-top';
 import { ScrollProgress } from '@/components/common/scroll-progress';
+import ClickSpark from '@/components/ClickSpark';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -120,9 +121,17 @@ export default function RootLayout({
         className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
-        <ScrollProgress />
-        <main className="mx-auto">{children}</main>
-        <ScrollToTop />
+        <ClickSpark
+          sparkColor="#ea580c"
+          sparkSize={8}
+          sparkRadius={20}
+          sparkCount={10}
+          duration={500}
+        >
+          <ScrollProgress />
+          <main className="mx-auto">{children}</main>
+          <ScrollToTop />
+        </ClickSpark>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

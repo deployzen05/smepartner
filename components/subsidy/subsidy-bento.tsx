@@ -61,10 +61,10 @@ export function SubsidyBento() {
             {/* Card 1: Food Processing (Large Image) */}
             <motion.div variants={itemVariants} className="relative rounded-[2rem] overflow-hidden bg-orange-900 text-white shadow-lg shadow-orange-900/10 group flex flex-col justify-end min-h-[480px]">
               <Image
-                src="/service-commercial.png"
+                src="/subsidy/food-processing.png"
                 alt="Food Processing"
                 fill
-                className="object-cover opacity-70 mix-blend-overlay group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-orange-950 via-orange-900/60 to-transparent transition-opacity duration-500 group-hover:opacity-90"></div>
               <div className="relative z-10 p-8 md:p-10 pt-32 transform transition-transform duration-500 group-hover:-translate-y-2">
@@ -153,12 +153,12 @@ export function SubsidyBento() {
             {/* Card 6: Dairy (Large Image) */}
             <motion.div variants={itemVariants} className="relative rounded-[2rem] overflow-hidden bg-slate-900 text-white shadow-lg shadow-slate-900/10 group flex flex-col justify-end min-h-[480px] flex-grow">
               <Image
-                src="/service-pump.png"
+                src="/subsidy/dairy.png"
                 alt="Dairy Development"
                 fill
-                className="object-cover opacity-50 mix-blend-overlay group-hover:scale-105 transition-transform duration-700 ease-out grayscale group-hover:grayscale-0"
+                className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-900/20 transition-opacity duration-500 group-hover:opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent transition-opacity duration-500 group-hover:opacity-80"></div>
               <div className="relative z-10 p-8 md:p-10 pt-32 transform transition-transform duration-500 group-hover:-translate-y-2">
                 <p className="text-yellow-500 text-xs font-bold tracking-widest uppercase mb-3">Dairy Development Policy 2022</p>
                 <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight tracking-tight text-white group-hover:text-yellow-400 transition-colors">
