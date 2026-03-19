@@ -219,7 +219,7 @@ export function SubsidyBento() {
               className="group relative flex min-h-[480px] flex-grow flex-col justify-end overflow-hidden rounded-[2rem] bg-slate-900 text-white shadow-lg shadow-slate-900/10"
             >
               <Image
-                src="/subsidy/dairy.jfif"
+                src="https://images.pexels.com/photos/5216140/pexels-photo-5216140.jpeg"
                 alt="Dairy Development"
                 fill
                 className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105"

@@ -56,7 +56,7 @@ export default function DairyDevelopmentPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="/subsidy/dairy.jfif"
+                src="https://images.pexels.com/photos/5216140/pexels-photo-5216140.jpeg"
                 alt="Nand Baba Dairy Mission"
                 fill
                 className="object-cover"
