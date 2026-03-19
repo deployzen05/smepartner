@@ -9,10 +9,9 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const bgImages = [
-  '/sub-1.png',
-  '/sub-2.png',
-  '/sub-3.png',
-  '/sub-4.png',
+  '/subsidy.jpg',
+  '/subsidy/msme.png',
+  '/subsidy/up-tourism.jpg',
 ];
 
 export function SubsidyHero() {
@@ -53,11 +52,11 @@ export function SubsidyHero() {
             initial={{ opacity: idx === 0 ? 1 : 0, scale: 1.1 }}
             animate={{
               opacity: bgIndex === idx ? 1 : 0,
-              scale: bgIndex === idx ? 1 : 1.1
+              scale: bgIndex === idx ? 1 : 1.1,
             }}
             transition={{
               opacity: { duration: 1.5, ease: 'easeInOut' },
-              scale: { duration: 5, ease: 'easeOut' }
+              scale: { duration: 5, ease: 'easeOut' },
             }}
           >
             <Image
@@ -86,14 +85,14 @@ export function SubsidyHero() {
         >
           <motion.div variants={item}>
             <Badge className="mb-6 border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-orange-400 backdrop-blur-md">
-              <span className="mr-2 inline-block h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
-              Authorized UPNEDA Vendor
+              <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-orange-500" />
+              Registered IIA
             </Badge>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="mb-6 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1]"
+            className="font-display mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Experience the Power of
             <br />
@@ -104,26 +103,32 @@ export function SubsidyHero() {
 
           <motion.p
             variants={item}
-            className="mb-10 max-w-xl text-left text-lg font-light leading-relaxed text-slate-300 sm:text-xl"
+            className="mb-10 max-w-xl text-left text-lg leading-relaxed font-light text-slate-300 sm:text-xl"
           >
-            Unlock up to <strong className="font-semibold text-white">90% capital subsidy</strong> with SME Partner. We manage all
-            documentation and coordination for industries and homes across UP.
+            Unlock up to{' '}
+            <strong className="font-semibold text-white">
+              90% capital subsidy
+            </strong>{' '}
+            with SME Partner. We manage all documentation and coordination for
+            industries and homes across UP.
           </motion.p>
 
-          <motion.div variants={item} className="mb-12 flex flex-col gap-4 sm:flex-row sm:gap-8">
+          <motion.div
+            variants={item}
+            className="mb-12 flex flex-col gap-4 sm:flex-row sm:gap-8"
+          >
             {[
-              { icon: FileText, text: 'UPNEDA Authorized' },
+              { icon: FileText, text: 'Registered IIA' },
               { icon: IndianRupee, text: 'Up to 90% Subsidy' },
               { icon: ShieldCheck, text: 'End-to-End Docs' },
             ].map((f, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 text-slate-300"
-              >
+              <div key={i} className="flex items-center gap-3 text-slate-300">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
                   <f.icon className="h-4 w-4 text-orange-400" />
                 </div>
-                <span className="text-sm font-medium tracking-wide uppercase">{f.text}</span>
+                <span className="text-sm font-medium tracking-wide uppercase">
+                  {f.text}
+                </span>
               </div>
             ))}
           </motion.div>
@@ -134,7 +139,7 @@ export function SubsidyHero() {
               className="group relative overflow-hidden rounded-full bg-orange-500 px-10 py-7 text-lg font-semibold tracking-wide text-white shadow-[0_0_40px_-10px_rgba(249,115,22,0.5)] transition-all hover:scale-105 hover:bg-orange-600"
             >
               <Link href="/enquire">
-                <span className="relative z-10">Claim Your Subsidy</span>
+                <span className="relative z-10">Request a Consultation</span>
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
               </Link>
             </Button>
@@ -147,10 +152,11 @@ export function SubsidyHero() {
                 key={idx}
                 onClick={() => setBgIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${bgIndex === idx
-                  ? 'w-8 bg-orange-400'
-                  : 'w-2 bg-white/40 hover:bg-white/70'
-                  }`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  bgIndex === idx
+                    ? 'w-8 bg-orange-400'
+                    : 'w-2 bg-white/40 hover:bg-white/70'
+                }`}
               />
             ))}
           </motion.div>

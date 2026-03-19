@@ -14,13 +14,6 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
-
-
-
-
-
-
-
 const features = [
   {
     Icon: Home,
@@ -29,7 +22,7 @@ const features = [
       'Rooftop solar solutions for homes under PM Surya Ghar Yojana with central & state subsidy assistance and bank finance options.',
     href: '/solar/services/residential',
     cta: 'Know more',
-    imgSrc: "/service-residential.png",
+    imgSrc: '/service-residential.png',
   },
   {
     Icon: Building2,
@@ -38,7 +31,7 @@ const features = [
       'Customized solar EPC solutions for hospitals, hotels, cold storages, and commercial establishments with long-term ROI focus.',
     href: '/solar/services/commercial',
     cta: 'Know more',
-    imgSrc: "/service-commercial.png",
+    imgSrc: '/service-commercial.webp',
   },
   {
     Icon: Factory,
@@ -47,7 +40,7 @@ const features = [
       'Solar power plants for MSMEs and food processing units with eligibility-based capital subsidy support and compliance handling.',
     href: '/solar/services/industrial',
     cta: 'Know more',
-    imgSrc: "/service-industrial.png",
+    imgSrc: '/service-industrial.jpg',
   },
   {
     Icon: Droplets,
@@ -56,17 +49,17 @@ const features = [
       'Solar-powered pumping solutions for agriculture and industrial use, reducing dependency on grid electricity.',
     href: '/solar/services/pumps',
     cta: 'Know more',
-    imgSrc: "/service-pump.png",
+    imgSrc: '/service-pump.png',
   },
-  {
-    Icon: Wallet,
-    name: 'Industrial Subsidy Consultancy',
-    description:
-      'Consultancy services for capital subsidy, mandi tax exemption, MSME benefits, and project finance across eligible sectors.',
-    href: '/subsidy',
-    cta: 'Know more',
-    imgSrc: "/service-subsidy.png",
-  },
+  // {
+  //   Icon: Wallet,
+  //   name: 'Industrial Subsidy Consultancy',
+  //   description:
+  //     'Consultancy services for capital subsidy, mandi tax exemption, MSME benefits, and project finance across eligible sectors.',
+  //   href: '/subsidy',
+  //   cta: 'Know more',
+  //   imgSrc: "/service-subsidy.png",
+  // },
   {
     Icon: Zap,
     name: 'Operations & Maintenance',
@@ -74,10 +67,9 @@ const features = [
       'Long-term operation and maintenance services to ensure consistent generation and system performance.',
     href: '/solar/services/operations',
     cta: 'Know more',
-    imgSrc: "/service-maintenance.jpg",
+    imgSrc: '/service-maintenance.jpg',
   },
 ];
-
 
 export function WhatWeOfferGrid() {
   return (
@@ -93,7 +85,7 @@ export function WhatWeOfferGrid() {
             delay: idx * 0.1,
             ease: [0.21, 0.47, 0.32, 0.98],
           }}
-          className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-slate-100 p-6 transition-all duration-300 hover:border-orange-200 hover:shadow-xl"
+          className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 hover:border-orange-200 hover:shadow-xl"
         >
           <div className="relative z-10 flex h-full flex-col justify-between gap-6">
             <div>
@@ -101,7 +93,7 @@ export function WhatWeOfferGrid() {
                 <feature.Icon className="h-5 w-5 text-zinc-600 transition-colors duration-300 group-hover:text-orange-600" />
               </div>
 
-              <h3 className="mb-2 text-lg font-bold leading-tight text-slate-900">
+              <h3 className="mb-2 text-lg leading-tight font-bold text-slate-900">
                 {feature.name}
               </h3>
 
@@ -123,7 +115,6 @@ export function WhatWeOfferGrid() {
                   src={feature.imgSrc}
                   alt={feature.name}
                   fill
-                  
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-all duration-500 group-hover:scale-105 group-hover:saturate-125"
                 />

@@ -4,6 +4,7 @@ import './globals.css';
 import { ScrollToTop } from '@/components/common/scroll-to-top';
 import { ScrollProgress } from '@/components/common/scroll-progress';
 import ClickSpark from '@/components/ClickSpark';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -83,13 +84,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'SME Partner - Leading Solar Energy Solution Provider in UP',
-    description:
-      'Empowering businesses and homes with sustainable solar energy solutions. Authorized UPNEDA vendor offering subsidies and financing.',
 
-  },
   robots: {
     index: true,
     follow: true,
@@ -162,6 +157,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <Toaster />
       </body>
     </html>
   );

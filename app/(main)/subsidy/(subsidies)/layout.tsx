@@ -1,7 +1,7 @@
 'use client';
 
 import { SubsidyNavbar } from '@/components/subsidy/subsidy-navbar';
-import { SubsidyFooter } from '@/components/subsidy/subsidy-footer';
+import { Footer } from '@/components/common/footer';
 import { SubsidyCTA } from '@/components/subsidy/subsidy-cta';
 import { BreadcrumbSection } from '@/components/common/breadcrumb-section';
 import { usePathname } from 'next/navigation';
@@ -41,7 +41,7 @@ export default function SubsidiesLayout({
   return (
     <div className="min-h-screen bg-slate-50">
       <SubsidyNavbar />
-      <div className="w-full h-24" />
+      <div className="h-24 w-full" />
       <BreadcrumbSection
         className="pb-8 md:pb-12"
         title={title}
@@ -51,7 +51,7 @@ export default function SubsidiesLayout({
       {children}
 
       <SubsidyCTA />
-      <SubsidyFooter />
+      <Footer />
     </div>
   );
 }

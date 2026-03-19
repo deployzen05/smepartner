@@ -41,7 +41,6 @@ import {
 import Image from 'next/image';
 import LogoImage from '@/public/logo.jpeg';
 
-
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
@@ -79,7 +78,7 @@ export function Navbar() {
       href: '/solar/services/operations',
       description: 'Long-term operation and maintenance services',
       icon: Zap,
-    }
+    },
   ];
 
   const ListItem = React.forwardRef<
@@ -121,13 +120,7 @@ export function Navbar() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between xl:h-20">
           <Link href="/" className="group flex items-center gap-2.5">
             <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/20 transition-transform group-hover:scale-105">
-              <Image
-                src={LogoImage}
-                alt="Logo"
-                width={56}
-                height={56}
-                
-              />
+              <Image src={LogoImage} alt="Logo" width={56} height={56} />
             </div>
           </Link>
 
@@ -147,6 +140,25 @@ export function Navbar() {
               About
               <span className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-full dark:bg-orange-500" />
             </Link>
+
+            {isHomePage && (
+              <>
+                <Link
+                  href="/solar"
+                  className="group relative flex items-center py-2 text-sm font-medium text-slate-600 transition-colors hover:text-orange-600 dark:text-slate-300 dark:hover:text-orange-400"
+                >
+                  Solar
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-full dark:bg-orange-500" />
+                </Link>
+                <Link
+                  href="/subsidy"
+                  className="group relative flex items-center py-2 text-sm font-medium text-slate-600 transition-colors hover:text-orange-600 dark:text-slate-300 dark:hover:text-orange-400"
+                >
+                  Subsidy
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-orange-600 transition-all duration-300 group-hover:w-full dark:bg-orange-500" />
+                </Link>
+              </>
+            )}
 
             <NavigationMenu>
               <NavigationMenuList>
@@ -184,7 +196,7 @@ export function Navbar() {
             >
               <Link href="/enquire">Enquiry</Link>
             </Button>
-            {!isHomePage && (
+            {
               <Button asChild variant="outline-brand" className="h-11 px-8">
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=128/758,+Krishna+Rama+Chandra+Apartment,+K-Block,+Kidwai+Nagar,+Kanpur+-+208011"
@@ -194,7 +206,7 @@ export function Navbar() {
                   Locate Us
                 </a>
               </Button>
-            )}
+            }
           </div>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -245,6 +257,27 @@ export function Navbar() {
                       About
                       <ArrowRight className="h-4 w-4 text-slate-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-slate-500" />
                     </Link>
+
+                    {isHomePage && (
+                      <>
+                        <Link
+                          href="/solar"
+                          onClick={() => setIsOpen(false)}
+                          className="group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-slate-900 transition-colors hover:bg-orange-50 hover:text-orange-600 dark:text-slate-100 dark:hover:bg-orange-950/30 dark:hover:text-orange-400"
+                        >
+                          Solar
+                          <ArrowRight className="h-4 w-4 text-slate-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-slate-500" />
+                        </Link>
+                        <Link
+                          href="/subsidy"
+                          onClick={() => setIsOpen(false)}
+                          className="group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-slate-900 transition-colors hover:bg-orange-50 hover:text-orange-600 dark:text-slate-100 dark:hover:bg-orange-950/30 dark:hover:text-orange-400"
+                        >
+                          Subsidy
+                          <ArrowRight className="h-4 w-4 text-slate-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-slate-500" />
+                        </Link>
+                      </>
+                    )}
 
                     <Accordion type="single" collapsible className="w-full">
                       {!isHomePage && (

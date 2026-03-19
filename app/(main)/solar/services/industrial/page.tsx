@@ -41,24 +41,21 @@ export default function IndustrialPage() {
               </p>
 
               <p className="text-base leading-relaxed text-slate-600">
-                We specialize in solar projects for <strong>Rice Mills, Cold
-                Storages, Atta Chakkis (Flour Mills)</strong>, textile units,
-                and other eligible industrial sectors, supporting clients
-                through eligibility assessment, documentation, approvals,
-                and execution.
+                We specialize in solar projects for{' '}
+                <strong>Rice Mills, Atta Chakkis (Flour Mills)</strong>, textile
+                units, and other eligible industrial sectors, supporting clients
+                through eligibility assessment, documentation, approvals, and
+                execution.
               </p>
 
               <ul className="space-y-4">
                 {[
-                  'Subsidy assistance for food processing units (as per applicable schemes)',
-                  'Support for MSME incentives and industrial policies',
-                  'Guidance on mandi tax exemption where applicable',
-                  'CAPEX and OPEX models based on project feasibility',
+                  'Subsidy assistance over solar installation in food processing units (as per applicable schemes)',
+                  'Support for industrial solar installation',
+                  'Project Finance available from SIDBI',
+                  'Hassle free process from documentation to installation',
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
+                  <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 text-orange-600" />
                     <span>{item}</span>
                   </li>
@@ -67,13 +64,12 @@ export default function IndustrialPage() {
 
               <div className="pt-4">
                 <Button
-                      size="lg"
-                      className="bg-orange-600 px-8 font-bold text-white hover:bg-orange-700"
-                    asChild>
-                      <Link href="/enquiry">
-                        Check Eligibility & Feasibility
-                      </Link> 
-                    </Button>
+                  size="lg"
+                  className="bg-orange-600 px-8 font-bold text-white hover:bg-orange-700"
+                  asChild
+                >
+                  <Link href="/enquiry">Check Eligibility & Feasibility</Link>
+                </Button>
               </div>
             </div>
 

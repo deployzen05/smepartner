@@ -44,10 +44,7 @@ export default function CommercialPage() {
                   'Improved energy cost efficiency over long-term operation',
                   'Customized system sizing based on site assessment',
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
+                  <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 text-orange-600" />
                     <span>{item}</span>
                   </li>
@@ -55,24 +52,20 @@ export default function CommercialPage() {
               </ul>
 
               <div className="pt-4">
-                
-                    <Button
-                      size="lg"
-                      className="bg-orange-600 px-8 font-bold text-white hover:bg-orange-700"
-                    asChild
-                    >
-                      <Link href="/enquiry">
-                      Request a Consultation
-                      </Link>
-                    </Button>
-                  
+                <Button
+                  size="lg"
+                  className="bg-orange-600 px-8 font-bold text-white hover:bg-orange-700"
+                  asChild
+                >
+                  <Link href="/enquiry">Request a Consultation</Link>
+                </Button>
               </div>
             </div>
 
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="/service-commercial.png"
+                src="/service-commercial.webp"
                 alt="Commercial rooftop solar installation"
                 fill
                 className="object-cover"

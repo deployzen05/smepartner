@@ -26,7 +26,7 @@ export function HeroSection() {
     'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1600&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=1600&auto=format&fit=crop',
+    'https://images.pexels.com/photos/9799766/pexels-photo-9799766.jpeg',
   ];
 
   const [bgIndex, setBgIndex] = React.useState(0);
@@ -60,7 +60,6 @@ export function HeroSection() {
               fill
               priority={idx === 0}
               sizes="100vw"
-              
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
               className="object-cover"
             />
@@ -85,9 +84,9 @@ export function HeroSection() {
             </Badge>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             variants={item}
-            className="mb-4 text-left text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+            className="mb-4 text-left text-2xl leading-tight font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl"
           >
             Empowering Your Business with
             <br />
@@ -96,7 +95,7 @@ export function HeroSection() {
             </span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             variants={item}
             className="mb-6 max-w-xl text-left text-base text-slate-200 sm:text-lg"
           >
@@ -109,7 +108,10 @@ export function HeroSection() {
           <motion.div variants={item} className="mb-8 flex flex-wrap gap-3">
             {[
               { icon: Zap, text: 'PM Surya Ghar Yojana Support' },
-              { icon: ShieldCheck, text: '30 Years Panel Life' },
+              {
+                icon: ShieldCheck,
+                text: '30 Years Panel Performance Warranty',
+              },
               { icon: FileText, text: 'Up to 90% Subsidy Assistance' },
             ].map((f, i) => (
               <div

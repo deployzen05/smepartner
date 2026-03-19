@@ -22,8 +22,8 @@ export default function TechUpgradationPage() {
               </h1>
 
               <p className="text-lg leading-relaxed text-slate-600">
-                Designed to encourage MSMEs to adopt modern machinery, green 
-                technologies, and renewable energy. This scheme offers targeted 
+                Designed to encourage MSMEs to adopt modern machinery, green
+                technologies, and renewable energy. This scheme offers targeted
                 financial assistance to lower the cost of capital improvements.
               </p>
 
@@ -34,10 +34,7 @@ export default function TechUpgradationPage() {
                   'RAMP Programme: Extra 15% subsidy for active technology upgrades.',
                   'Preferences: Given to Green tech, Solar energy, and Women-owned MSMEs.',
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
+                  <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange-600" />
                     <span>{item}</span>
                   </li>
@@ -58,7 +55,7 @@ export default function TechUpgradationPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="/subsidy/tech-upgradation.png"
+                src="/subsidy/tech.webp"
                 alt="Technology Upgradation Facility"
                 fill
                 className="object-cover"

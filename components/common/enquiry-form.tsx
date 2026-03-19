@@ -13,23 +13,17 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+// Removed select imports
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { User, Mail, Globe } from 'lucide-react';
+import { User, Mail, MapPin } from 'lucide-react';
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Name is required'),
   email: z.string().email('Invalid email address'),
-  country: z.string().min(1, 'Country is required'),
+  pinCode: z.string().regex(/^\d{6}$/, 'Valid 6-digit pin code is required'),
   phone: z.string().min(5, 'Phone number is required'),
   requirements: z.string().optional(),
 });
@@ -40,7 +34,7 @@ export function EnquiryForm() {
     defaultValues: {
       fullName: '',
       email: '',
-      country: 'in',
+      pinCode: '',
       phone: '',
       requirements: '',
     },
@@ -48,7 +42,7 @@ export function EnquiryForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    toast.success('Demo Scheduled!', {
+    toast.success('Consultation Scheduled!', {
       description: 'Our team will be in touch shortly.',
     });
     form.reset();
@@ -63,10 +57,10 @@ export function EnquiryForm() {
     >
       <div className="mb-8 text-center">
         <h2 className="text-2xl font-bold text-orange-600 md:text-3xl">
-          Schedule a Demo
+          Schedule a Consultation
         </h2>
         <p className="mt-2 text-slate-500">
-          Get a personalized walkthrough of our platform
+          Get expert guidance on our services and policies
         </p>
       </div>
 
@@ -85,7 +79,7 @@ export function EnquiryForm() {
                     <div className="relative">
                       <User className="absolute top-3 left-3 h-4 w-4 text-slate-400" />
                       <Input
-                        placeholder="John Doe"
+                        placeholder="Enter your full name"
                         {...field}
                         className="h-11 border-slate-200 bg-slate-50 pl-10 transition-colors focus:bg-white"
                       />
@@ -108,7 +102,7 @@ export function EnquiryForm() {
                     <div className="relative">
                       <Mail className="absolute top-3 left-3 h-4 w-4 text-slate-400" />
                       <Input
-                        placeholder="john@company.com"
+                        placeholder="Enter your email"
                         {...field}
                         className="h-11 border-slate-200 bg-slate-50 pl-10 transition-colors focus:bg-white"
                       />
@@ -123,30 +117,23 @@ export function EnquiryForm() {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <FormField
               control={form.control}
-              name="country"
+              name="pinCode"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-xs font-bold tracking-wide text-slate-700 uppercase">
-                    Country
+                    Pin Code
                   </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <div className="relative">
-                        <Globe className="absolute top-3 left-3 z-10 h-4 w-4 text-slate-400" />
-                        <SelectTrigger className="h-11 border-slate-200 bg-slate-50 pl-10 focus:bg-white">
-                          <SelectValue placeholder="Select Country" />
-                        </SelectTrigger>
-                      </div>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="in">India (भारत)</SelectItem>
-                      <SelectItem value="us">United States</SelectItem>
-                      <SelectItem value="uk">United Kingdom</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <FormControl>
+                    <div className="relative">
+                      <MapPin className="absolute top-3 left-3 h-4 w-4 text-slate-400" />
+                      <Input
+                        placeholder="208001"
+                        {...field}
+                        className="h-11 border-slate-200 bg-slate-50 pl-10 transition-colors focus:bg-white"
+                        maxLength={6}
+                      />
+                    </div>
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -206,7 +193,7 @@ export function EnquiryForm() {
             type="submit"
             className="mt-6 h-12 w-full rounded-lg bg-[#ffd563] text-sm font-bold tracking-wide text-black uppercase shadow-md transition-all hover:bg-[#ffca28] hover:shadow-lg active:translate-y-0.5"
           >
-            Schedule a Demo
+            Schedule a Consultation
           </Button>
         </form>
       </Form>

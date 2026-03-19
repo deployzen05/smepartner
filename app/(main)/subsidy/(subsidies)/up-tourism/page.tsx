@@ -22,9 +22,10 @@ export default function UpTourismPage() {
               </h1>
 
               <p className="text-lg leading-relaxed text-slate-600">
-                The Uttar Pradesh Tourism Policy provides large-scale capital subsidies 
-                to boost tourism infrastructure, hotels, wellness centers, and resorts, 
-                recognizing the state's vast spiritual and cultural tourism potential.
+                The Uttar Pradesh Tourism Policy provides large-scale capital
+                subsidies to boost tourism infrastructure, hotels, wellness
+                centers, and resorts, recognizing the state's vast spiritual and
+                cultural tourism potential.
               </p>
 
               <ul className="space-y-4">
@@ -34,10 +35,7 @@ export default function UpTourismPage() {
                   'Interest Subsidy: 5% interest subsidy for 5 years on loans up to ₹5 Crore.',
                   'Max Limit: Total incentives cannot exceed 30% of the project cost.',
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
+                  <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange-600" />
                     <span>{item}</span>
                   </li>
@@ -58,7 +56,7 @@ export default function UpTourismPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="/subsidy/up-tourism.png"
+                src="/subsidy/up-tourism.jpg"
                 alt="Uttar Pradesh Tourism and Wellness"
                 fill
                 className="object-cover"

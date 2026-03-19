@@ -2,39 +2,57 @@ import { Metadata } from 'next';
 import { EnquiryForm } from '@/components/common/enquiry-form';
 import Image from 'next/image';
 import { Sparkles } from 'lucide-react';
+import { BackButton } from '@/components/common/back-button';
 
 export const metadata: Metadata = {
-  title: 'Enquire Now - Schedule a Demo',
+  title: 'Enquire Now - Schedule a Consultation',
   description:
-    'Contact SME Partner for your solar requirements. Schedule a demo or get a customized quote for residential, commercial, or industrial solar.',
+    'Contact SME Partner for your solar and subsidy requirements. Schedule a consultation or get a customized quote for your industrial or residential projects.',
 };
 
 export default function EnquirePage() {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-[#0a1128]">
       <section className="py-16 md:py-24">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="mb-16 text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-100 bg-orange-50 px-4 py-1 text-sm font-semibold tracking-wider text-orange-600 uppercase">
-              <Sparkles className="h-4 w-4" />
-              YOUR ENQUIRIES
-            </div>
-            <h1 className="text-3xl font-bold text-orange-600 md:text-5xl">
-              Explore Your Enquiries with Us
-            </h1>
-          </div>
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Left Column */}
+            <div className="flex flex-col justify-center">
+              <BackButton />
+              <div className="mb-6 inline-flex items-center gap-2 self-start rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-sm font-semibold tracking-wider text-cyan-400 uppercase">
+                <Sparkles className="h-4 w-4" />
+                YOUR ENQUIRIES
+              </div>
+              <h1 className="mb-6 text-4xl leading-tight font-bold text-white md:text-5xl lg:text-6xl">
+                Explore Your <br />
+                <span className="text-cyan-400">Enquiries</span> with Us
+              </h1>
+              <p className="mb-10 text-lg leading-relaxed text-slate-300">
+                Contact SME Partner for your solar and subsidy requirements.
+                Schedule a consultation or get a customized quote for your
+                residential, commercial, or industrial projects.
+              </p>
 
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-20">
-            <div className="relative aspect-square min-h-[400px] w-full overflow-hidden rounded-3xl shadow-lg lg:aspect-auto lg:h-full">
-              <Image
-                src="https://plus.unsplash.com/premium_photo-1661540692683-524469fae479?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Enquiry Support"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+              <div className="relative mt-8 w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="https://images.pexels.com/photos/7709257/pexels-photo-7709257.jpeg"
+                    alt="Enquiry Support"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                {/* Bottom Banner */}
+                <div className="absolute right-0 bottom-0 left-0 bg-[#00AEEF] py-4 text-center">
+                  <p className="text-lg font-bold text-white md:text-xl">
+                    Uttar Pradesh's Trusted Solar & Subsidy Partner*
+                  </p>
+                </div>
+              </div>
             </div>
 
+            {/* Right Column */}
             <div className="w-full">
               <EnquiryForm />
             </div>

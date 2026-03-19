@@ -42,10 +42,10 @@ export function ReadyToGoSolar() {
           {/* Images */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              'photo-1509391366360-2e959784a276',
-              'photo-1624397640148-949b1732bb0a',
-              'photo-1497435334941-8c899ee9e8e9',
-              'photo-1548337138-e87d889cc369',
+              'https://images.pexels.com/photos/4254166/pexels-photo-4254166.jpeg',
+              'https://images.pexels.com/photos/6040783/pexels-photo-6040783.jpeg',
+              'https://images.pexels.com/photos/28321970/pexels-photo-28321970.jpeg',
+              'https://images.pexels.com/photos/7211069/pexels-photo-7211069.jpeg',
             ].map((id, idx) => (
               <motion.div
                 key={id}
@@ -56,7 +56,7 @@ export function ReadyToGoSolar() {
                 className="relative aspect-square overflow-hidden rounded-2xl shadow-md"
               >
                 <Image
-                  src={`https://images.unsplash.com/${id}?q=80&w=800&auto=format&fit=crop`}
+                  src={id}
                   alt="Solar project execution by SME Partner"
                   fill
                   className="object-cover"

@@ -6,7 +6,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'PMFME Scheme',
-  description: 'Details on the PM formalization of Micro Food Processing Enterprises (PMFME) scheme in Uttar Pradesh.',
+  description:
+    'Details on the PM formalization of Micro Food Processing Enterprises (PMFME) scheme in Uttar Pradesh.',
 };
 
 export default function PmfmeSchemePage() {
@@ -22,9 +23,10 @@ export default function PmfmeSchemePage() {
               </h1>
 
               <p className="text-lg leading-relaxed text-slate-600">
-                The PM Formalisation of Micro food processing Enterprises (PMFME) scheme 
-                is designed to address the challenges faced by micro enterprises and 
-                support their upgradation and formalization.
+                The PM Formalisation of Micro food processing Enterprises
+                (PMFME) scheme is designed to address the challenges faced by
+                micro enterprises and support their upgradation and
+                formalization.
               </p>
 
               <ul className="space-y-4">
@@ -34,10 +36,7 @@ export default function PmfmeSchemePage() {
                   'Financial Structure: Minimum 10% beneficiary contribution required.',
                   'Eligible Infrastructure: Ready-built worksheds and lease/rental worksheds.',
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
+                  <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange-600" />
                     <span>{item}</span>
                   </li>
@@ -58,7 +57,7 @@ export default function PmfmeSchemePage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="/subsidy/pmfme.png"
+                src="/subsidy/pmfme.jpg"
                 alt="Micro Food Processing Enterprise"
                 fill
                 className="object-cover"

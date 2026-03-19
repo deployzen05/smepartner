@@ -1,14 +1,6 @@
 'use client';
 
-import {
-  Mail,
-  Phone,
-  Clock,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-} from 'lucide-react';
+import { Mail, Phone, Clock, Facebook, Instagram } from 'lucide-react';
 
 export function TopHeader() {
   return (
@@ -16,7 +8,7 @@ export function TopHeader() {
       <div className="flex w-full flex-col flex-wrap items-center gap-2 text-center sm:w-auto sm:flex-row sm:gap-6 sm:text-left">
         <span className="flex items-center gap-2 transition-colors hover:text-white">
           <Clock className="h-3.5 w-3.5 text-orange-500" />
-          <span>Mon-Sat: 9:00am - 6:00pm</span>
+          <span>Mon-Sat: 10:00am - 7:00pm</span>
         </span>
         <a
           href="mailto:smepartner01@gmail.com"
@@ -24,6 +16,13 @@ export function TopHeader() {
         >
           <Mail className="h-3.5 w-3.5 text-orange-500" />
           <span>smepartner01@gmail.com</span>
+        </a>
+        <a
+          href="mailto:smesolarsolution@gmail.com"
+          className="flex items-center gap-2 transition-colors hover:text-white"
+        >
+          <Mail className="h-3.5 w-3.5 text-orange-500" />
+          <span>smesolarsolution@gmail.com</span>
         </a>
         <a
           href="tel:+919169478991"
@@ -39,10 +38,17 @@ export function TopHeader() {
           <Phone className="h-3.5 w-3.5 text-orange-500" />
           <span>+91 91402 99799</span>
         </a>
+        <a
+          href="tel:+918828245701"
+          className="flex items-center gap-2 transition-colors hover:text-white"
+        >
+          <Phone className="h-3.5 w-3.5 text-orange-500" />
+          <span>+91 88282 45701</span>
+        </a>
       </div>
       <div className="flex items-center gap-4">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/people/SME-Solar-Solutions/61586248106545/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -50,26 +56,9 @@ export function TopHeader() {
         >
           <Facebook className="h-4 w-4" />
         </a>
+
         <a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-          className="text-slate-400 transition-colors hover:text-orange-500"
-        >
-          <Twitter className="h-4 w-4" />
-        </a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="text-slate-400 transition-colors hover:text-orange-500"
-        >
-          <Linkedin className="h-4 w-4" />
-        </a>
-        <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/smesolarsolutions?igsh=MTNtemhmc2tiZjAxaw%3D%3D&utm_source=ig_contact_invite"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"

@@ -22,9 +22,10 @@ export default function DairyDevelopmentPage() {
               </h1>
 
               <p className="text-lg leading-relaxed text-slate-600">
-                The Dairy Development Policy 2022 aims to strengthen the entire dairy 
-                value chain in Uttar Pradesh, from establishing new processing plants 
-                and expanding existing capacities to supporting cold chain infrastructure.
+                The Dairy Development Policy 2022 aims to strengthen the entire
+                dairy value chain in Uttar Pradesh, from establishing new
+                processing plants and expanding existing capacities to
+                supporting cold chain infrastructure.
               </p>
 
               <ul className="space-y-4">
@@ -34,10 +35,7 @@ export default function DairyDevelopmentPage() {
                   'Value Addition: Subsidies for MSME units crafting cheese, ice cream, etc.',
                   'Infrastructure: Incentives for cattle feed units and cold chain development.',
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
+                  <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange-600" />
                     <span>{item}</span>
                   </li>
@@ -58,7 +56,7 @@ export default function DairyDevelopmentPage() {
             {/* Image */}
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/3]">
               <Image
-                src="/subsidy/dairy.png"
+                src="/subsidy/dairy.jfif"
                 alt="Nand Baba Dairy Mission"
                 fill
                 className="object-cover"

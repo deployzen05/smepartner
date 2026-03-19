@@ -1,14 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {
-  Facebook,
-  Linkedin,
-  Instagram,
-  MapPin,
-  Phone,
-  Mail,
-} from 'lucide-react';
+import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -32,7 +25,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative z-20 overflow-hidden bg-white pt-16 md:pt-24 pb-8 shadow-[0_-5px_30px_rgba(0,0,0,0.02)]">
+    <footer className="relative z-20 overflow-hidden bg-white pt-16 pb-8 shadow-[0_-5px_30px_rgba(0,0,0,0.02)] md:pt-24">
       <div className="mx-auto max-w-7xl px-4">
         <motion.div
           variants={container}
@@ -58,37 +51,40 @@ export function Footer() {
                   SME PARTNER
                 </span>
                 <span className="text-xs font-bold tracking-widest text-orange-500 uppercase">
-                  Solar & Industrial Consultancy
+                  Industrial Subsidy Consultant & Solar EPC Vendor
                 </span>
               </div>
             </Link>
 
             <p className="mb-6 pr-4 leading-relaxed text-slate-500">
-              SME PARTNER is an industrial consultancy and solar EPC company
-              established in 2015. We provide government subsidy assistance,
-              project finance support, and solar power solutions across Uttar
-              Pradesh.
+              SME PARTNER is an industrial subsidy consultant and solar EPC
+              company established in 2015. We provide government subsidy
+              assistance, project finance support, and solar power solutions
+              across Uttar Pradesh.
             </p>
 
             <p className="mb-8 text-sm text-slate-500">
-              Authorized UPNEDA Vendor · IIA & SIDBI Partner
+              Authorized UPNEDA Vendor
+              <br />
+              Registed in IIA
+              <br />
+              SIDBI Partner for Industrial Project Finance
             </p>
 
             <div className="flex gap-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/people/SME-Solar-Solutions/61586248106545/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-blue-600 hover:text-white"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
+
               <Link
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-blue-700 hover:text-white"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/smesolarsolutions?igsh=MTNtemhmc2tiZjAxaw%3D%3D&utm_source=ig_contact_invite"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-pink-600 hover:text-white"
               >
                 <Instagram className="h-5 w-5" />
@@ -110,31 +106,43 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="transition hover:text-orange-500"
                 >
-                  128/758, Krishna Rama Chandra Apartment, K-Block, Kidwai Nagar,
-                  Kanpur, Uttar Pradesh – 208011
+                  128/758, Krishna Rama Chandra Apartment, K-Block, Kidwai
+                  Nagar, Kanpur, Uttar Pradesh – 208011
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-slate-400" />
-                <a href="tel:+919169478991" className="transition hover:text-orange-500">
+                <a
+                  href="tel:+919169478991"
+                  className="transition hover:text-orange-500"
+                >
                   +91 9169478991
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-slate-400" />
-                <a href="tel:+919140299799" className="transition hover:text-orange-500">
+                <a
+                  href="tel:+919140299799"
+                  className="transition hover:text-orange-500"
+                >
                   +91 9140299799
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-slate-400" />
-                <a href="tel:+918828245701" className="transition hover:text-orange-500">
+                <a
+                  href="tel:+918828245701"
+                  className="transition hover:text-orange-500"
+                >
                   +91 8828245701
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-slate-400" />
-                <a href="mailto:smesolarsolution@gmail.com" className="transition hover:text-orange-500">
+                <a
+                  href="mailto:smesolarsolution@gmail.com"
+                  className="transition hover:text-orange-500"
+                >
                   smesolarsolution@gmail.com
                 </a>
               </li>
@@ -142,25 +150,40 @@ export function Footer() {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div variants={item} className={isHomePage ? "lg:col-span-4" : "lg:col-span-2"}>
+          <motion.div
+            variants={item}
+            className={isHomePage ? 'lg:col-span-4' : 'lg:col-span-2'}
+          >
             <h3 className="mb-6 text-xl font-bold text-slate-900">
               Quick Links
             </h3>
             <ul className="space-y-3">
               {(isHomePage
                 ? [
-                  { label: 'Terms & Conditions', href: '#' },
-                  { label: 'Privacy Policy', href: '#' },
-                ]
+                    { label: 'Terms & Conditions', href: '#' },
+                    { label: 'Privacy Policy', href: '#' },
+                  ]
                 : [
-                  { label: 'Residential Solar', href: '/solar/services/residential' },
-                  { label: 'Commercial Solar', href: '/solar/services/commercial' },
-                  { label: 'Industrial Solar', href: '/solar/services/industrial' },
-                  { label: 'Solar Water Pumps', href: '/solar/services/pumps' },
-                  { label: 'Subsidy Consultancy', href: '/subsidy' },
-                  { label: 'Terms & Conditions', href: '#' },
-                  { label: 'Privacy Policy', href: '#' },
-                ]
+                    {
+                      label: 'Residential Solar',
+                      href: '/solar/services/residential',
+                    },
+                    {
+                      label: 'Commercial Solar',
+                      href: '/solar/services/commercial',
+                    },
+                    {
+                      label: 'Industrial Solar',
+                      href: '/solar/services/industrial',
+                    },
+                    {
+                      label: 'Solar Water Pumps',
+                      href: '/solar/services/pumps',
+                    },
+                    { label: 'Subsidy Consultancy', href: '/subsidy' },
+                    { label: 'Terms & Conditions', href: '#' },
+                    { label: 'Privacy Policy', href: '#' },
+                  ]
               ).map((link) => (
                 <li key={link.label}>
                   <Link

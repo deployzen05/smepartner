@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
-
 export function SubsidyAbout() {
   return (
     <section
@@ -22,22 +21,12 @@ export function SubsidyAbout() {
           >
             <div className="relative aspect-video w-full max-w-lg overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
               <Image
-                src="/sub-2.png"
+                src="/subsidy.jpg"
                 alt="Solar Subsidy Expertise"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/10" />
-            </div>
-
-            <div className="absolute -bottom-8 -left-16 z-30 hidden md:block">
-              <Image
-                src="/solar.png"
-                alt="Solar Icon"
-                width={140}
-                height={140}
-                priority
-              />
             </div>
           </motion.div>
 

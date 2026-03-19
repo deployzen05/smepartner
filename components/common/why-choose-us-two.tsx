@@ -20,15 +20,15 @@ export function WhyChooseUsTwo() {
               </span>
             </div>
 
-            <h2 className="mb-6 text-3xl font-bold leading-tight text-balance text-orange-600 md:text-5xl">
-              A Trusted Partner for Solar & Government Subsidies
+            <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
+              A Trusted Partner for Solar Services & Government Subsidies
             </h2>
 
             <p className="mb-8 text-lg leading-relaxed text-slate-600">
-              SME PARTNER is an industrial consultancy and solar EPC company
-              established in 2015. We help businesses and households across
-              Uttar Pradesh adopt solar energy while navigating government
-              subsidies, approvals, and financing with confidence.
+              SME PARTNER is an industrial subsidy consultant and solar EPC
+              company established in 2015. We help businesses and households
+              across Uttar Pradesh adopt solar energy while navigating
+              government subsidies, approvals, and financing with confidence.
             </p>
 
             {/* Trust Blocks instead of fake numbers */}
@@ -87,7 +87,7 @@ export function WhyChooseUsTwo() {
               </div>
               <div className="relative h-40 overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-2 md:h-56">
                 <Image
-                  src="/service-commercial.png"
+                  src="/service-industrial.jpg"
                   alt="Commercial Solar Solutions"
                   fill
                   className="object-cover"
@@ -106,7 +106,7 @@ export function WhyChooseUsTwo() {
               </div>
               <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg transition hover:-translate-y-2 md:h-64">
                 <Image
-                  src="/service-commercial.png"
+                  src="/service-commercial.webp"
                   alt="Government Subsidy Consultancy"
                   fill
                   className="object-cover"

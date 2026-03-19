@@ -15,7 +15,7 @@ export function SubsidyCTA() {
 
           <div className="relative z-10 max-w-2xl flex-1">
             <h3 className="mb-4 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
-              Ready to Claim Your Solar Subsidy?
+              Ready to Claim Your Subsidy?
             </h3>
             <p className="text-lg leading-relaxed text-slate-600 md:text-xl">
               Don't miss out on government incentives. Our team will handle all

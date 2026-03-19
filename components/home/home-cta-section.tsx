@@ -23,16 +23,17 @@ export function HomeCTASection() {
               </span>{' '}
               for your industry to claiming{' '}
               <span className="font-bold text-slate-900">
-                ₹1,08,000 solar grants
+                ₹1,08,000 solar subsidy
               </span>
-              , we are Uttar Pradesh’s most trusted industrial & solar consultancy. Let's build your success together.
+              , we are Uttar Pradesh’s most trusted industrial subsidy
+              consultant & solar EPC vendor. Let's build your success together.
             </p>
           </div>
           <div className="relative z-10 flex shrink-0 flex-col items-center justify-center gap-4 sm:flex-row lg:gap-6">
             <Link href="/enquire">
               <Button
                 variant="cta"
-                className="px-6 py-4 text-sm shadow-sm md:text-base bg-orange-600 hover:bg-orange-700 text-white"
+                className="bg-orange-600 px-6 py-4 text-sm text-white shadow-sm hover:bg-orange-700 md:text-base"
               >
                 Enquiry
               </Button>
@@ -40,7 +41,7 @@ export function HomeCTASection() {
             <Button
               asChild
               variant="outline-brand"
-              className="w-full px-8 py-4 text-base sm:w-auto border-orange-600 text-orange-600 hover:bg-orange-50"
+              className="w-full border-orange-600 px-8 py-4 text-base text-orange-600 hover:bg-orange-50 sm:w-auto"
               size="lg"
             >
               <Link href="tel:+919169478991">

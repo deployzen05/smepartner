@@ -13,38 +13,38 @@ import { motion } from 'motion/react';
 
 const benefits = [
   {
-    title: 'Authorized UPNEDA Vendor',
+    title: 'Registered IIA',
     description:
-      'Registered and trusted vendor approved by Uttar Pradesh New & Renewable Energy Development Agency.',
+      'Registered with the Indian Industries Association (IIA), ensuring compliance and dedicated subsidy support.',
     icon: ShieldCheck,
   },
   {
-    title: 'Certified Quality Standards',
+    title: 'Expert Consultants',
     description:
-      'Committed to the highest standards for quality, safety, and regulatory compliance.',
+      'Our team comprises seasoned experts deeply versed in state and central government industrial policies.',
     icon: Award,
   },
   {
-    title: 'Subsidy Assistance',
+    title: 'Maximum Subsidy Realization',
     description:
-      'Expert guidance for subsidy assistance subject to scheme eligibility.',
+      'We meticulously prepare and file your claims to ensure you receive the highest possible grant.',
     icon: Percent,
   },
   {
-    title: 'Low-Interest Financing',
+    title: 'Project Finance Support',
     description:
-      'Facilitation of specialized solar loans starting at just 6% interest.',
+      'Facilitation of industrial loans and project financing through our extensive banking network.',
     icon: IndianRupee,
   },
   {
-    title: '30 Years Panel Performance Warranty',
+    title: 'End-to-End Execution',
     description:
-      'Reliable, long-term panel performance backed by manufacturer warranties.',
+      'From document preparation to department liaison, we manage the entire subsidy lifecycle.',
     icon: Trophy,
   },
 ];
 
-export function WhyChooseUsSection() {
+export function SubsidyWhyChooseUs() {
   return (
     <section className="overflow-hidden bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4">
@@ -68,29 +68,30 @@ export function WhyChooseUsSection() {
               </div>
 
               <h2 className="mb-6 text-3xl leading-tight font-bold text-balance text-orange-600 md:text-5xl">
-                Why SME Partner is Uttar Pradesh’s Trusted Choice
+                Why SME Partner is Uttar Pradesh’s Trusted Choice for Subsidies
               </h2>
 
               <div className="space-y-4 text-lg leading-relaxed text-slate-600">
                 <p>
-                  SME Partner is more than a solar installer — we are a complete
-                  consultancy for government subsidies and renewable energy
-                  solutions. Our authorization with UPNEDA ensures regulatory
-                  compliance and maximum benefit realization.
+                  Claiming industrial and government subsidies requires a deep
+                  understanding of policies, meticulous documentation, and
+                  consistent follow-ups. SME Partner simplifies this complex
+                  process for businesses across UP.
                 </p>
                 <p>
-                  From MSME and food processing subsidies to PM Surya Ghar
-                  residential solar, our team manages documentation, financing,
-                  approvals, and execution end-to-end.
+                  Whether you are seeking Capital Grants, Mandi Tax Exemptions,
+                  or MSME incentives, our experienced consultants act as an
+                  extension of your team to secure the benefits your business
+                  deserves.
                 </p>
               </div>
             </div>
 
             <Link
-              href="/about"
+              href="/enquire"
               className="group inline-flex items-center rounded-md bg-[#ffd563] px-8 py-3 font-bold text-black shadow-md transition-all hover:bg-[#ffca28] hover:shadow-lg"
             >
-              Know More
+              Consult an Expert
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
