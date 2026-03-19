@@ -56,8 +56,8 @@
   --color-tech-darker: #f8fafc;
 
   /* Custom fonts */
-  --font-sans: 'Montserrat', var(--font-inter), sans-serif;
-  --font-display: 'Poppins', sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
 
   @keyframes marquee {
     from {
@@ -217,7 +217,7 @@
   h4,
   h5,
   h6 {
-    @apply leading-tight tracking-tight;
+    @apply leading-tight tracking-tight font-display;
     text-wrap: balance;
   }
   p {

@@ -8,6 +8,13 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+const bgImages = [
+  '/sub-1.png',
+  '/sub-2.png',
+  '/sub-3.png',
+  '/sub-4.png',
+];
+
 export function SubsidyHero() {
   const container: Variants = {
     hidden: { opacity: 0 },
@@ -22,22 +29,20 @@ export function SubsidyHero() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const bgImages = ['/sub-1.png', '/sub-2.png', '/sub-3.png', '/sub-4.png'];
-
   const [bgIndex, setBgIndex] = React.useState(0);
 
   React.useEffect(() => {
     const interval = setInterval(
       () => setBgIndex((i) => (i + 1) % bgImages.length),
-      3500
+      5000
     );
     return () => clearInterval(interval);
-  }, []);
+  }, [bgIndex]);
 
   return (
     <section
       id="subsidy-hero"
-      className="relative z-10 flex min-h-[750px] w-full items-center overflow-hidden bg-slate-900 pt-5"
+      className="relative z-10 flex min-h-[750px] w-full items-center overflow-hidden bg-slate-900 pt-5 pb-10"
     >
       {/* BACKGROUND IMAGES */}
       <div className="absolute inset-0 z-0">
@@ -45,9 +50,15 @@ export function SubsidyHero() {
           <motion.div
             key={img}
             className="absolute inset-0"
-            initial={{ opacity: idx === 0 ? 1 : 0 }}
-            animate={{ opacity: bgIndex === idx ? 1 : 0 }}
-            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            initial={{ opacity: idx === 0 ? 1 : 0, scale: 1.1 }}
+            animate={{
+              opacity: bgIndex === idx ? 1 : 0,
+              scale: bgIndex === idx ? 1 : 1.1
+            }}
+            transition={{
+              opacity: { duration: 1.5, ease: 'easeInOut' },
+              scale: { duration: 5, ease: 'easeOut' }
+            }}
           >
             <Image
               src={img}
@@ -56,12 +67,13 @@ export function SubsidyHero() {
               priority={idx === 0}
               sizes="100vw"
               className="object-cover"
+              referrerPolicy="no-referrer"
             />
           </motion.div>
         ))}
 
         {/* GRADIENT OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-transparent" />
       </div>
 
       {/* CONTENT */}
@@ -70,45 +82,48 @@ export function SubsidyHero() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex max-w-2xl flex-col items-start text-left"
+          className="flex max-w-3xl flex-col items-start text-left"
         >
           <motion.div variants={item}>
-            <Badge className="mb-4 bg-orange-100 text-orange-700">
-              🌞 Authorized UPNEDA Vendor
+            <Badge className="mb-6 border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-orange-400 backdrop-blur-md">
+              <span className="mr-2 inline-block h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
+              Authorized UPNEDA Vendor
             </Badge>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="mb-4 text-left text-2xl leading-tight font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl"
+            className="mb-6 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1]"
           >
             Experience the Power of
             <br />
-            <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 to-amber-200 bg-clip-text text-transparent">
               Clean Energy & Subsidies
             </span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mb-6 max-w-xl text-left text-base text-slate-200 sm:text-lg"
+            className="mb-10 max-w-xl text-left text-lg font-light leading-relaxed text-slate-300 sm:text-xl"
           >
-            Unlock up to 90% capital subsidy with SME Partner. We manage all
+            Unlock up to <strong className="font-semibold text-white">90% capital subsidy</strong> with SME Partner. We manage all
             documentation and coordination for industries and homes across UP.
           </motion.p>
 
-          <motion.div variants={item} className="mb-8 flex flex-wrap gap-3">
+          <motion.div variants={item} className="mb-12 flex flex-col gap-4 sm:flex-row sm:gap-8">
             {[
-              { icon: FileText, text: 'UPNEDA Authorized Vendor' },
-              { icon: IndianRupee, text: 'Up to 90% Capital Subsidy' },
-              { icon: ShieldCheck, text: 'Complete Documentation' },
+              { icon: FileText, text: 'UPNEDA Authorized' },
+              { icon: IndianRupee, text: 'Up to 90% Subsidy' },
+              { icon: ShieldCheck, text: 'End-to-End Docs' },
             ].map((f, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm text-white backdrop-blur"
+                className="flex items-center gap-3 text-slate-300"
               >
-                <f.icon className="h-4 w-4 text-orange-400" />
-                <span>{f.text}</span>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+                  <f.icon className="h-4 w-4 text-orange-400" />
+                </div>
+                <span className="text-sm font-medium tracking-wide uppercase">{f.text}</span>
               </div>
             ))}
           </motion.div>
@@ -116,10 +131,28 @@ export function SubsidyHero() {
           <motion.div variants={item}>
             <Button
               asChild
-              className="rounded-lg border-b-4 border-[#eec248] bg-[#ffd563] px-8 py-5 text-lg font-bold text-black shadow-lg hover:bg-[#ffca28] active:translate-y-1 active:border-b-0"
+              className="group relative overflow-hidden rounded-full bg-orange-500 px-10 py-7 text-lg font-semibold tracking-wide text-white shadow-[0_0_40px_-10px_rgba(249,115,22,0.5)] transition-all hover:scale-105 hover:bg-orange-600"
             >
-              <Link href="/enquire">Claim Your Subsidy</Link>
+              <Link href="/enquire">
+                <span className="relative z-10">Claim Your Subsidy</span>
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+              </Link>
             </Button>
+          </motion.div>
+
+          {/* CAROUSEL INDICATORS */}
+          <motion.div variants={item} className="mt-12 flex items-center gap-3">
+            {bgImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setBgIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${bgIndex === idx
+                  ? 'w-8 bg-orange-400'
+                  : 'w-2 bg-white/40 hover:bg-white/70'
+                  }`}
+              />
+            ))}
           </motion.div>
         </motion.div>
       </div>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono, Inter, Montserrat, Poppins } from 'next/font/google';
+import { Geist, Geist_Mono, Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ScrollToTop } from '@/components/common/scroll-to-top';
 import { ScrollProgress } from '@/components/common/scroll-progress';
@@ -10,16 +10,9 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-});
-
-const poppins = Poppins({
-  variable: '--font-poppins',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
 });
 
 const geistSans = Geist({
@@ -118,7 +111,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
         <ClickSpark
