@@ -103,27 +103,40 @@ export function SubsidyFooter() {
             </h3>
             <ul className="space-y-4 text-slate-600">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-1 h-5 w-5 text-slate-400" />
-                <span>
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-slate-400" />
+                <a
+                  href="https://maps.google.com/?q=128/758,+Krishna+Rama+Chandra+Apartment,+K-Block,+Kidwai+Nagar,+Kanpur,+Uttar+Pradesh+–+208011"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-orange-500"
+                >
                   128/758, Krishna Rama Chandra Apartment, K-Block, Kidwai Nagar,
                   Kanpur, Uttar Pradesh – 208011
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-slate-400" />
-                <span>+91 9169478991</span>
+                <Phone className="h-5 w-5 shrink-0 text-slate-400" />
+                <a href="tel:+919169478991" className="transition hover:text-orange-500">
+                  +91 9169478991
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-slate-400" />
-                <span>+91 9140299799</span>
+                <Phone className="h-5 w-5 shrink-0 text-slate-400" />
+                <a href="tel:+919140299799" className="transition hover:text-orange-500">
+                  +91 9140299799
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-slate-400" />
-                <span>+91 9956286657</span>
+                <Phone className="h-5 w-5 shrink-0 text-slate-400" />
+                <a href="tel:+919956286657" className="transition hover:text-orange-500">
+                  +91 8828245701
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-slate-400" />
-                <span>smesolarsolution@gmail.com</span>
+                <Mail className="h-5 w-5 shrink-0 text-slate-400" />
+                <a href="mailto:smesolarsolution@gmail.com" className="transition hover:text-orange-500">
+                  smesolarsolution@gmail.com
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -134,21 +147,21 @@ export function SubsidyFooter() {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {(isHomePage 
+              {(isHomePage
                 ? [
-                    { label: 'Terms & Conditions', href: '#' },
-                    { label: 'Privacy Policy', href: '#' },
-                  ]
+                  { label: 'Terms & Conditions', href: '#' },
+                  { label: 'Privacy Policy', href: '#' },
+                ]
                 : [
-                    { label: 'Food Processing', href: '/subsidy/food-processing' },
-                    { label: 'PMFME Scheme', href: '/subsidy/pmfme-scheme' },
-                    { label: 'MSME Policy', href: '/subsidy/msme' },
-                    { label: 'UP Tourism Policy', href: '/subsidy/up-tourism' },
-                    { label: 'Tech Upgradation Scheme', href: '/subsidy/tech-upgradation' },
-                    { label: 'Nand Baba Dairy Mission', href: '/subsidy/dairy-development' },
-                    { label: 'Terms & Conditions', href: '#' },
-                    { label: 'Privacy Policy', href: '#' },
-                  ]
+                  { label: 'Food Processing', href: '/subsidy/food-processing' },
+                  { label: 'PMFME Scheme', href: '/subsidy/pmfme-scheme' },
+                  { label: 'MSME Policy', href: '/subsidy/msme' },
+                  { label: 'UP Tourism Policy', href: '/subsidy/up-tourism' },
+                  { label: 'Tech Upgradation Scheme', href: '/subsidy/tech-upgradation' },
+                  { label: 'Nand Baba Dairy Mission', href: '/subsidy/dairy-development' },
+                  { label: 'Terms & Conditions', href: '#' },
+                  { label: 'Privacy Policy', href: '#' },
+                ]
               ).map((link) => (
                 <li key={link.label}>
                   <Link

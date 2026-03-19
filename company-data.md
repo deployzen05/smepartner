@@ -125,6 +125,6 @@ Based on an estimated cost of ₹60,000 per KW.
 
 ### **6. Contact Information**
 
-- **Mobile:** +91 9169478991, +91 9140299799, +91 9956286657.
+- **Mobile:** +91 9169478991, +91 9140299799, +91 8828245701.
 - **Email:** `smepartner01@gmail.com`, `smesolarsolution@gmail.com`.
 
