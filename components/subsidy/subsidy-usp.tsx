@@ -107,7 +107,7 @@ export function SubsidyUSP() {
               whileHover={{ scale: 1.05 }}
             >
               <Image
-                src="/sub-3.png"
+                src="/government-subsidy.jpg"
                 alt="Subsidy expertise"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110"
