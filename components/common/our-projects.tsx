@@ -9,25 +9,19 @@ const projects = [
   {
     image:
       'https://images.unsplash.com/photo-1566093097221-ac2335b09e70?q=80&w=1000&auto=format&fit=crop',
-    title: 'Industrial Solar Project – Jiolite',
+    title: 'Industrial Solar Project',
     location: 'Manufacturing Unit, Uttar Pradesh',
   },
   {
     image:
       'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1000&auto=format&fit=crop',
-    title: 'Rooftop Solar Installation – Morano',
+    title: 'Rooftop Solar Installation',
     location: 'Commercial Facility',
   },
   {
     image:
-      'https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=1000&auto=format&fit=crop',
-    title: 'Solar Power Project – Badshah',
-    location: 'Food Processing Unit',
-  },
-  {
-    image:
       'https://plus.unsplash.com/premium_photo-1679500295214-ef105cc843a5?q=80&w=1171&auto=format&fit=crop',
-    title: 'Industrial Solar Support – Rustam',
+    title: 'Industrial Solar Support',
     location: 'Industrial Client, Uttar Pradesh',
   },
   {
@@ -59,20 +53,17 @@ const ProjectCard = ({
         src={image}
         alt={title}
         fill
-        
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
         className="object-cover transition-transform duration-700 group-hover:scale-110"
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80" />
 
-      <div className="absolute bottom-0 left-0 right-0 p-8 transition-transform duration-300 group-hover:translate-y-0">
+      <div className="absolute right-0 bottom-0 left-0 p-8 transition-transform duration-300 group-hover:translate-y-0">
         <span className="mb-2 block text-xs font-bold tracking-wider text-orange-400 uppercase">
           {location}
         </span>
-        <h3 className="text-xl font-bold text-white leading-tight">
-          {title}
-        </h3>
+        <h3 className="text-xl leading-tight font-bold text-white">{title}</h3>
       </div>
     </div>
   </div>
@@ -95,7 +86,7 @@ export function OurProjects() {
           Trusted by Leading Businesses Across Uttar Pradesh
         </h2>
 
-        <p className="mt-4 text-lg text-slate-700 max-w-3xl mx-auto">
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-700">
           A snapshot of solar and consultancy projects executed and supported by
           SME Partner for industrial, commercial, and food processing clients.
         </p>
